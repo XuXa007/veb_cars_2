@@ -14,31 +14,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@Controller
+@RestController
 @RequestMapping("/model")
 public class ModelController {
     @Autowired
     private ModelService modelService;
 
     @GetMapping("/")
-    public String getAllModels(ModelMap model) {
-        Iterable<ModelDto> models = modelService.getAllModels();
-
-        List<String> imagePaths = new ArrayList<>();
-        imagePaths.add("src/main/resources/image/BMW_i8.jpg");
-        imagePaths.add("src/main/resources/image/Mazda-cx5.jpg");
-
-        model.addAttribute("models", models);
-        model.addAttribute("imagePaths", imagePaths);
-        return "models";
+    Iterable<ModelDto> all() {
+        return modelService.getAllModels();
     }
-
-//    @GetMapping("/")
-//    public String getAllModels(ModelMap model) {
-//        Iterable<ModelDto> models = modelService.getAllModels();
-//        model.addAttribute("models", models);
-//        return "models";
-//    }
 
     @PostMapping("/")
     ModelDto newModel(@RequestBody ModelDto newModel) {

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 import java.util.UUID;
 
-@Controller
+@RestController
 @RequestMapping("/role")
 public class RoleController {
     @Autowired
@@ -25,24 +25,17 @@ public class RoleController {
     }
 
     @GetMapping("/")
-    @ResponseBody
     Iterable<RoleDto> all() {
         return roleService.getAllRoles();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<RoleDto> getRoleById(@PathVariable UUID id) {
-        Optional<RoleDto> roleOptional = Optional.ofNullable(roleService.getRoleById(id));
-
-        return roleOptional.map(role -> ResponseEntity.ok().body(role))
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-//    @GetMapping("/genre/{id}")
-//    public GenreDto getGenreById(@PathVariable Long id) {
-//        return genreService.findGenreById(id);
+//    @GetMapping("/{id}")
+//    public ResponseEntity<RoleDto> getRoleById(@PathVariable UUID id) {
+//        Optional<RoleDto> roleOptional = Optional.ofNullable(roleService.getRoleById(id));
+//
+//        return roleOptional.map(role -> ResponseEntity.ok().body(role))
+//                .orElseGet(() -> ResponseEntity.notFound().build());
 //    }
-
     @PostMapping("/")
     RoleDto newRole(@RequestBody RoleDto newRole) {
         return roleService.registerRole(newRole);

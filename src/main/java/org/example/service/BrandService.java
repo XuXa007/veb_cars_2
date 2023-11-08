@@ -14,8 +14,6 @@ public interface BrandService {
 
     BrandDto updateBrand(String brandID, BrandDto updateBrand);
 
-    void registerBrand(String townName);
-
     void deleteBrand(String brandID);
 
 

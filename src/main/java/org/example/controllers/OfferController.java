@@ -10,17 +10,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
-@Controller
+@RestController
 @RequestMapping("/offer")
 public class OfferController {
     @Autowired
     private OfferService offerService;
 
     @GetMapping("/")
-    public String all(ModelMap model) {
-        Iterable<OfferDto> offer = offerService.getAllOffers();
-        model.addAttribute("offers", offer);
-        return "offers";
+    Iterable<OfferDto> all() {
+        return offerService.getAllOffers();
     }
 
     @PostMapping("/")

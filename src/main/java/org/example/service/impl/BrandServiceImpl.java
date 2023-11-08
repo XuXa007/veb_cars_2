@@ -36,18 +36,9 @@ public class BrandServiceImpl implements BrandService {
 
     private String brand = "brand";
 
-    @GetMapping("/")
-    public String getAllBrands(ModelMap model) {
-        List<BrandDto> brands = brandRepository.findAll().stream()
-                .map(s -> modelMapper.map(s, BrandDto.class))
-                .collect(Collectors.toList());
-        model.addAttribute("brands", brands);
-        return "brandList";
-    }
-
     @Override
     public List<BrandDto> getAllBrand() {
-        return null;
+        return brandRepository.findAll().stream().map((s) -> modelMapper.map(s, BrandDto.class)).collect(Collectors.toList());
     }
 
     @Override
@@ -66,30 +57,6 @@ public class BrandServiceImpl implements BrandService {
             return modelMapper.map(brandRepository.save(b), BrandDto.class);
         } else {
             throw new NotFoundException("A brand with this id already exists");
-        }
-    }
-
-    @Override
-    public void registerBrand(String townName) {
-        BrandDto brandDto = new BrandDto();
-        brandDto.setName(townName);
-
-        if (!this.validationUtil.isValid(brandDto)) {
-
-            this.validationUtil
-                    .violations(brandDto)
-                    .stream()
-                    .map(ConstraintViolation::getMessage)
-                    .forEach(System.out::println);
-        } else {
-            Brand brand = this.modelMapper.map(brandDto, Brand.class);
-
-            brand.setCreated(LocalDateTime.now());
-            brand.setModified(LocalDateTime.now());
-
-            List<Model> models = new ArrayList<>();
-            brand.setModels(models);
-            this.brandRepository.saveAndFlush(brand);
         }
     }
 

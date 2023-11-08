@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-@Controller
+@RestController
 @RequestMapping("/brand")
 public class BrandController {
     @Autowired
@@ -22,15 +22,7 @@ public class BrandController {
         return brandService.getAllBrand();
     }
 
-    @GetMapping("/home")
-    public String getHomePage() {
-        return "brandAll.html";
-    }
-    @PostMapping("/ddd")
-    public String addConfirm(@RequestParam String brandName, @RequestParam int brandAge) {
-        System.out.println(String.format("Brand name: $s, brand age: $d", brandName, brandAge));
-        return "redirect:/brand";
-    }
+
     @PostMapping("/")
     BrandDto newBrand(@RequestBody BrandDto newBrand) {
         return brandService.registerBrand(newBrand);
