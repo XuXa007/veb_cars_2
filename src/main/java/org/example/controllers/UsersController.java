@@ -17,6 +17,7 @@ public class UsersController {
     private UsersService usersService;
 
     @GetMapping("/")
+    @ResponseBody
     Iterable<UsersDto> all() {
         return usersService.getAllUsers();
     }
