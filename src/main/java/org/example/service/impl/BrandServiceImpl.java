@@ -2,6 +2,7 @@ package org.example.service.impl;
 
 import jakarta.validation.ConstraintViolation;
 import org.example.dtos.BrandDto;
+import org.example.dtos.ShowBrandInfoDto;
 import org.example.ex.BrandConflictException;
 import org.example.exception.NotFoundException;
 import org.example.models.Brand;
@@ -35,6 +36,15 @@ public class BrandServiceImpl implements BrandService {
     }
 
     private String brand = "brand";
+
+    public List<ShowBrandInfoDto> allBrands() {
+        return brandRepository.findAll().stream().map(brand -> modelMapper.map(brand, ShowBrandInfoDto.class))
+                .collect(Collectors.toList());
+    }
+
+    public ShowBrandInfoDto brandDetails(String brandName) {
+        return modelMapper.map(brandRepository.findByName(brandName).orElse(null), ShowBrandInfoDto.class);
+    }
 
     @Override
     public List<BrandDto> getAllBrand() {

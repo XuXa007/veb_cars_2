@@ -1,5 +1,7 @@
 package org.example.controllers;
 
+import org.example.dtos.AddModelDto;
+import org.example.dtos.AddUserDto;
 import org.example.dtos.UsersDto;
 import org.example.models.Model;
 import org.example.service.UsersService;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UsersController {
     @Autowired
@@ -21,9 +23,19 @@ public class UsersController {
         return usersService.getAllUsers();
     }
 
-    @PostMapping("/")
-    UsersDto newUser(@RequestBody UsersDto newUser) {
-        return usersService.registerUser(newUser);
+//    @PostMapping("/")
+//    UsersDto newUser(@RequestBody UsersDto newUser) {
+//        return usersService.registerUser(newUser);
+//    }
+
+    @GetMapping("/add")
+    public String addUser() {
+        return "user-add";
+    }
+
+    @ModelAttribute("userModel")
+    public AddUserDto initUser() {
+        return new AddUserDto();
     }
 
     @DeleteMapping("/{userID}")

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head}"></head>
+<body class="d-flex flex-column h-100">
+<div th:replace="~{fragments/navbar}">Navbar</div>
+<main class="flex-shrink-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="jumbotron text-center rounded col-md-8 align-self-center pt-5">
+        <div class="justify-content-center">
+          <h1>Add Offer</h1>
+        </div>
+        <form th:action="@{/offer/add}"
+              th:method="post"
+              th:object="${offerModel}"
+              class="m-md-auto w-50 pb-3">
+          <div class="mb-3">
+            <label class="form-label" for="model">Model</label>
+            <input th:field="*{model}"
+                   th:errorclass="is-invalid"
+                   type="text" class="form-control text-center" id="model" aria-describedby="model"
+                   name="model"/>
+            <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger">Error
+              message</small>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="users">User</label>
+            <input th:field="*{users}"
+                   th:errorclass="is-invalid"
+                   type="text" class="form-control text-center" id="users" aria-describedby="users"
+                   name="users"/>
+            <small th:if="${#fields.hasErrors('users')}" th:errors="*{users}" class="text-danger">Error
+              message</small>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="description">Description</label>
+            <input th:field="*{description}"
+                   th:errorclass="is-invalid"
+                   type="text" class="form-control text-center" id="description" aria-describedby="description"
+                   name="category"/>
+            <small th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-danger">Error
+              message</small>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="engine">Engine</label>
+            <input th:field="*{engine}"
+                   th:errorclass="is-invalid"
+                   type="text" class="form-control text-center"
+                   id="engine" aria-describedby="engine" name="engine"/>
+            <small th:if="${#fields.hasErrors('engine')}" th:errors="*{engine}"
+                   class="text-danger">Error
+              message</small>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="mileage">Mileage</label>
+            <input th:field="*{mileage}"
+                   th:errorclass="is-invalid"
+                   type="text" class="form-control text-center"
+                   id="mileage" aria-describedby="mileage" name="mileage"/>
+            <small th:if="${#fields.hasErrors('mileage')}" th:errors="*{mileage}"
+                   class="text-danger">Error
+              message</small>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="transmission">Transmission</label>
+            <input th:field="*{transmission}"
+                   th:errorclass="is-invalid"
+                   type="text" class="form-control text-center"
+                   id="transmission" aria-describedby="transmission" name="transmission"/>
+            <small th:if="${#fields.hasErrors('transmission')}" th:errors="*{transmission}"
+                   class="text-danger">Error
+              message</small>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="year">Year</label>
+            <input th:field="*{year}"
+                   th:errorclass="is-invalid"
+                   type="text" class="form-control text-center"
+                   id="year" aria-describedby="year" name="year"/>
+            <small th:if="${#fields.hasErrors('year')}" th:errors="*{year}"
+                   class="text-danger">Error
+              message</small>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="price">Price</label>
+            <input th:field="*{price}"
+                   th:errorclass="is-invalid"
+                   type="text" class="form-control text-center"
+                   id="price" aria-describedby="price" name="price"/>
+            <small th:if="${#fields.hasErrors('price')}" th:errors="*{price}"
+                   class="text-danger">Error
+              message</small>
+          </div>
+
+          <button type="submit" class="btn btn-secondary">Add Brand</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+<footer th:replace="~{fragments/footer}"></footer>
+</body>
+</html>

@@ -1,6 +1,7 @@
 package org.example.models;
 
 import jakarta.persistence.*;
+import org.example.dtos.ShowBrandInfoDto;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,7 +14,6 @@ public class Brand extends Base {
     @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL)
     private List<Model> models;
 
-    @Column(name="name", length = 255, nullable = false)
     private String name;
 
     @Column(name="created", length = 6, nullable = false)

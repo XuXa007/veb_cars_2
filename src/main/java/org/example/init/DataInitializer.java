@@ -99,10 +99,10 @@ public class DataInitializer implements CommandLineRunner {
         offer1 = offerService.registerOffer(offer1);
         offer2 = offerService.registerOffer(offer2);
 
-        List<ModelDto> modelsByBrand = modelService.findModelByBrandName("Mazda");
-        for (ModelDto model : modelsByBrand) {
-            System.out.println(model);
-        }
+//        List<ModelDto> modelsByBrand = modelService.findModelByBrandName("Mazda");
+//        for (ModelDto model : modelsByBrand) {
+//            System.out.println(model);
+//        }
 
 //        System.out.println(brand1);
 //        System.out.println(brand2);

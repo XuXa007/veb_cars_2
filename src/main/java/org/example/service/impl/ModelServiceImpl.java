@@ -2,6 +2,8 @@ package org.example.service.impl;
 
 import jakarta.validation.ConstraintViolation;
 import org.example.dtos.ModelDto;
+import org.example.dtos.ShowBrandInfoDto;
+import org.example.dtos.ShowModelInfoDto;
 import org.example.exception.NotFoundException;
 import org.example.models.Brand;
 import org.example.models.Model;
@@ -95,8 +97,16 @@ public class ModelServiceImpl implements ModelService {
                 .collect(Collectors.toList());
     }
 
-//    @Autowired
-//    public void setModelRepository(ModelRepository modelRepository) {
-//        this.modelRepository = modelRepository;
-//    }
+
+
+    public List<ShowModelInfoDto> allModels() {
+        return modelRepository.findAll().stream().map(model -> modelMapper.map(model, ShowModelInfoDto.class))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public ShowModelInfoDto modelDetails(String modelName) {
+        return modelMapper.map(modelRepository.findByName(modelName).orElse(null), ShowModelInfoDto.class);
+    }
+
 }

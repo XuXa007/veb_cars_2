@@ -1,6 +1,7 @@
 package org.example.service;
 
 import org.example.dtos.BrandDto;
+import org.example.dtos.ShowBrandInfoDto;
 import org.example.models.Brand;
 import org.example.models.Offer;
 
@@ -16,6 +17,9 @@ public interface BrandService {
 
     void deleteBrand(String brandID);
 
+    List<ShowBrandInfoDto> allBrands();
 
     List<BrandDto> findBrandByName(String name);
+
+    ShowBrandInfoDto brandDetails(String brandName);
 }

@@ -3,6 +3,8 @@ package org.example.service.impl;
 import jakarta.validation.ConstraintViolation;
 import org.example.dtos.BrandDto;
 import org.example.dtos.OfferDto;
+import org.example.dtos.ShowModelInfoDto;
+import org.example.dtos.ShowOfferInfoDto;
 import org.example.ex.OfferConflictException;
 import org.example.exception.NotFoundException;
 import org.example.models.Model;
@@ -96,8 +98,9 @@ public class OfferServiceImpl implements OfferService {
         return modelMapper.map(savedOffer, OfferDto.class);
     }
 
-//    @Autowired
-//    public void setOfferRepository(OfferRepository offerRepository) {
-//        this.offerRepository = offerRepository;
-//    }
+    public List<ShowOfferInfoDto> allOffer() {
+        return offerRepository.findAll().stream().map(model -> modelMapper.map(offer, ShowOfferInfoDto.class))
+                .collect(Collectors.toList());
+    }
+
 }

@@ -1,0 +1,18 @@
+GET http://localhost:8080/model
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-27T162000.404.json
+
+###
+
+GET http://localhost:8080/model
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-27T161959.404.json
+
+###
+

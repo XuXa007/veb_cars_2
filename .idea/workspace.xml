@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="change for postman">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddBrandDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddModelDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddOfferDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddUserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowBrandInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowModelInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowOfferInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/validation/UniqueBrandName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/validation/UniqueBrandNameValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/validation/UniqueModelName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/validation/UniqueModelNameValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pic/company.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pic/employee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/brand-add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/brand-all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/brand-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/model-add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/model-all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/model-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/offer-add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/offer-all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/OfferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/init/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/init/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Brand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/BrandRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/BrandRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/ModelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/ModelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ModelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ModelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/OfferService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/BrandServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/impl/BrandServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/ModelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/impl/ModelServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/impl/OfferServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/BMW_i8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/Mazda-cx5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/brand.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/brandAll.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/modelList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/models.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/offers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/BMW_i8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/image/Mazda-cx5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/BrandController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/BrandController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/OfferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/OfferController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/UsersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/init/DataInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/init/DataInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/models/Brand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/models/Brand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/repo/BrandRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/repo/BrandRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/repo/ModelRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/repo/ModelRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/BrandService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/BrandService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/ModelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/ModelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/impl/BrandServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/impl/BrandServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/impl/ModelServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/impl/ModelServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/brand.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/brandAll.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/modelList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/models.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/offers.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2WrYEm5JjU7kgSxdl0F4IKoT2JQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/xl/IdeaProjects/veb-2-2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static/css/css" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static/css" />
+      <recent name="$PROJECT_DIR$/src/main/resources/image" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.WebWorkApplication">
+    <configuration name="WebWorkApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.WebWorkApplication" />
+      <module name="lab-psql-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="veb-2-2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="veb-2-2" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebWorkApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="lab-psql-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.WebWorkApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.WebWorkApplication" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="" />
+      <created>1697492058148</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697492058148</updated>
+      <workItem from="1697492059264" duration="7224000" />
+      <workItem from="1697546082355" duration="4010000" />
+      <workItem from="1697620003453" duration="13101000" />
+      <workItem from="1697656851205" duration="326000" />
+      <workItem from="1697996392533" duration="16523000" />
+      <workItem from="1698707100482" duration="2000000" />
+      <workItem from="1698780826128" duration="8785000" />
+      <workItem from="1698839936855" duration="1518000" />
+      <workItem from="1699291995117" duration="15000" />
+      <workItem from="1699398281379" duration="7310000" />
+      <workItem from="1699442206610" duration="13246000" />
+      <workItem from="1699466827972" duration="132000" />
+      <workItem from="1699466979492" duration="3117000" />
+      <workItem from="1699576097275" duration="2350000" />
+      <workItem from="1699633800724" duration="598000" />
+      <workItem from="1699868870729" duration="648000" />
+      <workItem from="1701040431586" duration="2625000" />
+      <workItem from="1701088293371" duration="23190000" />
+    </task>
+    <task id="LOCAL-00001" summary="do something with html">
+      <option name="closed" value="true" />
+      <created>1699465383515</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699465383516</updated>
+    </task>
+    <task id="LOCAL-00002" summary="i do project when only user and role can answer json, next commit will be only for json - postman">
+      <option name="closed" value="true" />
+      <created>1699467197022</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699467197022</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change for postman">
+      <option name="closed" value="true" />
+      <created>1699467718355</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699467718355</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="do something with html" />
+    <MESSAGE value="i do project when only user and role can answer json, next commit will be only for json - postman" />
+    <MESSAGE value="change for postman" />
+    <option name="LAST_COMMIT_MESSAGE" value="change for postman" />
+  </component>
+</project>

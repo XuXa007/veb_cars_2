@@ -1,31 +1,53 @@
 package org.example.controllers;
 
+import org.example.dtos.AddBrandDto;
 import org.example.dtos.BrandDto;
 import org.example.models.Brand;
-import org.example.models.Offer;
 import org.example.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 
-import java.util.List;
-import java.util.UUID;
 
-@RestController
+@Controller
 @RequestMapping("/brand")
 public class BrandController {
     @Autowired
     private BrandService brandService;
 
-    @GetMapping("/")
-    Iterable<BrandDto> all() {
-        return brandService.getAllBrand();
-    }
-
+//    @GetMapping("/")
+//    Iterable<BrandDto> all() {
+//        return brandService.getAllBrand();
+//    }
 
     @PostMapping("/")
     BrandDto newBrand(@RequestBody BrandDto newBrand) {
         return brandService.registerBrand(newBrand);
+    }
+
+    @GetMapping("/add")
+    public String addBrand() {
+        return "brand-add";
+    }
+
+    @ModelAttribute("brandModel")
+    public AddBrandDto initBrand() {
+        return new AddBrandDto();
+    }
+
+    @GetMapping("/all")
+    public String showAllBrands(Model model) {
+        model.addAttribute("brandInfos", brandService.allBrands());
+
+        return "brand-all";
+    }
+
+    @GetMapping("/brand-details/{brand-name}")
+    public String brandDetails(@PathVariable("brand-name") String brandName, Model model) {
+        model.addAttribute("brandDetails", brandService.brandDetails(brandName));
+
+        return "brand-details";
     }
 
     @DeleteMapping("/{brandID}")
