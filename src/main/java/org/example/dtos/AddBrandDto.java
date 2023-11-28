@@ -22,6 +22,7 @@ public class AddBrandDto {
         this.name = name;
     }
 
+    @NotEmpty(message = "Created must not be null or empty!")
     public LocalDateTime getCreated() {
         return created;
     }
@@ -30,6 +31,7 @@ public class AddBrandDto {
         this.created = created;
     }
 
+    @NotEmpty(message = "Modified must not be null or empty!")
     public LocalDateTime getModified() {
         return modified;
     }

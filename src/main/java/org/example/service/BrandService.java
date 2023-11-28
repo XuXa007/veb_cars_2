@@ -1,5 +1,6 @@
 package org.example.service;
 
+import org.example.dtos.AddBrandDto;
 import org.example.dtos.BrandDto;
 import org.example.dtos.ShowBrandInfoDto;
 import org.example.models.Brand;
@@ -22,4 +23,5 @@ public interface BrandService {
     List<BrandDto> findBrandByName(String name);
 
     ShowBrandInfoDto brandDetails(String brandName);
+    void addBrand(AddBrandDto brandDto);
 }

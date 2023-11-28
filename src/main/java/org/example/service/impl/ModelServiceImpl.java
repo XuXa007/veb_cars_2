@@ -1,6 +1,7 @@
 package org.example.service.impl;
 
 import jakarta.validation.ConstraintViolation;
+import org.example.dtos.AddModelDto;
 import org.example.dtos.ModelDto;
 import org.example.dtos.ShowBrandInfoDto;
 import org.example.dtos.ShowModelInfoDto;
@@ -60,6 +61,10 @@ public class ModelServiceImpl implements ModelService {
         } else {
             throw new NotFoundException("A brand with this id already exists");
         }
+    }
+
+    public void addModel(AddModelDto modelDto) {
+        modelRepository.saveAndFlush(modelMapper.map(modelDto, Model.class));
     }
 
     @Override

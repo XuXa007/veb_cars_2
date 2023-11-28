@@ -2,8 +2,8 @@ package org.example.Enums;
 
 
 public enum Transmission {
-    MANUAL ("Механичсекая", 0),
-    AUTOMATIC ("Автоматиическая", 1);
+    Manual ("Механичсекая", 0),
+    Automatic ("Автоматиическая", 1);
     private String type;
     private int number;
 

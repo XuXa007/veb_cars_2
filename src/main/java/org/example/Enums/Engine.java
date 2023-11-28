@@ -2,10 +2,10 @@ package org.example.Enums;
 
 
 public enum Engine {
-    GASOLINE ("Бензин", 0),
-    DIESEL ("Дизель", 1),
-    ELECTRIC ("Электричество", 2),
-    HYBRID ("Гибрид", 3);
+    Gasoline ("Бензин", 0),
+    Diesel ("Дизель", 1),
+    Electric ("Электричество", 2),
+    Hybrid ("Гибрид", 3);
     private String type;
     private int number;
 

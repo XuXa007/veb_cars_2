@@ -1,13 +1,17 @@
 package org.example.controllers;
 
+import jakarta.validation.Valid;
 import org.example.dtos.AddBrandDto;
+import org.example.dtos.AddModelDto;
 import org.example.dtos.BrandDto;
 import org.example.models.Brand;
 import org.example.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -29,6 +33,20 @@ public class BrandController {
     @GetMapping("/add")
     public String addBrand() {
         return "brand-add";
+    }
+
+    @PostMapping("/add")
+    public String addBrand(@Valid AddBrandDto brandModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("companyModel", brandModel);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.modelModel",
+                    bindingResult);
+            return "redirect:/brand/add";
+        }
+        brandService.addBrand(brandModel);
+
+        return "redirect:/";
     }
 
     @ModelAttribute("brandModel")

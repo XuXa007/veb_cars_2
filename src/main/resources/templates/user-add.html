@@ -56,15 +56,14 @@
               message</small>
           </div>
 
-          <div class="mb-5">
+          <div class="mb-3">
             <label class="form-label" for="role">Role</label>
-            <input th:field="*{role}"
-                   th:errorclass="is-invalid"
-                   type="text" class="form-control text-center"
-                   id="role" aria-describedby="role" name="role"/>
-            <small th:if="${#fields.hasErrors('role')}" th:errors="*{role}"
-                   class="text-danger">Error
-              message</small>
+            <select name="role" id="role" class="form-control">
+              <option th:each="cat : ${T(org.example.Enums.RoleEnum).values()}"
+                      th:value="${cat}" th:text="${#strings.capitalize(cat.name())}"
+                      th:selected="${cat == userModel.role}"></option>
+            </select>
+            <small th:if="${#fields.hasErrors('role')}" th:errors="*{role}" class="text-danger">Error message</small>
           </div>
           <button type="submit" class="btn btn-secondary">Add Brand</button>
         </form>

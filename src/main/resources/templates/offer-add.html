@@ -47,13 +47,12 @@
 
           <div class="mb-3">
             <label class="form-label" for="engine">Engine</label>
-            <input th:field="*{engine}"
-                   th:errorclass="is-invalid"
-                   type="text" class="form-control text-center"
-                   id="engine" aria-describedby="engine" name="engine"/>
-            <small th:if="${#fields.hasErrors('engine')}" th:errors="*{engine}"
-                   class="text-danger">Error
-              message</small>
+            <select name="engine" id="engine" class="form-control">
+              <option th:each="cat : ${T(org.example.Enums.Engine).values()}"
+                      th:value="${cat}" th:text="${#strings.capitalize(cat.name())}"
+                      th:selected="${cat == offerModel.engine}"></option>
+            </select>
+            <small th:if="${#fields.hasErrors('engine')}" th:errors="*{engine}" class="text-danger">Error message</small>
           </div>
 
           <div class="mb-3">
@@ -69,13 +68,12 @@
 
           <div class="mb-3">
             <label class="form-label" for="transmission">Transmission</label>
-            <input th:field="*{transmission}"
-                   th:errorclass="is-invalid"
-                   type="text" class="form-control text-center"
-                   id="transmission" aria-describedby="transmission" name="transmission"/>
-            <small th:if="${#fields.hasErrors('transmission')}" th:errors="*{transmission}"
-                   class="text-danger">Error
-              message</small>
+            <select name="transmission" id="transmission" class="form-control">
+              <option th:each="cat : ${T(org.example.Enums.Transmission).values()}"
+                      th:value="${cat}" th:text="${#strings.capitalize(cat.name())}"
+                      th:selected="${cat == offerModel.transmission}"></option>
+            </select>
+            <small th:if="${#fields.hasErrors('transmission')}" th:errors="*{transmission}" class="text-danger">Error message</small>
           </div>
 
           <div class="mb-3">

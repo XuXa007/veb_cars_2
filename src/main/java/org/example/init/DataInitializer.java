@@ -88,12 +88,12 @@ public class DataInitializer implements CommandLineRunner {
         String uuid10 = String.valueOf(UUID.randomUUID());
 
         OfferDto offer1 = new OfferDto(uuid9, model1,user1,"Компактный кроссовер, выпускаемый японской автомобильной компанией Mazda. Первый серийный автомобиль Mazda, дизайн кузова которого создан согласно идеологии KODO - Дух движения. ",
-                Engine.ELECTRIC, imagePathBMW, 1200, price1, Transmission.AUTOMATIC, 2009,
+                Engine.Electric, imagePathBMW, 1200, price1, Transmission.Automatic, 2009,
                 now, yesterday);
 
         OfferDto offer2 = new OfferDto(uuid10, model2, user2,"Автомобиль компании BMW.\n" +
                 "Он представлен в кузове двухдверного купе и выполнен из алюминия и поликарбоната. Коэффициент аэродинамического сопротивления составляет 0,26.",
-                Engine.ELECTRIC, "image_url_2", 9000, price2, Transmission.AUTOMATIC, 2020,
+                Engine.Electric, "image_url_2", 9000, price2, Transmission.Automatic, 2020,
                 now, yesterday);
 
         offer1 = offerService.registerOffer(offer1);

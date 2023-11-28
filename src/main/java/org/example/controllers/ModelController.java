@@ -1,5 +1,6 @@
 package org.example.controllers;
 
+import jakarta.validation.Valid;
 import org.example.dtos.AddBrandDto;
 import org.example.dtos.AddModelDto;
 import org.example.dtos.BrandDto;
@@ -10,7 +11,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,10 +48,10 @@ public class ModelController {
         return "model-details";
     }
 
-    @PostMapping("/")
-    ModelDto newModel(@RequestBody ModelDto newModel) {
-        return modelService.registerModel(newModel);
-    }
+//    @PostMapping("/")
+//    ModelDto newModel(@RequestBody ModelDto newModel) {
+//        return modelService.registerModel(newModel);
+//    }
 
     @DeleteMapping("/{modelID}")
     void deleteModel(@PathVariable("modelID") ModelDto modelID) {
@@ -65,5 +68,17 @@ public class ModelController {
         return "modelList";
     }
 
+    @PostMapping("/add")
+    public String addModel(@Valid AddModelDto modelModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("modelModel", modelModel);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.companyModel",
+                    bindingResult);
+            return "redirect:/model/add";
+        }
+        modelService.addModel(modelModel);
+
+        return "redirect:/";
+    }
 }

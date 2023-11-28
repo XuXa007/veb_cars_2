@@ -1,6 +1,7 @@
 package org.example.service.impl;
 
 import jakarta.validation.ConstraintViolation;
+import org.example.dtos.AddBrandDto;
 import org.example.dtos.BrandDto;
 import org.example.dtos.ShowBrandInfoDto;
 import org.example.ex.BrandConflictException;
@@ -42,8 +43,13 @@ public class BrandServiceImpl implements BrandService {
                 .collect(Collectors.toList());
     }
 
+
     public ShowBrandInfoDto brandDetails(String brandName) {
         return modelMapper.map(brandRepository.findByName(brandName).orElse(null), ShowBrandInfoDto.class);
+    }
+
+    public void addBrand(AddBrandDto brandDto) {
+        brandRepository.saveAndFlush(modelMapper.map(brandDto, Brand.class));
     }
 
     @Override
