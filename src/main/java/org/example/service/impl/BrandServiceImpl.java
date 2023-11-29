@@ -49,7 +49,10 @@ public class BrandServiceImpl implements BrandService {
     }
 
     public void addBrand(AddBrandDto brandDto) {
-        brandRepository.saveAndFlush(modelMapper.map(brandDto, Brand.class));
+        brandDto.setCreated(LocalDateTime.now());
+        brandDto.setModified(LocalDateTime.now());
+        Brand brand = modelMapper.map(brandDto, Brand.class);
+        brandRepository.saveAndFlush(brand);
     }
 
     @Override

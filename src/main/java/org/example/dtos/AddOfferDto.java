@@ -4,6 +4,7 @@ import org.example.Enums.Engine;
 import org.example.Enums.Transmission;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 public class AddOfferDto {
     private ModelDto model;
@@ -14,6 +15,9 @@ public class AddOfferDto {
     private BigDecimal price;
     private Transmission transmission;
     private int year;
+
+    private LocalDateTime created;
+    private LocalDateTime modified;
 
     public ModelDto getModel() {
         return model;
@@ -77,5 +81,21 @@ public class AddOfferDto {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
+    public LocalDateTime getModified() {
+        return modified;
+    }
+
+    public void setModified(LocalDateTime modified) {
+        this.modified = modified;
     }
 }

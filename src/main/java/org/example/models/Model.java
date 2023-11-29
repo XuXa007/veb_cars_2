@@ -23,8 +23,8 @@ public class Model extends Base {
     @Enumerated(EnumType.ORDINAL)
     @Column(name="category", length = 11, nullable = false)
     private Category category;
-    @Column(name="imageURL", length = 255, nullable = false)
-    private String imageUrl;
+    @Column(name="imageURL", length = 255)
+    private String imageURL;
     @Column(name="startYear", length = 11, nullable = false)
     private int startYear;
     @Column(name="endYear", length = 11, nullable = false)
@@ -69,12 +69,12 @@ public class Model extends Base {
         this.category = category;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImageURL() {
+        return imageURL;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImageUrl(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public int getStartYear() {

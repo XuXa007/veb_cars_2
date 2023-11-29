@@ -46,7 +46,7 @@ public class BrandController {
         }
         brandService.addBrand(brandModel);
 
-        return "redirect:/";
+        return "redirect:/brand/all";
     }
 
     @ModelAttribute("brandModel")

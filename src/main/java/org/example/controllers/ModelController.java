@@ -48,11 +48,6 @@ public class ModelController {
         return "model-details";
     }
 
-//    @PostMapping("/")
-//    ModelDto newModel(@RequestBody ModelDto newModel) {
-//        return modelService.registerModel(newModel);
-//    }
-
     @DeleteMapping("/{modelID}")
     void deleteModel(@PathVariable("modelID") ModelDto modelID) {
         modelService.registerModel(modelID);
@@ -79,6 +74,6 @@ public class ModelController {
         }
         modelService.addModel(modelModel);
 
-        return "redirect:/";
+        return "redirect:/model/all";
     }
 }

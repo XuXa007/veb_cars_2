@@ -9,19 +9,22 @@
       <div class="col-md-2"></div>
       <main class="jumbotron text-center rounded col-md-12 align-self-center pt-5">
         <div class="justify-content-center">
-          <h1>Brand Details</h1>
+          <h1>Offer Details</h1>
         </div>
         <div class="row bg-light rounded">
           <div class="col-md-6"><img src="/pic/company.png" height="350px"></div>
           <div class="col-md-6 pt-3">
-            <h2>Company</h2>
-            <h4 th:text="'Name: ' + ${brandDetails.name}"></h4>
-            <h4 th:text="'Created: ' + ${brandDetails.created}"></h4>
-            <h4 th:text="'Modified: ' + ${brandDetails.modified}"></h4>
-            <div class="btn-group">
-              <a class="btn btn-success btn-lg mx-2" th:href="@{/brand/edit/{brand-name}(brand-name=${brandDetails.name})}">Edit</a>
-              <a class="btn btn-danger btn-lg" th:href="@{/brand/delete/{brand-name}(brand-name=${brandDetails.name})}">Delete</a>
-            </div>
+            <h2>Offer</h2>
+              <h2 th:text="'Model: ' + ${offerDetails.model.name}"></h2>
+              <h2 th:text="'User: ' + ${offerDetails.users.userName}"></h2>
+              <h4 th:text="'Price: ' + ${offerDetails.price}"></h4>
+              <h4 th:text="'Year: ' + ${offerDetails.year}"></h4>
+              <h5 th:text="'Description: ' + ${offerDetails.description}"></h5>
+
+              <div class="btn-group">
+                <a class="btn btn-success btn-lg mx-2" th:href="@{/offer/edit/{offer-id}(offer-id=${offerDetails.id})}">Edit</a>
+                <a class="btn btn-danger btn-lg" th:href="@{/offer/delete/{offer-id}(offer-id=${offerDetails.id})}">Delete</a>
+              </div>
           </div>
         </div>
       </main>

@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -52,6 +53,7 @@ public class BrandDto {
         this.created = created;
     }
 
+//    @DateTimeFormat(pattern = "MM-yyyy")
     public LocalDateTime getModified() {
         return modified;
     }

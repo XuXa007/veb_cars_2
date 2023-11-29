@@ -8,6 +8,7 @@ import org.example.models.Users;
 import java.math.BigDecimal;
 
 public class ShowOfferInfoDto {
+    private String id;
     private ModelDto model;
     private UsersDto users;
     private String description;
@@ -16,6 +17,14 @@ public class ShowOfferInfoDto {
     private BigDecimal price;
     private Transmission transmission;
     private int year;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public ModelDto getModel() {
         return model;

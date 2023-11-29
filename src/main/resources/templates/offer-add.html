@@ -15,24 +15,24 @@
               th:method="post"
               th:object="${offerModel}"
               class="m-md-auto w-50 pb-3">
-          <div class="mb-3">
-            <label class="form-label" for="model">Model</label>
-            <input th:field="*{model}"
-                   th:errorclass="is-invalid"
-                   type="text" class="form-control text-center" id="model" aria-describedby="model"
-                   name="model"/>
-            <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger">Error
-              message</small>
-          </div>
 
           <div class="mb-3">
-            <label class="form-label" for="users">User</label>
-            <input th:field="*{users}"
-                   th:errorclass="is-invalid"
-                   type="text" class="form-control text-center" id="users" aria-describedby="users"
-                   name="users"/>
-            <small th:if="${#fields.hasErrors('users')}" th:errors="*{users}" class="text-danger">Error
-              message</small>
+            <label class="form-label" for="model">Model name</label>
+            <select name="model" id="model" class="form-control">
+              <option th:each="modelItem : ${modelList}" th:value="${modelItem.id}" th:text="${#strings.capitalize(modelItem.name)}"
+                      th:selected="${offerModel.model != null and modelItem.id == offerModel.model.id}"></option>
+            </select>
+            <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger">Error message</small>
+          </div>
+
+
+          <div class="mb-3">
+            <label class="form-label" for="users">User name</label>
+            <select name="users" id="users" class="form-control">
+              <option th:each="userItem : ${userList}" th:value="${userItem.id}" th:text="${#strings.capitalize(userItem.userName)}"
+                      th:selected="${offerModel.users != null and userItem.id == offerModel.users.id}"></option>
+            </select>
+            <small th:if="${#fields.hasErrors('users')}" th:errors="*{users}" class="text-danger">Error message</small>
           </div>
 
           <div class="mb-3">

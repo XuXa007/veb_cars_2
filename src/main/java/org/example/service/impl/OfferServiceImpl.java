@@ -1,10 +1,7 @@
 package org.example.service.impl;
 
 import jakarta.validation.ConstraintViolation;
-import org.example.dtos.BrandDto;
-import org.example.dtos.OfferDto;
-import org.example.dtos.ShowModelInfoDto;
-import org.example.dtos.ShowOfferInfoDto;
+import org.example.dtos.*;
 import org.example.ex.OfferConflictException;
 import org.example.exception.NotFoundException;
 import org.example.models.Model;
@@ -19,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -98,9 +96,24 @@ public class OfferServiceImpl implements OfferService {
         return modelMapper.map(savedOffer, OfferDto.class);
     }
 
-    public List<ShowOfferInfoDto> allOffer() {
-        return offerRepository.findAll().stream().map(model -> modelMapper.map(offer, ShowOfferInfoDto.class))
+    public List<ShowOfferInfoDto> allOffers() {
+        return offerRepository.findAll().stream().map(offer -> modelMapper.map(offer, ShowOfferInfoDto.class))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public ShowOfferInfoDto offerDetails(String offerId) {
+        return modelMapper.map(offerRepository.findById(offerId).orElse(null), ShowOfferInfoDto.class);
+    }
+
+    @Override
+    public void addOffer(AddOfferDto offerDto) {
+
+        offerDto.setCreated(LocalDateTime.now());
+        offerDto.setModified(LocalDateTime.now());
+        Offer offer = modelMapper.map(offerDto, Offer.class);
+        offerRepository.saveAndFlush(offer);
+    }
+
 
 }

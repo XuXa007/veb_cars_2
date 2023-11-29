@@ -16,6 +16,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.IllformedLocaleException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -64,7 +65,11 @@ public class ModelServiceImpl implements ModelService {
     }
 
     public void addModel(AddModelDto modelDto) {
-        modelRepository.saveAndFlush(modelMapper.map(modelDto, Model.class));
+        modelDto.setCreated(LocalDateTime.now());
+        modelDto.setModified(LocalDateTime.now());
+        modelDto.setImageURL("ooopss...");
+        Model model = modelMapper.map(modelDto, Model.class);
+        modelRepository.saveAndFlush(model);
     }
 
     @Override

@@ -14,6 +14,7 @@ public class AddModelDto {
     private String category;
     private int startYear;
     private int endYear;
+    private String imageURL;
     private LocalDateTime created;
     private LocalDateTime modified;
 
@@ -65,5 +66,13 @@ public class AddModelDto {
 
     public void setModified(LocalDateTime modified) {
         this.modified = modified;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }

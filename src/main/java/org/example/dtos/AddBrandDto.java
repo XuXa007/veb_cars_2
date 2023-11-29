@@ -3,6 +3,7 @@ package org.example.dtos;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import org.example.utils.validation.UniqueBrandName;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
@@ -22,7 +23,7 @@ public class AddBrandDto {
         this.name = name;
     }
 
-    @NotEmpty(message = "Created must not be null or empty!")
+    @DateTimeFormat(pattern = "MM-yyyy")
     public LocalDateTime getCreated() {
         return created;
     }
@@ -31,7 +32,7 @@ public class AddBrandDto {
         this.created = created;
     }
 
-    @NotEmpty(message = "Modified must not be null or empty!")
+//    @DateTimeFormat(pattern = "MM-yyyy")
     public LocalDateTime getModified() {
         return modified;
     }
