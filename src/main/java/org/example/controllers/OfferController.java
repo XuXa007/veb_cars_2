@@ -73,10 +73,6 @@ public class OfferController {
         return "redirect:/offer/all";
     }
 
-
-
-
-
     @GetMapping("/all")
     public String showAllOffer(Model model) {
         model.addAttribute("allOffers", offerService.allOffers());

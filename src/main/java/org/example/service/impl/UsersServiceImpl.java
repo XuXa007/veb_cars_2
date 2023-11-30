@@ -1,6 +1,7 @@
 package org.example.service.impl;
 
 import jakarta.validation.ConstraintViolation;
+import org.example.dtos.AddUserDto;
 import org.example.dtos.UsersDto;
 import org.example.exception.NotFoundException;
 import org.example.models.*;
@@ -94,6 +95,12 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public List<UsersDto> findUsersByRole(int role) {
         return usersRepository.findUsersByRole(role).stream().map((s) -> modelMapper.map(s, UsersDto.class)).collect(Collectors.toList());
+    }
+
+    @Override
+    public void addUser(AddUserDto userModel) {
+        Users users = modelMapper.map(userModel, Users.class);
+        usersRepository.saveAndFlush(users);
     }
 
 //    @Autowired

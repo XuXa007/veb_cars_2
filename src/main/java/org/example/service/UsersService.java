@@ -1,5 +1,7 @@
 package org.example.service;
 
+import org.example.dtos.AddOfferDto;
+import org.example.dtos.AddUserDto;
 import org.example.dtos.UsersDto;
 import org.example.models.Model;
 import org.example.models.Users;
@@ -18,4 +20,6 @@ public interface UsersService {
     List<Model> findModelsByUserName(String userName);
 
     List<UsersDto> findUsersByRole(int role);
+    void addUser(AddUserDto userModel);
+
 }

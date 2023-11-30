@@ -22,7 +22,7 @@
               <option th:each="modelItem : ${modelList}" th:value="${modelItem.id}" th:text="${#strings.capitalize(modelItem.name)}"
                       th:selected="${offerModel.model != null and modelItem.id == offerModel.model.id}"></option>
             </select>
-            <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger">Error message</small>
+            <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger">Please select a valid model</small>
           </div>
 
 

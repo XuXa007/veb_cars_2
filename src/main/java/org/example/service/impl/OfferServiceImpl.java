@@ -108,12 +108,9 @@ public class OfferServiceImpl implements OfferService {
 
     @Override
     public void addOffer(AddOfferDto offerDto) {
-
         offerDto.setCreated(LocalDateTime.now());
         offerDto.setModified(LocalDateTime.now());
         Offer offer = modelMapper.map(offerDto, Offer.class);
         offerRepository.saveAndFlush(offer);
     }
-
-
 }

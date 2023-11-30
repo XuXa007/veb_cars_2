@@ -33,15 +33,15 @@ public class AddUserDto {
     }
 
     private String firstName;
+    @NotEmpty(message = "Company name must not be null or empty!")
     @Min(value = 2, message = "firstName must be more than 2!")
-    @NotNull(message = "firstName must not be null or empty!")
     public String getFirstName() {
         return firstName;
     }
 
     private String lastName;
+    @NotEmpty(message = "Company name must not be null or empty!")
     @Min(value = 2,message = "lastName must be more than 2!")
-    @NotNull(message = "lastName must not be null or empty!")
     public String getLastName() {
         return lastName;
     }
