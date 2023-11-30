@@ -1,11 +1,14 @@
 package org.example.dtos;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import org.example.utils.validation.UniqueBrandName;
 import org.example.utils.validation.UniqueModelName;
 
 import java.time.LocalDateTime;
+import java.time.Year;
 
 public class AddModelDto {
     @UniqueModelName
@@ -36,6 +39,8 @@ public class AddModelDto {
         this.category = category;
     }
 
+    @Min(value = 1000, message = "Start year must be at least 1000")
+    @Max(value = 9999, message = "Start year must be at most 9999")
     public int getStartYear() {
         return startYear;
     }
@@ -44,6 +49,8 @@ public class AddModelDto {
         this.startYear = startYear;
     }
 
+    @Min(value = 1885, message = "Start year must be at least 1700")
+    @Max(value = 2023, message = "Start year must be at most 9999")
     public int getEndYear() {
         return endYear;
     }

@@ -29,13 +29,6 @@ public class RoleController {
         return roleService.getAllRoles();
     }
 
-//    @GetMapping("/{id}")
-//    public ResponseEntity<RoleDto> getRoleById(@PathVariable UUID id) {
-//        Optional<RoleDto> roleOptional = Optional.ofNullable(roleService.getRoleById(id));
-//
-//        return roleOptional.map(role -> ResponseEntity.ok().body(role))
-//                .orElseGet(() -> ResponseEntity.notFound().build());
-//    }
     @PostMapping("/")
     RoleDto newRole(@RequestBody RoleDto newRole) {
         return roleService.registerRole(newRole);

@@ -41,8 +41,7 @@
                    th:errorclass="is-invalid"
                    type="text" class="form-control text-center"
                    id="startYear" aria-describedby="startYear" name="startYear"/>
-            <small th:if="${#fields.hasErrors('startYear')}" th:errors="*{startYear}"
-                   class="text-danger">Error
+            <small th:if="${#fields.hasErrors('startYear')}" th:errors="*{startYear}" class="text-danger">Error
               message</small>
           </div>
 
@@ -56,28 +55,6 @@
                    class="text-danger">Error
               message</small>
           </div>
-
-<!--          <div class="mb-3">-->
-<!--            <label class="form-label" for="created">Created</label>-->
-<!--            <input th:field="*{created}"-->
-<!--                   th:errorclass="is-invalid"-->
-<!--                   type="text" class="form-control text-center"-->
-<!--                   id="created" aria-describedby="created" name="created"/>-->
-<!--            <small th:if="${#fields.hasErrors('created')}" th:errors="*{created}"-->
-<!--                   class="text-danger">Error-->
-<!--              message</small>-->
-<!--          </div>-->
-
-<!--          <div class="mb-3">-->
-<!--            <label class="form-label" for="modified">Modified</label>-->
-<!--            <input th:field="*{modified}"-->
-<!--                   th:errorclass="is-invalid"-->
-<!--                   type="text" class="form-control text-center"-->
-<!--                   id="modified" aria-describedby="modified" name="modified"/>-->
-<!--            <small th:if="${#fields.hasErrors('modified')}" th:errors="*{modified}"-->
-<!--                   class="text-danger">Error-->
-<!--              message</small>-->
-<!--          </div>-->
 
           <button type="submit" class="btn btn-secondary">Add Model</button>
         </form>

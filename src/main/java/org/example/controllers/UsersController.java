@@ -33,7 +33,7 @@ public class UsersController {
 
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("userModel", userModel);
-            redirectAttributes.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "userModel",
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userModel",
                     bindingResult);
             return "redirect:/users/add";
         }

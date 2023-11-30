@@ -13,6 +13,8 @@ import java.util.UUID;
 public class BrandDto {
     private String id;
 
+    @NotEmpty(message = "Brand name must not be null or empty!")
+    @Size(min = 2, max = 10, message = "Brand name must be between 2 and 10 characters!")
     private String name;
     private LocalDateTime created;
     private LocalDateTime modified;
@@ -34,9 +36,8 @@ public class BrandDto {
         this.id = id;
     }
 
-    @NotNull
-    @NotEmpty
-    @Size(min = 1, max = 100)
+    @NotEmpty(message = "Brand name must not be null or empty!")
+    @Size(min = 2, max = 10, message = "Brand name must be between 2 and 10 characters!")
     public String getName() {
         return name;
     }
@@ -53,7 +54,6 @@ public class BrandDto {
         this.created = created;
     }
 
-//    @DateTimeFormat(pattern = "MM-yyyy")
     public LocalDateTime getModified() {
         return modified;
     }

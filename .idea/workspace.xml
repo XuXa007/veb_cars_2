@@ -5,24 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="change for postman">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/config/BeanConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WebWorkApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WebWorkApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/BeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/BeanConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/OfferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/RoleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/UsersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddBrandDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddBrandDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddModelDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddModelDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddUserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddUserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/impl/OfferServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/brand-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/brand-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/offer-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/offer-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/BrandDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/BrandDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/BrandRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/BrandRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/ModelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/ModelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/OfferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/OfferRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/UsersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/BrandServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/impl/BrandServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/model-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/model-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/WebWorkApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/WebWorkApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/BrandController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/BrandController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/OfferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/OfferController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/UsersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/UsersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/impl/OfferServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/impl/OfferServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/impl/UsersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/impl/UsersServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dtos/BrandDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dtos/BrandDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/BrandService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/BrandService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/impl/BrandServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/impl/BrandServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -25,10 +25,10 @@ public class BrandController {
 //        return brandService.getAllBrand();
 //    }
 
-    @PostMapping("/")
-    BrandDto newBrand(@RequestBody BrandDto newBrand) {
-        return brandService.registerBrand(newBrand);
-    }
+//    @PostMapping("/")
+//    BrandDto newBrand(@RequestBody BrandDto newBrand) {
+//        return brandService.registerBrand(newBrand);
+//    }
 
     @GetMapping("/add")
     public String addBrand() {
@@ -39,8 +39,8 @@ public class BrandController {
     public String addBrand(@Valid AddBrandDto brandModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("companyModel", brandModel);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.modelModel",
+            redirectAttributes.addFlashAttribute("brandModel", brandModel);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.brandModel",
                     bindingResult);
             return "redirect:/brand/add";
         }
@@ -68,15 +68,15 @@ public class BrandController {
         return "brand-details";
     }
 
-    @DeleteMapping("/{brandID}")
-    void deleteBrand(@PathVariable("brandID") BrandDto brandID) {
-        brandService.registerBrand(brandID);
-    }
-
-    @PutMapping("/{brandID}")
-    public BrandDto updateBrand(@PathVariable("brandID") String brandID, @RequestBody BrandDto updateBrand) {
-        return brandService.updateBrand(brandID, updateBrand);
-    }
+//    @DeleteMapping("/{brandID}")
+//    void deleteBrand(@PathVariable("brandID") BrandDto brandID) {
+//        brandService.registerBrand(brandID);
+//    }
+//
+//    @PutMapping("/{brandID}")
+//    public BrandDto updateBrand(@PathVariable("brandID") String brandID, @RequestBody BrandDto updateBrand) {
+//        return brandService.updateBrand(brandID, updateBrand);
+//    }
 
 
 }

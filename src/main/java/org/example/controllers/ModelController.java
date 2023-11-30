@@ -68,7 +68,7 @@ public class ModelController {
 
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("modelModel", modelModel);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.companyModel",
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.modelModel",
                     bindingResult);
             return "redirect:/model/add";
         }

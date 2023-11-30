@@ -63,7 +63,7 @@ public class OfferController {
 
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("offerModel", offerModel);
-            redirectAttributes.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "offerModel",
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.offerModel",
                     bindingResult);
             return "redirect:/offer/add";
         }

@@ -4,13 +4,14 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import org.example.utils.validation.UniqueBrandName;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.time.LocalDateTime;
 
 public class AddBrandDto {
     @UniqueBrandName
     @NotEmpty(message = "Brand name must not be null or empty!")
-    @Size(min = 2, max = 10, message = "Brand name must be between 2 and 10 characters!")
+    @Size(min = 2, message = "Brand name must be between 2 and 10 characters!")
     public String name;
     private LocalDateTime created;
     private LocalDateTime modified;
@@ -24,7 +25,6 @@ public class AddBrandDto {
         this.name = name;
     }
 
-    @DateTimeFormat(pattern = "MM-yyyy")
     public LocalDateTime getCreated() {
         return created;
     }
@@ -33,7 +33,6 @@ public class AddBrandDto {
         this.created = created;
     }
 
-//    @DateTimeFormat(pattern = "MM-yyyy")
     public LocalDateTime getModified() {
         return modified;
     }

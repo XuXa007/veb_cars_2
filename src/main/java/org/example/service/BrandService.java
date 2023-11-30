@@ -12,11 +12,11 @@ import java.util.UUID;
 public interface BrandService {
     List<BrandDto> getAllBrand();
 
-    BrandDto registerBrand(BrandDto brandDto);
+//    BrandDto registerBrand(BrandDto brandDto);
 
-    BrandDto updateBrand(String brandID, BrandDto updateBrand);
+//    BrandDto updateBrand(String brandID, BrandDto updateBrand);
 
-    void deleteBrand(String brandID);
+//    void deleteBrand(String brandID);
 
     List<ShowBrandInfoDto> allBrands();
 
