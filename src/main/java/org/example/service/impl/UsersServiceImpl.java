@@ -61,12 +61,12 @@ public class UsersServiceImpl implements UsersService {
         }
     }
 
-    @Override
-    public void deleteUser(String userID) {
-        Users user = usersRepository.findById(userID)
-                .orElseThrow(() -> new NotFoundException("Could not find user by id: " + userID));
-        usersRepository.delete(user);
-    }
+//    @Override
+//    public void deleteUser(String userID) {
+//        Users user = usersRepository.findById(userID)
+//                .orElseThrow(() -> new NotFoundException("Could not find user by id: " + userID));
+//        usersRepository.delete(user);
+//    }
 
     @Override
     public UsersDto updateUser(String userID, UsersDto updateUser) {
@@ -120,4 +120,7 @@ public class UsersServiceImpl implements UsersService {
         return modelMapper.map(usersRepository.findByUserName(userName).orElse(null), ShowUserInfoDto.class);
     }
 
+    public void removeUser(String userName) {
+        usersRepository.deleteByUserName(userName);
+    }
 }

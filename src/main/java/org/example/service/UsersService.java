@@ -12,7 +12,7 @@ public interface UsersService {
     List<UsersDto> getAllUsers();
 
     UsersDto registerUser(UsersDto usersDto);
-    void deleteUser(String userID);
+//    void deleteUser(String userID);
 
     UsersDto updateUser(String userID, UsersDto updateUser);
 
@@ -24,4 +24,6 @@ public interface UsersService {
     List<ShowUserInfoDto> allUsers();
 
     ShowUserInfoDto userDetails(String userName);
+
+    void removeUser(String userName);
 }

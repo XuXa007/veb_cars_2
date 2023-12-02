@@ -20,7 +20,7 @@
                         <h4 th:text="'Modified: ' + ${userDetails.modified}"></h4>
                         <div class="btn-group">
                             <a class="btn btn-success btn-lg mx-2" th:href="@{/user/edit/{user-userName}(user-useNname=${userDetails.userName})}">Edit</a>
-                            <a class="btn btn-danger btn-lg" th:href="@{/user/delete/{user-userName}(user-userName=${userDetails.userName})}">Delete</a>
+                            <a class="btn btn-danger btn-lg" th:href="@{/user/user-delete/{user-userName}(user-userName=${userDetails.userName})}">Delete</a>
                         </div>
                     </div>
                 </div>

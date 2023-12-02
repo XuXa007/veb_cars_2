@@ -70,4 +70,11 @@ public class UsersController {
 
         return "user-details";
     }
+
+    @GetMapping("/user-delete/{user-userName}")
+    public String deleteUser(@PathVariable("user-userName") String userName) {
+        usersService.removeUser(userName);
+
+        return "redirect:/user/all";
+    }
 }
