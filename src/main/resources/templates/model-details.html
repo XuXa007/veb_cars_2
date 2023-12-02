@@ -6,25 +6,45 @@
 <main class="flex-shrink-0">
     <div class="container">
         <div class="row">
-            <div class="col-md-2"></div>
+            <div class="col-md-4"></div>
             <main class="jumbotron text-center rounded col-md-12 align-self-center pt-5">
                 <div class="justify-content-center">
                     <h1>Model Details</h1>
                 </div>
-                <div class="row bg-light rounded">
-                    <div class="col-md-6"><img src="/pic/company.png" height="350px"></div>
-                    <div class="col-md-6 pt-3">
-                        <h2>Model</h2>
-                        <h2 th:text="'Model: ' + ${modelDetails.name}"></h2>
-                        <h4 th:text="'Category: ' + ${modelDetails.category}"></h4>
-                        <h4 th:text="'Start year: ' + ${modelDetails.startYear}"></h4>
-                        <h4 th:text="'Start year: ' + ${modelDetails.endYear}"></h4>
-                        <h4 th:text="'Created: ' + ${modelDetails.created}"></h4>
-                        <h4 th:text="'Modified: ' + ${modelDetails.modified}"></h4>
-                        <div class="align-bottom"><a class="btn btn-danger align-bottom"
-                                                     th:href="@{/models/models-delete/{models-name}(models-name=${modelDetails.name})}">Delete models</a>
-                        </div>
-                    </div>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td>Model</td>
+                        <td th:text="'Model: ' + ${modelDetails.name}"></td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td th:text="'Category: ' + ${modelDetails.category}"></td>
+                    </tr>
+                    <tr>
+                        <td>Start year</td>
+                        <td th:text="'Start year: ' + ${modelDetails.startYear}"></td>
+                    </tr>
+                    <tr>
+                        <td>End year</td>
+                        <td th:text="'End year: ' + ${modelDetails.endYear}"></td>
+                    </tr>
+                    <tr>
+                        <td>Created</td>
+                        <td th:text="'Created: ' + ${modelDetails.created}"></td>
+                    </tr>
+                    <tr>
+                        <td>Modified</td>
+                        <td th:text="'Modified: ' + ${modelDetails.modified}"></td>
+                    </tr>
+                    <tr>
+                        <td>Image</td>
+                        <td><img th:src="@{/pic/model.png}" height="100px" alt="Model Image"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="align-bottom"><a class="btn btn-danger align-bottom"
+                                             th:href="@{/models/models-delete/{models-name}(models-name=${modelDetails.name})}">Delete models</a>
                 </div>
             </main>
         </div>

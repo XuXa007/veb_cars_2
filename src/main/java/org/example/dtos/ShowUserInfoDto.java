@@ -1,5 +1,7 @@
 package org.example.dtos;
 
+import org.example.Enums.RoleEnum;
+
 import java.time.LocalDateTime;
 
 public class ShowUserInfoDto {
@@ -7,7 +9,7 @@ public class ShowUserInfoDto {
     private String firstName;
     private String lastName;
     private boolean isActive;
-
+    private RoleEnum roleEnum;
     private LocalDateTime created;
     private LocalDateTime modified;
 
@@ -57,5 +59,13 @@ public class ShowUserInfoDto {
 
     public void setModified(LocalDateTime modified) {
         this.modified = modified;
+    }
+
+    public RoleEnum getRoleEnum() {
+        return roleEnum;
+    }
+
+    public void setRoleEnum(RoleEnum roleEnum) {
+        this.roleEnum = roleEnum;
     }
 }

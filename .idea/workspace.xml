@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="change for postman">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowUserInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowUserInfoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/model-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/model-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-all.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
