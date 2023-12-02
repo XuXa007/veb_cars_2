@@ -1,12 +1,6 @@
 package org.example.dtos;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
-import org.example.models.Model;
-
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class ShowBrandInfoDto {
     private String name;

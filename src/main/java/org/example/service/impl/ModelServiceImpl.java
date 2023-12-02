@@ -3,13 +3,11 @@ package org.example.service.impl;
 import jakarta.validation.ConstraintViolation;
 import org.example.dtos.AddModelDto;
 import org.example.dtos.ModelDto;
-import org.example.dtos.ShowBrandInfoDto;
 import org.example.dtos.ShowModelInfoDto;
 import org.example.exception.NotFoundException;
 import org.example.models.Brand;
-import org.example.models.Model;
+import org.example.models.Models;
 import org.example.repo.ModelRepository;
-import org.example.repo.OfferRepository;
 import org.example.service.ModelService;
 import org.example.util.ValidationUtil;
 import org.modelmapper.ModelMapper;
@@ -55,7 +53,7 @@ public class ModelServiceImpl implements ModelService {
             throw new IllformedLocaleException("Illegal arguments in  Model!");
         }
 
-        Model m = modelMapper.map(model, Model.class);
+        Models m = modelMapper.map(model, Models.class);
         String modelId = m.getId();
         if (modelId == null || modelRepository.findById(modelId).isEmpty()) {
             return modelMapper.map(modelRepository.save(m), ModelDto.class);
@@ -68,35 +66,34 @@ public class ModelServiceImpl implements ModelService {
         modelDto.setCreated(LocalDateTime.now());
         modelDto.setModified(LocalDateTime.now());
         modelDto.setImageURL("ooopss...");
-        Model model = modelMapper.map(modelDto, Model.class);
-        modelRepository.saveAndFlush(model);
+        Models models = modelMapper.map(modelDto, Models.class);
+        modelRepository.saveAndFlush(models);
     }
 
     @Override
     public void deleteModel(String modelID) {
-        Model model = modelRepository.findById(modelID)
+        Models models = modelRepository.findById(modelID)
                 .orElseThrow(() -> new NotFoundException("Could not find user by id: " + modelID));
-        modelRepository.delete(model);
+        modelRepository.delete(models);
     }
 
     @Override
     public ModelDto updateModel(String modelID, ModelDto updateModel) {
-        Model existingModel = modelRepository.findById(modelID).orElseThrow(() -> new NotFoundException("Could not find" + model + " by id: " + modelID));
+        Models existingModels = modelRepository.findById(modelID).orElseThrow(() -> new NotFoundException("Could not find" + model + " by id: " + modelID));
 
         Brand existingBrand = modelMapper.map(updateModel.getBrand(), Brand.class);
 
-        existingModel.setBrand(existingBrand);
+        existingModels.setBrand(existingBrand);
 
-//        existingModel.setId(updateModel.getId());
-        existingModel.setName(updateModel.getName());
-        existingModel.setImageUrl(updateModel.getImageURL());
-        existingModel.setStartYear(updateModel.getStartYear());
-        existingModel.setEndYear(updateModel.getEndYear());
-        existingModel.setCreated(updateModel.getCreated());
-        existingModel.setModified(updateModel.getModified());
+        existingModels.setName(updateModel.getName());
+        existingModels.setImageUrl(updateModel.getImageURL());
+        existingModels.setStartYear(updateModel.getStartYear());
+        existingModels.setEndYear(updateModel.getEndYear());
+        existingModels.setCreated(updateModel.getCreated());
+        existingModels.setModified(updateModel.getModified());
 
-        Model savedModel = modelRepository.save(existingModel);
-        return modelMapper.map(savedModel, ModelDto.class);
+        Models savedModels = modelRepository.save(existingModels);
+        return modelMapper.map(savedModels, ModelDto.class);
     }
 
     @Override
@@ -118,5 +115,11 @@ public class ModelServiceImpl implements ModelService {
     public ShowModelInfoDto modelDetails(String modelName) {
         return modelMapper.map(modelRepository.findByName(modelName).orElse(null), ShowModelInfoDto.class);
     }
+
+    @Override
+    public Models getModelById(String modelId) {
+        return modelRepository.findById(modelId).orElse(null);
+    }
+
 
 }

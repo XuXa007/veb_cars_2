@@ -20,16 +20,6 @@ public class BrandController {
     @Autowired
     private BrandService brandService;
 
-//    @GetMapping("/")
-//    Iterable<BrandDto> all() {
-//        return brandService.getAllBrand();
-//    }
-
-//    @PostMapping("/")
-//    BrandDto newBrand(@RequestBody BrandDto newBrand) {
-//        return brandService.registerBrand(newBrand);
-//    }
-
     @GetMapping("/add")
     public String addBrand() {
         return "brand-add";
@@ -67,16 +57,4 @@ public class BrandController {
 
         return "brand-details";
     }
-
-//    @DeleteMapping("/{brandID}")
-//    void deleteBrand(@PathVariable("brandID") BrandDto brandID) {
-//        brandService.registerBrand(brandID);
-//    }
-//
-//    @PutMapping("/{brandID}")
-//    public BrandDto updateBrand(@PathVariable("brandID") String brandID, @RequestBody BrandDto updateBrand) {
-//        return brandService.updateBrand(brandID, updateBrand);
-//    }
-
-
 }

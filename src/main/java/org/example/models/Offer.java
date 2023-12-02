@@ -13,9 +13,9 @@ import java.time.LocalDateTime;
 public class Offer extends Base {
 
     @ManyToOne
-    @JoinColumn(name = "model_id")
+    @JoinColumn(name = "models_id")
     @JsonIgnore
-    private Model model;
+    private Models models;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -44,12 +44,12 @@ public class Offer extends Base {
     public Offer() {
     }
 
-    public Model getModel() {
-        return model;
+    public Models getModel() {
+        return models;
     }
 
-    public void setModel(Model model) {
-        this.model = model;
+    public void setModel(Models models) {
+        this.models = models;
     }
 
     public Users getUsers() {

@@ -1,5 +1,6 @@
 package org.example.dtos;
 
+import jakarta.validation.constraints.*;
 import org.example.Enums.Engine;
 import org.example.Enums.Transmission;
 
@@ -15,11 +16,20 @@ public class AddOfferDto {
     private BigDecimal price;
     private Transmission transmission;
     private int year;
+    private String modelId;
 
     private LocalDateTime created;
     private LocalDateTime modified;
 
-    public ModelDto getModel() {
+    public String getModelId() {
+        return modelId;
+    }
+
+    public void setModelId(String modelId) {
+        this.modelId = modelId;
+    }
+
+    public ModelDto getModels() {
         return model;
     }
 
@@ -35,6 +45,8 @@ public class AddOfferDto {
         this.users = users;
     }
 
+    @NotEmpty(message = "Description must not be null or empty!")
+    @Size(min = 2, message = "Description should be at least 2 characters long!")
     public String getDescription() {
         return description;
     }
@@ -51,6 +63,8 @@ public class AddOfferDto {
         this.engine = engine;
     }
 
+    @Min(value = 1, message = "Mileage must not be null or empty!")
+//    @Max(value = 2023, message = "Mileage  must be at most 2023")
     public int getMileage() {
         return mileage;
     }
@@ -59,6 +73,9 @@ public class AddOfferDto {
         this.mileage = mileage;
     }
 
+    @NotNull(message = "Price must not be null or empty!")
+    @DecimalMin(value = "0.0", inclusive = false)
+//    @DecimalMax("30.00")
     public BigDecimal getPrice() {
         return price;
     }
@@ -75,6 +92,9 @@ public class AddOfferDto {
         this.transmission = transmission;
     }
 
+    @Min(value = 1885, message = "Year must be at least 1885")
+//    @Max(value = 2023, message = "Year must be at most 2023")
+    @NotNull(message = "Year must not be null or empty!")
     public int getYear() {
         return year;
     }

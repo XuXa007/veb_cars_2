@@ -1,18 +1,16 @@
 package org.example.models;
 
 import jakarta.persistence.*;
-import org.example.dtos.ShowBrandInfoDto;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name = "brand")
 public class Brand extends Base {
 
     @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL)
-    private List<Model> models;
+    private List<Models> models;
 
     private String name;
 
@@ -24,11 +22,11 @@ public class Brand extends Base {
     public Brand() {
     }
 
-    public List<Model> getModels() {
+    public List<Models> getModels() {
         return models;
     }
 
-    public void setModels(List<Model> models) {
+    public void setModels(List<Models> models) {
         this.models = models;
     }
 

@@ -1,13 +1,12 @@
 package org.example.service;
 
-import org.example.dtos.AddOfferDto;
 import org.example.dtos.AddUserDto;
+import org.example.dtos.ShowModelInfoDto;
+import org.example.dtos.ShowUserInfoDto;
 import org.example.dtos.UsersDto;
-import org.example.models.Model;
-import org.example.models.Users;
+import org.example.models.Models;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface UsersService {
     List<UsersDto> getAllUsers();
@@ -17,9 +16,12 @@ public interface UsersService {
 
     UsersDto updateUser(String userID, UsersDto updateUser);
 
-    List<Model> findModelsByUserName(String userName);
+    List<Models> findModelsByUserName(String userName);
 
     List<UsersDto> findUsersByRole(int role);
     void addUser(AddUserDto userModel);
 
+    List<ShowUserInfoDto> allUsers();
+
+    ShowUserInfoDto userDetails(String userName);
 }

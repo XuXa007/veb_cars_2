@@ -1,9 +1,6 @@
 package org.example.dtos;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import org.example.utils.validation.UniqueBrandName;
 import org.example.utils.validation.UniqueModelName;
 
@@ -22,7 +19,7 @@ public class AddModelDto {
     private LocalDateTime modified;
 
     @NotEmpty(message = "Model name must not be null or empty!")
-    @Size(min = 2, max = 10, message = "Brand name must be between 2 and 10 characters!")
+    @Size(min = 2, message = "Model name should be at least 2 characters long!")
     public String getName() {
         return name;
     }
@@ -39,8 +36,9 @@ public class AddModelDto {
         this.category = category;
     }
 
-    @Min(value = 1000, message = "Start year must be at least 1000")
-    @Max(value = 9999, message = "Start year must be at most 9999")
+    @NotNull(message = "Start year must not be null or empty!")
+    @Min(value = 1885, message = "Start year must be at least 1885")
+//    @Max(value = 2025, message = "Start year must be at most 2023")
     public int getStartYear() {
         return startYear;
     }
@@ -49,8 +47,8 @@ public class AddModelDto {
         this.startYear = startYear;
     }
 
-    @Min(value = 1885, message = "Start year must be at least 1700")
-    @Max(value = 2023, message = "Start year must be at most 9999")
+    @Min(value = 1885, message = "Start year must be at least 1885")
+//    @Max(value = 2023, message = "Start year must be at most 2023")
     public int getEndYear() {
         return endYear;
     }

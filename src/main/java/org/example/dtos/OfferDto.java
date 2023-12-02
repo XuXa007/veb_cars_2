@@ -65,8 +65,6 @@ public class OfferDto {
         this.users = users;
     }
 
-    @NotNull
-    @Size(min = 1, max = 500)
     public String getDescription() {
         return description;
     }

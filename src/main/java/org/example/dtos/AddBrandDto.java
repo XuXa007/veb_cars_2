@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class AddBrandDto {
     @UniqueBrandName
     @NotEmpty(message = "Brand name must not be null or empty!")
-    @Size(min = 2, message = "Brand name must be between 2 and 10 characters!")
+    @Size(min = 2, message = "Brand name should be at least 2 characters long!")
     public String name;
     private LocalDateTime created;
     private LocalDateTime modified;

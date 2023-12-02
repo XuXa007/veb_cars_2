@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>3089</IntrospectionStateNumber>
+      <IntrospectionStateNumber>3191</IntrospectionStateNumber>
       <ServerVersion>15.5</ServerVersion>
       <StartupTime>1701169887</StartupTime>
       <TimeZones>true ACDT
@@ -804,7 +804,7 @@ false Zulu
 13471||10|C|G
 13471||-9223372036854775808|U|G
 13471||10|U|G</Grants>
-      <IntrospectionStateNumber>3089</IntrospectionStateNumber>
+      <IntrospectionStateNumber>3191</IntrospectionStateNumber>
       <ObjectId>24613</ObjectId>
       <OwnerName>xl</OwnerName>
     </database>
@@ -4242,40 +4242,40 @@ false Zulu
     <schema id="266" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>3089</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2023-11-29.01:04:30.906</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-28.22:04:32</LocalIntrospectionTimestamp>
+      <IntrospectionStateNumber>3191</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2023-12-02.02:24:38.556</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-12-01.23:24:39</LocalIntrospectionTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>517</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <table id="267" parent="266" name="brand">
-      <ObjectId>29069</ObjectId>
-      <StateNumber>3069</StateNumber>
+      <ObjectId>29247</ObjectId>
+      <StateNumber>3186</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="268" parent="266" name="model">
-      <ObjectId>29076</ObjectId>
-      <StateNumber>3069</StateNumber>
+      <ObjectId>29254</ObjectId>
+      <StateNumber>3186</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="269" parent="266" name="offer">
-      <ObjectId>29084</ObjectId>
-      <StateNumber>3070</StateNumber>
+      <ObjectId>29262</ObjectId>
+      <StateNumber>3187</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="270" parent="266" name="roles">
-      <ObjectId>29093</ObjectId>
-      <StateNumber>3072</StateNumber>
+      <ObjectId>29271</ObjectId>
+      <StateNumber>3189</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="271" parent="266" name="users">
-      <ObjectId>29099</ObjectId>
-      <StateNumber>3071</StateNumber>
+      <ObjectId>29277</ObjectId>
+      <StateNumber>3188</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4283,35 +4283,35 @@ false Zulu
       <DasType>timestamp(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>3064</StateNumber>
+      <StateNumber>3181</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="273" parent="267" name="modified">
       <DasType>timestamp(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>3064</StateNumber>
+      <StateNumber>3181</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="274" parent="267" name="id">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>3064</StateNumber>
+      <StateNumber>3181</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="275" parent="267" name="name">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
-      <StateNumber>3064</StateNumber>
+      <StateNumber>3181</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="276" parent="267" name="brand_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>29074</ObjectId>
+      <ObjectId>29252</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>3064</StateNumber>
+      <StateNumber>3181</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -4320,92 +4320,91 @@ false Zulu
     </index>
     <key id="277" parent="267" name="brand_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>29075</ObjectId>
+      <ObjectId>29253</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>3064</StateNumber>
-      <UnderlyingIndexId>29074</UnderlyingIndexId>
+      <StateNumber>3181</StateNumber>
+      <UnderlyingIndexId>29252</UnderlyingIndexId>
     </key>
     <check id="278" parent="268" name="model_category_check">
       <ColNames>category</ColNames>
-      <ObjectId>29079</ObjectId>
+      <ObjectId>29257</ObjectId>
       <Predicate>(category &gt;= 0) AND (category &lt;= 3)</Predicate>
-      <StateNumber>3065</StateNumber>
+      <StateNumber>3182</StateNumber>
     </check>
     <column id="279" parent="268" name="category">
       <DasType>smallint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>3065</StateNumber>
+      <StateNumber>3182</StateNumber>
       <TypeId>21</TypeId>
     </column>
     <column id="280" parent="268" name="end_year">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>3065</StateNumber>
+      <StateNumber>3182</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="281" parent="268" name="start_year">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>3065</StateNumber>
+      <StateNumber>3182</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="282" parent="268" name="created">
       <DasType>timestamp(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>3065</StateNumber>
+      <StateNumber>3182</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="283" parent="268" name="modified">
       <DasType>timestamp(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>3065</StateNumber>
+      <StateNumber>3182</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="284" parent="268" name="brand_id">
       <DasType>varchar(255)|0s</DasType>
       <Position>6</Position>
-      <StateNumber>3065</StateNumber>
+      <StateNumber>3182</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="285" parent="268" name="id">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
-      <StateNumber>3065</StateNumber>
+      <StateNumber>3182</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="286" parent="268" name="imageurl">
       <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>8</Position>
-      <StateNumber>3065</StateNumber>
+      <StateNumber>3182</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="287" parent="268" name="name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
-      <StateNumber>3065</StateNumber>
+      <StateNumber>3182</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <foreign-key id="288" parent="268" name="fkhbgv4j3vpt308sepyq9q79mhu">
       <ColNames>brand_id</ColNames>
-      <ObjectId>29106</ObjectId>
-      <StateNumber>3069</StateNumber>
+      <ObjectId>29284</ObjectId>
+      <StateNumber>3186</StateNumber>
       <RefKeyColPositions>3</RefKeyColPositions>
-      <RefTableId>29069</RefTableId>
+      <RefTableId>29247</RefTableId>
     </foreign-key>
     <index id="289" parent="268" name="model_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>29082</ObjectId>
+      <ObjectId>29260</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>3065</StateNumber>
+      <StateNumber>3182</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -4414,125 +4413,125 @@ false Zulu
     </index>
     <key id="290" parent="268" name="model_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>29083</ObjectId>
+      <ObjectId>29261</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>3065</StateNumber>
-      <UnderlyingIndexId>29082</UnderlyingIndexId>
+      <StateNumber>3182</StateNumber>
+      <UnderlyingIndexId>29260</UnderlyingIndexId>
     </key>
     <check id="291" parent="269" name="offer_engine_check">
       <ColNames>engine</ColNames>
-      <ObjectId>29087</ObjectId>
+      <ObjectId>29265</ObjectId>
       <Predicate>(engine &gt;= 0) AND (engine &lt;= 3)</Predicate>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
     </check>
     <check id="292" parent="269" name="offer_transmission_check">
       <ColNames>transmission</ColNames>
-      <ObjectId>29088</ObjectId>
+      <ObjectId>29266</ObjectId>
       <Predicate>(transmission &gt;= 0) AND (transmission &lt;= 1)</Predicate>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
     </check>
     <column id="293" parent="269" name="engine">
       <DasType>smallint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>21</TypeId>
     </column>
     <column id="294" parent="269" name="mileage">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="295" parent="269" name="price">
       <DasType>numeric(38,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>1700</TypeId>
     </column>
     <column id="296" parent="269" name="transmission">
       <DasType>smallint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>21</TypeId>
     </column>
     <column id="297" parent="269" name="year">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="298" parent="269" name="created">
       <DasType>timestamp(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="299" parent="269" name="modified">
       <DasType>timestamp(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="300" parent="269" name="description">
       <DasType>varchar(500)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="301" parent="269" name="id">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="302" parent="269" name="imageurl">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>10</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="303" parent="269" name="model_id">
+    <column id="303" parent="269" name="models_id">
       <DasType>varchar(255)|0s</DasType>
       <Position>11</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="304" parent="269" name="user_id">
       <DasType>varchar(255)|0s</DasType>
       <Position>12</Position>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <foreign-key id="305" parent="269" name="fkdrk83i4l9yhi69wtyl4ul2pyp">
-      <ColNames>model_id</ColNames>
-      <ObjectId>29111</ObjectId>
-      <StateNumber>3070</StateNumber>
+    <foreign-key id="305" parent="269" name="fktdss4sxtvrjfx1cua6etuhnf5">
+      <ColNames>models_id</ColNames>
+      <ObjectId>29289</ObjectId>
+      <StateNumber>3187</StateNumber>
       <RefKeyColPositions>7</RefKeyColPositions>
-      <RefTableId>29076</RefTableId>
+      <RefTableId>29254</RefTableId>
     </foreign-key>
     <foreign-key id="306" parent="269" name="fkaydjfxft8xl9eitcdy1gd7bk8">
       <ColNames>user_id</ColNames>
-      <ObjectId>29116</ObjectId>
-      <StateNumber>3071</StateNumber>
+      <ObjectId>29294</ObjectId>
+      <StateNumber>3188</StateNumber>
       <RefKeyColPositions>5</RefKeyColPositions>
-      <RefTableId>29099</RefTableId>
+      <RefTableId>29277</RefTableId>
     </foreign-key>
     <index id="307" parent="269" name="offer_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>29091</ObjectId>
+      <ObjectId>29269</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>3066</StateNumber>
+      <StateNumber>3183</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -4541,37 +4540,37 @@ false Zulu
     </index>
     <key id="308" parent="269" name="offer_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>29092</ObjectId>
+      <ObjectId>29270</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>3066</StateNumber>
-      <UnderlyingIndexId>29091</UnderlyingIndexId>
+      <StateNumber>3183</StateNumber>
+      <UnderlyingIndexId>29269</UnderlyingIndexId>
     </key>
     <check id="309" parent="270" name="roles_name_check">
       <ColNames>name</ColNames>
-      <ObjectId>29096</ObjectId>
+      <ObjectId>29274</ObjectId>
       <Predicate>(name &gt;= 0) AND (name &lt;= 1)</Predicate>
-      <StateNumber>3067</StateNumber>
+      <StateNumber>3184</StateNumber>
     </check>
     <column id="310" parent="270" name="name">
       <DasType>smallint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>3067</StateNumber>
+      <StateNumber>3184</StateNumber>
       <TypeId>21</TypeId>
     </column>
     <column id="311" parent="270" name="id">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>3067</StateNumber>
+      <StateNumber>3184</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="312" parent="270" name="roles_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>29097</ObjectId>
+      <ObjectId>29275</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>3067</StateNumber>
+      <StateNumber>3184</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -4580,93 +4579,93 @@ false Zulu
     </index>
     <key id="313" parent="270" name="roles_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>29098</ObjectId>
+      <ObjectId>29276</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>3067</StateNumber>
-      <UnderlyingIndexId>29097</UnderlyingIndexId>
+      <StateNumber>3184</StateNumber>
+      <UnderlyingIndexId>29275</UnderlyingIndexId>
     </key>
     <column id="314" parent="271" name="is_active">
       <DasType>boolean|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>3068</StateNumber>
+      <StateNumber>3185</StateNumber>
       <TypeId>16</TypeId>
     </column>
     <column id="315" parent="271" name="created">
       <DasType>timestamp(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>3068</StateNumber>
+      <StateNumber>3185</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="316" parent="271" name="modified">
       <DasType>timestamp(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>3068</StateNumber>
+      <StateNumber>3185</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="317" parent="271" name="first_name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>3068</StateNumber>
+      <StateNumber>3185</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="318" parent="271" name="id">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>3068</StateNumber>
+      <StateNumber>3185</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="319" parent="271" name="imageurl">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>3068</StateNumber>
+      <StateNumber>3185</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="320" parent="271" name="last_name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
-      <StateNumber>3068</StateNumber>
+      <StateNumber>3185</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="321" parent="271" name="password">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
-      <StateNumber>3068</StateNumber>
+      <StateNumber>3185</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="322" parent="271" name="role_id">
       <DasType>varchar(255)|0s</DasType>
       <Position>9</Position>
-      <StateNumber>3068</StateNumber>
+      <StateNumber>3185</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="323" parent="271" name="user_name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>10</Position>
-      <StateNumber>3068</StateNumber>
+      <StateNumber>3185</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <foreign-key id="324" parent="271" name="fkp56c1712k691lhsyewcssf40f">
       <ColNames>role_id</ColNames>
-      <ObjectId>29121</ObjectId>
-      <StateNumber>3072</StateNumber>
+      <ObjectId>29299</ObjectId>
+      <StateNumber>3189</StateNumber>
       <RefKeyColPositions>2</RefKeyColPositions>
-      <RefTableId>29093</RefTableId>
+      <RefTableId>29271</RefTableId>
     </foreign-key>
     <index id="325" parent="271" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>29104</ObjectId>
+      <ObjectId>29282</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>3068</StateNumber>
+      <StateNumber>3185</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -4675,10 +4674,10 @@ false Zulu
     </index>
     <key id="326" parent="271" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>29105</ObjectId>
+      <ObjectId>29283</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>3068</StateNumber>
-      <UnderlyingIndexId>29104</UnderlyingIndexId>
+      <StateNumber>3185</StateNumber>
+      <UnderlyingIndexId>29282</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

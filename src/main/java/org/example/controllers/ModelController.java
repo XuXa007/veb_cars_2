@@ -5,6 +5,7 @@ import org.example.dtos.AddBrandDto;
 import org.example.dtos.AddModelDto;
 import org.example.dtos.BrandDto;
 import org.example.dtos.ModelDto;
+import org.example.models.Models;
 import org.example.service.ModelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

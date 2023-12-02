@@ -11,7 +11,7 @@
         <div class="justify-content-center">
           <h1>Add User</h1>
         </div>
-        <form th:action="@{/users/add}"
+        <form th:action="@{/user/add}"
               th:method="post"
               th:object="${userModel}"
               class="m-md-auto w-50 pb-3">
@@ -65,7 +65,7 @@
             </select>
             <small th:if="${#fields.hasErrors('role')}" th:errors="*{role}" class="text-danger">Error message</small>
           </div>
-          <button type="submit" class="btn btn-secondary">Add Brand</button>
+          <button type="submit" class="btn btn-secondary">Add User</button>
         </form>
       </div>
     </div>

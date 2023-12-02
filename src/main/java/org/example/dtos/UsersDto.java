@@ -16,11 +16,11 @@ public class UsersDto {
     @NotNull
     @Length(min = 8)
     private String password;
-    @NotNull
-    @Length(min = 2)
+//    @NotNull
+//    @Length(min = 2)
     private String firstName;
-    @NotNull
-    @Length(min = 2)
+//    @NotNull
+//    @Length(min = 2)
     private String lastName;
     private boolean isActive;
     private String imageURL;

@@ -2,8 +2,6 @@ package org.example.dtos;
 
 import org.example.Enums.Engine;
 import org.example.Enums.Transmission;
-import org.example.models.Model;
-import org.example.models.Users;
 
 import java.math.BigDecimal;
 

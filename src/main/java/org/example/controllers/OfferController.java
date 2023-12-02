@@ -3,6 +3,7 @@ package org.example.controllers;
 import jakarta.validation.Valid;
 import org.apache.catalina.User;
 import org.example.dtos.*;
+import org.example.models.Models;
 import org.example.service.ModelService;
 import org.example.service.OfferService;
 import org.example.service.UsersService;
@@ -60,7 +61,6 @@ public class OfferController {
 
     @PostMapping("/add")
     public String addOffer(@Valid AddOfferDto offerModel, BindingResult bindingResult, RedirectAttributes redirectAttributes, ModelMap modelMap) {
-
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("offerModel", offerModel);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.offerModel",
@@ -68,10 +68,21 @@ public class OfferController {
             return "redirect:/offer/add";
         }
 
+        // Получаем id модели из DTO
+        String modelId = offerModel.getModelId();
+
+        // Используем id для получения объекта Model из сервиса
+        Models models = modelService.getModelById(modelId);
+
+        // Устанавливаем объект Model в AddOfferDto
+        offerModel.setModelId(modelId); // Присваиваем ID модели
+
+        // Продолжаем с вашим сервисом
         offerService.addOffer(offerModel);
 
         return "redirect:/offer/all";
     }
+
 
     @GetMapping("/all")
     public String showAllOffer(Model model) {

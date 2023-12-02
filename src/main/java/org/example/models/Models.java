@@ -1,8 +1,8 @@
 package org.example.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.example.Enums.Category;
+import org.example.dtos.ShowModelInfoDto;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -10,12 +10,12 @@ import java.util.List;
 
 @Entity
 @Table(name = "model")
-public class Model extends Base {
+public class Models extends Base {
     @ManyToOne
     @JoinColumn(name = "brand_id")
     private Brand brand;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "model", cascade = CascadeType.REMOVE)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "models", cascade = CascadeType.REMOVE)
     private List<Offer> offers;
 
     @Column(name="name", length = 255, nullable = false)
@@ -34,7 +34,7 @@ public class Model extends Base {
     @Column(name="modified", length = 6, nullable = false)
     private LocalDateTime modified;
 
-    public Model() {
+    public Models() {
     }
 
     public Brand getBrand() {

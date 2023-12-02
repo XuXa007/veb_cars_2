@@ -2,23 +2,19 @@ package org.example.service.impl;
 
 import jakarta.validation.ConstraintViolation;
 import org.example.dtos.*;
-import org.example.ex.OfferConflictException;
 import org.example.exception.NotFoundException;
-import org.example.models.Model;
+import org.example.models.Models;
 import org.example.models.Offer;
 import org.example.models.Users;
 import org.example.repo.OfferRepository;
-import org.example.repo.RoleRepository;
 import org.example.service.OfferService;
 import org.example.util.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
@@ -75,10 +71,10 @@ public class OfferServiceImpl implements OfferService {
     public OfferDto updateOffer(String offerID, OfferDto updateOffer) {
         Offer existingOffer = offerRepository.findById(offerID).orElseThrow(() -> new NotFoundException("Could not find" + offer + " by id: " + offerID));
 
-        Model existingModel = modelMapper.map(updateOffer.getModel(), Model.class);
+        Models existingModels = modelMapper.map(updateOffer.getModel(), Models.class);
         Users existingUser = modelMapper.map(updateOffer.getUsers(), Users.class);
 
-        existingOffer.setModel(existingModel);
+        existingOffer.setModel(existingModels);
         existingOffer.setUsers(existingUser);
 
 //        existingOffer.setId(updateOffer.getId());

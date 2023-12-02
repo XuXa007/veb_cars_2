@@ -2,11 +2,10 @@ package org.example.service;
 
 import org.example.dtos.AddModelDto;
 import org.example.dtos.ModelDto;
-import org.example.dtos.ShowBrandInfoDto;
 import org.example.dtos.ShowModelInfoDto;
+import org.example.models.Models;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface ModelService {
     List<ModelDto> getAllModels();
@@ -23,4 +22,6 @@ public interface ModelService {
 
     ShowModelInfoDto modelDetails(String modelName);
     void addModel(AddModelDto modelDto);
+
+    Models getModelById(String modelId);
 }

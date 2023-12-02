@@ -7,10 +7,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
 public interface UsersRepository extends JpaRepository<Users, String> {
     @Query("SELECT u FROM Users u JOIN u.role r WHERE r.roleEnum = :role")
     List<Users> findUsersByRole(@Param("role") int role);
+
+    Optional<Users> findByUserName(String userName);
 }

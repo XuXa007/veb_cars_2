@@ -2,6 +2,8 @@ package org.example.service.impl;
 
 import jakarta.validation.ConstraintViolation;
 import org.example.dtos.AddUserDto;
+import org.example.dtos.ShowModelInfoDto;
+import org.example.dtos.ShowUserInfoDto;
 import org.example.dtos.UsersDto;
 import org.example.exception.NotFoundException;
 import org.example.models.*;
@@ -12,6 +14,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -88,7 +91,7 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public List<Model> findModelsByUserName(String userName) {
+    public List<Models> findModelsByUserName(String userName) {
         return null;
     }
 
@@ -99,12 +102,22 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public void addUser(AddUserDto userModel) {
+        userModel.setCreated(LocalDateTime.now());
+        userModel.setModified(LocalDateTime.now());
+        userModel.setImageURL("ooopss...");
         Users users = modelMapper.map(userModel, Users.class);
         usersRepository.saveAndFlush(users);
     }
 
-//    @Autowired
-//    public void setUserRepository(UsersRepository usersRepository) {
-//        this.usersRepository = usersRepository;
-//    }
+    @Override
+    public List<ShowUserInfoDto> allUsers() {
+        return usersRepository.findAll().stream().map(model -> modelMapper.map(model, ShowUserInfoDto.class))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public ShowUserInfoDto userDetails(String userName) {
+        return modelMapper.map(usersRepository.findByUserName(userName).orElse(null), ShowUserInfoDto.class);
+    }
+
 }

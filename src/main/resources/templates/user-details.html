@@ -9,20 +9,18 @@
             <div class="col-md-2"></div>
             <main class="jumbotron text-center rounded col-md-12 align-self-center pt-5">
                 <div class="justify-content-center">
-                    <h1>Model Details</h1>
+                    <h1>User Details</h1>
                 </div>
                 <div class="row bg-light rounded">
                     <div class="col-md-6"><img src="/pic/company.png" height="350px"></div>
                     <div class="col-md-6 pt-3">
-                        <h2>Model</h2>
-                        <h2 th:text="'Model: ' + ${modelDetails.name}"></h2>
-                        <h4 th:text="'Category: ' + ${modelDetails.category}"></h4>
-                        <h4 th:text="'Start year: ' + ${modelDetails.startYear}"></h4>
-                        <h4 th:text="'Start year: ' + ${modelDetails.endYear}"></h4>
-                        <h4 th:text="'Created: ' + ${modelDetails.created}"></h4>
-                        <h4 th:text="'Modified: ' + ${modelDetails.modified}"></h4>
-                        <div class="align-bottom"><a class="btn btn-danger align-bottom"
-                                                     th:href="@{/models/models-delete/{models-name}(models-name=${modelDetails.name})}">Delete models</a>
+                        <h2>User</h2>
+                        <h4 th:text="'Name: ' + ${userDetails.userName}"></h4>
+                        <h4 th:text="'Created: ' + ${userDetails.created}"></h4>
+                        <h4 th:text="'Modified: ' + ${userDetails.modified}"></h4>
+                        <div class="btn-group">
+                            <a class="btn btn-success btn-lg mx-2" th:href="@{/user/edit/{user-userName}(user-useNname=${userDetails.userName})}">Edit</a>
+                            <a class="btn btn-danger btn-lg" th:href="@{/user/delete/{user-userName}(user-userName=${userDetails.userName})}">Delete</a>
                         </div>
                     </div>
                 </div>
