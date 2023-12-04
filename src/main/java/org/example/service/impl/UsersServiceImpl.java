@@ -123,4 +123,10 @@ public class UsersServiceImpl implements UsersService {
     public void removeUser(String userName) {
         usersRepository.deleteByUserName(userName);
     }
+
+    @Override
+    public Users getUserById(String modelId) {
+        return usersRepository.findById(modelId).orElse(null);
+
+    }
 }

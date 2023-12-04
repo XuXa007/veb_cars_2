@@ -10,7 +10,7 @@ import java.time.Year;
 public class AddModelDto {
     @UniqueModelName
     private String name;
-
+    private String brand;
     private String category;
     private int startYear;
     private int endYear;
@@ -80,4 +80,20 @@ public class AddModelDto {
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+//    public String getBrandId() {
+//        return brandId;
+//    }
+//
+//    public void setBrandId(String brandId) {
+//        this.brandId = brandId;
+//    }
 }

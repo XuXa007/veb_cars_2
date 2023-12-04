@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import org.apache.catalina.User;
 import org.example.dtos.*;
 import org.example.models.Models;
+import org.example.models.Users;
 import org.example.service.ModelService;
 import org.example.service.OfferService;
 import org.example.service.UsersService;
@@ -31,10 +32,6 @@ public class OfferController {
     private UsersService usersService;
 
 
-    @PostMapping("/")
-    OfferDto newOffer(@RequestBody OfferDto newOffer) {
-        return offerService.registerOffer(newOffer);
-    }
 
     @GetMapping("/add")
     public String addOffer(Model model) {
@@ -45,15 +42,7 @@ public class OfferController {
         return "offer-add";
     }
 
-    @DeleteMapping("/{offerID}")
-    void deleteOffer(@PathVariable("offerID") OfferDto offerDto) {
-        offerService.registerOffer(offerDto);
-    }
 
-    @PutMapping("/{offerID}")
-    public OfferDto updateOffer(@PathVariable("offerID") String offerID, @RequestBody OfferDto updateOffer) {
-        return offerService.updateOffer(offerID, updateOffer);
-    }
     @ModelAttribute("offerModel")
     public AddOfferDto initOffer() {
         return new AddOfferDto();
@@ -68,16 +57,15 @@ public class OfferController {
             return "redirect:/offer/add";
         }
 
-        // Получаем id модели из DTO
         String modelId = offerModel.getModelId();
+        String userId = offerModel.getUserId();
 
-        // Используем id для получения объекта Model из сервиса
         Models models = modelService.getModelById(modelId);
+        Users users = usersService.getUserById(userId);
 
-        // Устанавливаем объект Model в AddOfferDto
-        offerModel.setModelId(modelId); // Присваиваем ID модели
+        offerModel.setModelId(modelId);
+        offerModel.setUserId(userId);
 
-        // Продолжаем с вашим сервисом
         offerService.addOffer(offerModel);
 
         return "redirect:/offer/all";

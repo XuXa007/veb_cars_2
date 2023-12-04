@@ -10,12 +10,6 @@ import java.util.List;
 public interface ModelService {
     List<ModelDto> getAllModels();
 
-    ModelDto registerModel(ModelDto modelDto);
-
-    void deleteModel(String modelID);
-
-    ModelDto updateModel(String modelID, ModelDto updateModel);
-
     List<ModelDto> findModelByBrandName(String brandName);
 
     List<ShowModelInfoDto> allModels();
@@ -24,4 +18,6 @@ public interface ModelService {
     void addModel(AddModelDto modelDto);
 
     Models getModelById(String modelId);
+
+    void removeModel(String name);
 }

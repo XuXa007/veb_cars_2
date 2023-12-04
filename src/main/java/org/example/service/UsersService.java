@@ -5,6 +5,7 @@ import org.example.dtos.ShowModelInfoDto;
 import org.example.dtos.ShowUserInfoDto;
 import org.example.dtos.UsersDto;
 import org.example.models.Models;
+import org.example.models.Users;
 
 import java.util.List;
 
@@ -26,4 +27,6 @@ public interface UsersService {
     ShowUserInfoDto userDetails(String userName);
 
     void removeUser(String userName);
+    Users getUserById(String modelId);
+
 }

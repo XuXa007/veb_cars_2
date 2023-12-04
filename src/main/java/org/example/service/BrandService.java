@@ -24,4 +24,10 @@ public interface BrandService {
 
     ShowBrandInfoDto brandDetails(String brandName);
     void addBrand(AddBrandDto brandDto);
+
+    Brand getBrandById(String brandId);
+
+    void removeBrand(String name);
+
+
 }

@@ -1,11 +1,10 @@
 package org.example.controllers;
 
 import jakarta.validation.Valid;
-import org.example.dtos.AddBrandDto;
-import org.example.dtos.AddModelDto;
-import org.example.dtos.BrandDto;
-import org.example.dtos.ModelDto;
+import org.example.dtos.*;
+import org.example.models.Brand;
 import org.example.models.Models;
+import org.example.service.BrandService;
 import org.example.service.ModelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,8 +25,13 @@ public class ModelController {
     @Autowired
     private ModelService modelService;
 
+    @Autowired
+    private BrandService brandService;
+
     @GetMapping("/add")
-    public String addModel() {
+    public String addModel(Model model) {
+        List<BrandDto> brandList = brandService.getAllBrand();
+        model.addAttribute("brandList", brandList);
         return "model-add";
     }
 
@@ -49,15 +53,7 @@ public class ModelController {
         return "model-details";
     }
 
-    @DeleteMapping("/{modelID}")
-    void deleteModel(@PathVariable("modelID") ModelDto modelID) {
-        modelService.registerModel(modelID);
-    }
 
-    @PutMapping("/{modelID}")
-    public ModelDto updateModel(@PathVariable("modelID") String modelID, @RequestBody ModelDto updateModel) {
-        return modelService.updateModel(modelID, updateModel);
-    }
     public String getModelsByBrandName(@RequestParam String brandName, ModelMap model) {
         List<ModelDto> models = modelService.findModelByBrandName(brandName);
         model.addAttribute("models", models);
@@ -73,7 +69,18 @@ public class ModelController {
                     bindingResult);
             return "redirect:/model/add";
         }
+//        String brandId = modelModel.getBrandId();
+//        Brand brand = brandService.getBrandById(brandId);
+//
+//        modelModel.setBrandId(brandId);
         modelService.addModel(modelModel);
+
+        return "redirect:/model/all";
+    }
+
+    @GetMapping("/model-delete/{model-name}")
+    public String deleteModel(@PathVariable("model-name") String name) {
+        modelService.removeModel(name);
 
         return "redirect:/model/all";
     }

@@ -17,9 +17,22 @@ public class AddOfferDto {
     private Transmission transmission;
     private int year;
     private String modelId;
+    private String userId;
 
     private LocalDateTime created;
     private LocalDateTime modified;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public ModelDto getModel() {
+        return model;
+    }
 
     public String getModelId() {
         return modelId;

@@ -12,9 +12,6 @@ import java.util.UUID;
 
 public class BrandDto {
     private String id;
-
-    @NotEmpty(message = "Brand name must not be null or empty!")
-    @Size(min = 2, max = 10, message = "Brand name must be between 2 and 10 characters!")
     private String name;
     private LocalDateTime created;
     private LocalDateTime modified;

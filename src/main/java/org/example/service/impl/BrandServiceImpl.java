@@ -3,7 +3,9 @@ package org.example.service.impl;
 import org.example.dtos.AddBrandDto;
 import org.example.dtos.BrandDto;
 import org.example.dtos.ShowBrandInfoDto;
+import org.example.exception.NotFoundException;
 import org.example.models.Brand;
+import org.example.models.Models;
 import org.example.repo.BrandRepository;
 import org.example.service.BrandService;
 import org.example.util.ValidationUtil;
@@ -45,6 +47,17 @@ public class BrandServiceImpl implements BrandService {
         brandDto.setModified(LocalDateTime.now());
         Brand brand = modelMapper.map(brandDto, Brand.class);
         brandRepository.saveAndFlush(brand);
+    }
+
+    @Override
+    public Brand getBrandById(String brandId) {
+        return brandRepository.findById(brandId).orElse(null);
+
+    }
+
+    @Override
+    public void removeBrand(String name) {
+        brandRepository.deleteByName(name);
     }
 
     @Override
