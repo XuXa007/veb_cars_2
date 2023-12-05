@@ -1,6 +1,7 @@
 package org.example.dtos;
 
 import jakarta.validation.constraints.*;
+import org.example.models.Brand;
 import org.example.utils.validation.UniqueBrandName;
 import org.example.utils.validation.UniqueModelName;
 
@@ -10,7 +11,7 @@ import java.time.Year;
 public class AddModelDto {
     @UniqueModelName
     private String name;
-    private String brand;
+    private Brand brand;
     private String category;
     private int startYear;
     private int endYear;
@@ -81,11 +82,11 @@ public class AddModelDto {
         this.imageURL = imageURL;
     }
 
-    public String getBrand() {
+    public Brand getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(Brand brand) {
         this.brand = brand;
     }
 

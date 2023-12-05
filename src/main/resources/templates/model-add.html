@@ -17,9 +17,8 @@
               class="m-md-auto w-50 pb-3">
           <div class="mb-3">
             <label class="form-label" for="brand">Brand name</label>
-            <select name="brand" id="brand" class="form-control">
-              <option th:each="brandItem : ${brandList}" th:value="${brandItem.id}" th:text="${#strings.capitalize(brandItem.name)}"
-                      th:selected="${modelModel.brand != null and brandItem.id == modelModel.brand.id}"></option>
+            <select name="brand" id="brand" class="form-control" th:field="*{brand.id}">
+              <option th:each="brandItem : ${brandList}" th:value="${brandItem.id}" th:text="${#strings.capitalize(brandItem.name)}"></option>
             </select>
             <small th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}" class="text-danger">Please select a valid brand</small>
           </div>

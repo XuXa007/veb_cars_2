@@ -1,6 +1,7 @@
 package org.example.dtos;
 
 import org.example.Enums.Category;
+import org.example.models.Brand;
 
 import java.time.LocalDateTime;
 
@@ -9,10 +10,19 @@ public class ShowModelInfoDto {
     private Category category;
     private int startYear;
     private int endYear;
+    private Brand brand;
 
     public LocalDateTime created;
 
     private LocalDateTime modified;
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
 
     public LocalDateTime getCreated() {
         return created;

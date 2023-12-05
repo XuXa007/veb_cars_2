@@ -1019,8 +1019,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="296" parent="1" name="car2_veb">
-      <IntrospectionTimestamp>2023-12-04.17:00:00</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-12-04.11:00:00</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-12-05.07:23:18</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-12-05.01:23:18</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="297" parent="1" name="ex_car_veb">

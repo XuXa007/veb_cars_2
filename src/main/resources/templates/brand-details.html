@@ -14,13 +14,12 @@
         <div class="row bg-light rounded">
           <div class="col-md-6"><img src="/pic/company.png" height="350px"></div>
           <div class="col-md-6 pt-3">
-            <h2>Company</h2>
+            <h2>Brand</h2>
             <h4 th:text="'Name: ' + ${brandDetails.name}"></h4>
             <h4 th:text="'Created: ' + ${brandDetails.created}"></h4>
             <h4 th:text="'Modified: ' + ${brandDetails.modified}"></h4>
-            <div class="btn-group">
-              <a class="btn btn-success btn-lg mx-2" th:href="@{/brand/edit/{brand-name}(brand-name=${brandDetails.name})}">Edit</a>
-              <a class="btn btn-danger btn-lg" th:href="@{/brand/brand-delete/{brand-name}(brand-name=${brandDetails.name})}">Delete</a>
+            <div class="align-bottom"><a class="btn btn-danger align-bottom"
+                                         th:href="@{/brand/brand-delete/{brand-name}(brand-name=${brandDetails.name})}">Delete brand</a>
             </div>
           </div>
         </div>

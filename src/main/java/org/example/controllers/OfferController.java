@@ -75,7 +75,6 @@ public class OfferController {
     @GetMapping("/all")
     public String showAllOffer(Model model) {
         model.addAttribute("allOffers", offerService.allOffers());
-
         return "offer-all";
     }
 

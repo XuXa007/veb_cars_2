@@ -23,7 +23,7 @@
           <tbody>
           <tr th:each="user : ${userInfos}">
             <td th:text="${user.userName}"></td>
-            <td th:text="${user.roleEnum}"></td>
+            <td th:text="${user.getRoleEnum}"></td>
             <td th:text="${user.firstName}"></td>
             <td th:text="${user.lastName}"></td>
             <td th:text="${user.active}"></td>

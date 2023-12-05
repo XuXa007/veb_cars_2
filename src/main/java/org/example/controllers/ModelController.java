@@ -43,9 +43,9 @@ public class ModelController {
     @GetMapping("/all")
     public String showAllModels(Model model) {
         model.addAttribute("modelInfos", modelService.allModels());
-
         return "model-all";
     }
+
     @GetMapping("/model-details/{model-name}")
     public String modelDetails(@PathVariable("model-name") String modelName, Model model) {
         model.addAttribute("modelDetails", modelService.modelDetails(modelName));
@@ -62,21 +62,16 @@ public class ModelController {
 
     @PostMapping("/add")
     public String addModel(@Valid AddModelDto modelModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("modelModel", modelModel);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.modelModel",
                     bindingResult);
             return "redirect:/model/add";
         }
-//        String brandId = modelModel.getBrandId();
-//        Brand brand = brandService.getBrandById(brandId);
-//
-//        modelModel.setBrandId(brandId);
         modelService.addModel(modelModel);
-
         return "redirect:/model/all";
     }
+
 
     @GetMapping("/model-delete/{model-name}")
     public String deleteModel(@PathVariable("model-name") String name) {
