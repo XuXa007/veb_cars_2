@@ -37,12 +37,7 @@ public class ModelController {
         return new AddModelDto();
     }
 
-    @GetMapping("/all")
-    public String showAllModels(Model model) {
-        model.addAttribute("modelInfos", modelService.getAllModels());
-        model.addAttribute("brands", brandService.getAll());
-        return "model-all";
-    }
+
 
     @GetMapping("/model-details/{model-name}")
     public String modelDetails(@PathVariable("model-name") String modelName, Model model) {
@@ -51,6 +46,12 @@ public class ModelController {
         return "model-details";
     }
 
+    @GetMapping("/all")
+    public String showAllModels(Model model) {
+        model.addAttribute("modelInfos", modelService.getAllModels());
+        model.addAttribute("brands", brandService.getAll());
+        return "model-all";
+    }
 
     @PostMapping("/add")
     public String addModel(@Valid AddModelDto modelModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {

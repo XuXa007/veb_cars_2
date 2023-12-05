@@ -9,13 +9,13 @@
             <div class="col-md-2"></div>
             <div class="jumbotron text-center rounded col-md-8 align-self-center pt-5">
                 <h2 class="text-center text-dark mt-5">All Offers</h2>
-                <div th:each="o : ${allOffers}" class="d-flex flex-column bg-text mb-3">
-                    <h2 th:text="'Model: ' + ${o.model}"></h2>
-                    <h2 th:text="'User: ' + ${o.users}"></h2>
-                    <h4 th:text="'Price: ' + ${o.price}"></h4>
-                    <h4 th:text="'Year: ' + ${o.year}"></h4>
-                    <h5 th:text="'Description: ' + ${o.description}"></h5>
-                    <h4><a class="btn-block" th:href="@{/offer/offer-details/{offer-id}(offer-id=${o.id})}">Detail
+                <div th:each="a : ${addOffer}" class="d-flex flex-column bg-text mb-3">
+                    <h2 th:text="'Model: ' + ${a.model.name}"></h2>
+                    <h2 th:text="'User: ' + ${a.users.userName}"></h2>
+                    <h4 th:text="'Price: ' + ${a.price}"></h4>
+                    <h4 th:text="'Year: ' + ${a.year}"></h4>
+                    <h5 th:text="'Description: ' + ${a.description}"></h5>
+                    <h4><a class="btn-block" th:href="@{/offer/offer-details/{offer-id}(offer-id=${a.id})}">Detail
                         info</a></h4>
                 </div>
             </div>

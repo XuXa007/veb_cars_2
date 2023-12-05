@@ -8,8 +8,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class AddOfferDto {
-    private String model;
-    private String users;
+    private ShowModelInfoDto model;
+    private ShowUserInfoDto users;
     private String description;
     private Engine engine;
     private int mileage;
@@ -20,20 +20,19 @@ public class AddOfferDto {
     private LocalDateTime created;
     private LocalDateTime modified;
 
-
-    public String getModel() {
+    public ShowModelInfoDto getModel() {
         return model;
     }
 
-    public void setModel(String model) {
+    public void setModel(ShowModelInfoDto model) {
         this.model = model;
     }
 
-    public String getUsers() {
+    public ShowUserInfoDto getUsers() {
         return users;
     }
 
-    public void setUsers(String users) {
+    public void setUsers(ShowUserInfoDto users) {
         this.users = users;
     }
 

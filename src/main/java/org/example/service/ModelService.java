@@ -1,6 +1,7 @@
 package org.example.service;
 
 import org.example.dtos.AddModelDto;
+import org.example.dtos.ShowBrandInfoDto;
 import org.example.dtos.ShowModelInfoDto;
 import org.example.models.Models;
 import org.example.repo.BrandRepository;
@@ -50,16 +51,6 @@ public class ModelService {
         modelRepository.saveAndFlush(model);
     }
 
-
-//    public List<ModelDto> findModelByBrandName(String brandName) {
-//        return modelRepository.findAllByBrandName(brandName)
-//                .stream()
-//                .map((s) -> modelMapper.map(s, ModelDto.class))
-//                .collect(Collectors.toList());
-//    }
-
-
-
     public List<ShowModelInfoDto> allModels() {
         return modelRepository.findAll().stream().map(model -> modelMapper.map(model, ShowModelInfoDto.class))
                 .collect(Collectors.toList());
@@ -75,5 +66,9 @@ public class ModelService {
 
     public void removeModel(String name) {
         modelRepository.deleteByName(name);
+    }
+
+    public List<ShowModelInfoDto> getAllModelsForOffer() {
+        return modelRepository.findAll().stream().map((model) -> modelMapper.map(model, ShowModelInfoDto.class)).collect(Collectors.toList());
     }
 }

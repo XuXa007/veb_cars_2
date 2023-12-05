@@ -28,17 +28,6 @@ public class OfferController {
     private UsersService usersService;
 
 
-
-//    @GetMapping("/add")
-//    public String addOffer(Model model) {
-//        List<ModelDto> modelList = modelService.getAllModels();
-//        List<UsersDto> userList = usersService.getAllUsers();
-//        model.addAttribute("modelList", modelList);
-//        model.addAttribute("userList", userList);
-//        return "offer-add";
-//    }
-
-
     @ModelAttribute("offerModel")
     public AddOfferDto initOffer() {
         return new AddOfferDto();
@@ -53,15 +42,6 @@ public class OfferController {
             return "redirect:/offer/add";
         }
 
-//        String modelId = offerModel.getModelId();
-//        String userId = offerModel.getUserId();
-//
-//        Models models = modelService.getModelById(modelId);
-//        Users users = usersService.getUserById(userId);
-//
-//        offerModel.setModelId(modelId);
-//        offerModel.setUserId(userId);
-
         offerService.addOffer(offerModel);
 
         return "redirect:/offer/all";
@@ -70,8 +50,8 @@ public class OfferController {
 
     @GetMapping("/add")
     public String addOffer(Model model) {
-        model.addAttribute("listModels", modelService.getAllModels());
-        model.addAttribute("listUsers", usersService.getAll());
+        model.addAttribute("listModels", modelService.getAllModelsForOffer());
+        model.addAttribute("userList", usersService.getAllUsersForOffer());
         return "offer-add";
     }
 
@@ -84,7 +64,7 @@ public class OfferController {
 
     @GetMapping("/all")
     public String showAllOffers(Model model) {
-        model.addAttribute("allOffers", offerService.getAll());
+        model.addAttribute("addOffer", offerService.getAll());
 
         return "offer-all";
     }

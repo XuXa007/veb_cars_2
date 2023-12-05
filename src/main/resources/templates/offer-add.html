@@ -15,21 +15,31 @@
               th:method="post"
               th:object="${offerModel}"
               class="m-md-auto w-50 pb-3">
+
           <div class="mb-3">
             <label class="form-label" for="model">Model name</label>
-            <select class="form-control text-center" id="model" name="model" th:field="*{model}">
-              <option th:each="m : ${listModels}" th:value="${m.name}" th:text="${m.name}">Model name</option>
+            <select name="model" id="model" class="form-control" th:field="*{model}">
+              <option th:each="modelItem : ${listModels}"
+                      th:value="${modelItem.name}"
+                      th:text="${#strings.capitalize(modelItem.name)}"
+                      th:selected="${offerModel.model != null and modelItem.name == offerModel.model}">
+
+              </option>
             </select>
-            <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger">Error message</small>
+            <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger">Please select a valid model</small>
           </div>
 
-
           <div class="mb-3">
-            <label class="form-label" for="users">Username</label>
-            <select class="form-control text-center" id="users" name="users" th:field="*{users}">
-              <option th:each="u : ${listUsers}" th:value="${u.userName}" th:text="${u.userName}">User name</option>
+            <label class="form-label" for="users">Model name</label>
+            <select name="users" id="users" class="form-control" th:field="*{users}">
+              <option th:each="user : ${userList}"
+                      th:value="${user.userName}"
+                      th:text="${#strings.capitalize(user.userName)}"
+                      th:selected="${offerModel.users != null and user.userName == offerModel.users}">
+
+              </option>
             </select>
-            <small th:if="${#fields.hasErrors('users')}" th:errors="*{users}" class="text-danger">Error message</small>
+            <small th:if="${#fields.hasErrors('users')}" th:errors="*{users}" class="text-danger">Please select a valid model</small>
           </div>
 
           <div class="mb-3">
