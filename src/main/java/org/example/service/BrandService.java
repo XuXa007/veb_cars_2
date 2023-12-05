@@ -55,8 +55,8 @@ public class BrandService  {
         brandRepository.deleteByName(name);
     }
 
-    public List<BrandDto> getAllBrand() {
-        return brandRepository.findAll().stream().map((s) -> modelMapper.map(s, BrandDto.class)).collect(Collectors.toList());
+    public List<ShowBrandInfoDto> getAll() {
+        return brandRepository.findAll().stream().map((brand) -> modelMapper.map(brand, ShowBrandInfoDto.class)).collect(Collectors.toList());
     }
 
 

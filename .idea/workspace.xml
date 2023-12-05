@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="change for postman">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d6189074-2453-409a-9972-3e5bd51e1111.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d6189074-2453-409a-9972-3e5bd51e1111.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d6189074-2453-409a-9972-3e5bd51e1111/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d6189074-2453-409a-9972-3e5bd51e1111/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Enums/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Enums/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Enums/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Enums/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Enums/RoleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Enums/RoleEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Enums/Transmission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Enums/Transmission.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/OfferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddModelDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddModelDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddOfferDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddOfferDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/ModelDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/ModelDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/OfferDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/OfferDto.java" afterDir="false" />
@@ -22,24 +17,32 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowModelInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowModelInfoDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowOfferInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowOfferInfoDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowUserInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowUserInfoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/init/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/init/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Brand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Enums/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Enums/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Enums/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Enums/Engine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Enums/RoleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Enums/RoleEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Enums/Transmission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Enums/Transmission.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Models.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Models.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Offer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ModelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ModelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/OfferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/BrandServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/ModelServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/OfferServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/RoleServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/impl/UsersServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/util/ValidationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/validation/ValidationUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/util/ValidationUtilImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/validation/ValidationUtilImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/model-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/model-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/impl/ModelServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/impl/ModelServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/model-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/model-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/BrandController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/BrandController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dtos/ModelDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dtos/ModelDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dtos/OfferDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dtos/OfferDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dtos/RoleDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dtos/RoleDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/models/Brand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/models/Brand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/models/Offer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/models/Offer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/models/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/models/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/models/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/models/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/BrandService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/BrandService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/ModelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/ModelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/OfferService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/OfferService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/RoleService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +191,7 @@
       <workItem from="1701552860709" duration="4492000" />
       <workItem from="1701687037377" duration="3939000" />
       <workItem from="1701697870813" duration="2226000" />
-      <workItem from="1701781841910" duration="5554000" />
+      <workItem from="1701781841910" duration="7174000" />
     </task>
     <task id="LOCAL-00001" summary="do something with html">
       <option name="closed" value="true" />

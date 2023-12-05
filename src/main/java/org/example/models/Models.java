@@ -1,10 +1,10 @@
 package org.example.models;
 
 import jakarta.persistence.*;
-import org.example.models.Enums.Category;
+import org.example.Enums.Category;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -15,7 +15,7 @@ public class Models extends Base {
     private Brand brand;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "models", cascade = CascadeType.REMOVE)
-    private List<Offer> offers;
+    private Set<Offer> offers;
 
     @Column(name="name", length = 255, nullable = false)
     private String name;
@@ -44,12 +44,16 @@ public class Models extends Base {
         this.brand = brand;
     }
 
-    public List<Offer> getOffers() {
+    public Set<Offer> getOffers() {
         return offers;
     }
 
-    public void setOffers(List<Offer> offers) {
+    public void setOffers(Set<Offer> offers) {
         this.offers = offers;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public String getName() {

@@ -59,6 +59,6 @@ public class BrandController {
     public String deleteBrand(@PathVariable("brand-name") String name) {
         brandService.removeBrand(name);
 
-        return "redirect:/model/all";
+        return "redirect:/brand/all";
     }
 }

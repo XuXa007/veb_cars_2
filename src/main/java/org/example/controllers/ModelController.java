@@ -23,10 +23,12 @@ public class ModelController {
     @Autowired
     private BrandService brandService;
 
+
+
+
     @GetMapping("/add")
     public String addModel(Model model) {
-        List<BrandDto> brandList = brandService.getAllBrand();
-        model.addAttribute("brandList", brandList);
+        model.addAttribute("brandList", brandService.getAll());
         return "model-add";
     }
 
@@ -37,7 +39,8 @@ public class ModelController {
 
     @GetMapping("/all")
     public String showAllModels(Model model) {
-        model.addAttribute("modelInfos", modelService.allModels());
+        model.addAttribute("modelInfos", modelService.getAllModels());
+        model.addAttribute("brand", brandService.getAll());
         return "model-all";
     }
 

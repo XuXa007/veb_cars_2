@@ -1,7 +1,7 @@
 package org.example.dtos;
 
 
-import org.example.models.Enums.RoleEnum;
+import org.example.Enums.RoleEnum;
 
 public class RoleDto {
     private String id;

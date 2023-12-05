@@ -1,4 +1,4 @@
-package org.example.models.Enums;
+package org.example.Enums;
 
 public enum RoleEnum {
     User ("Пользователь", 0),

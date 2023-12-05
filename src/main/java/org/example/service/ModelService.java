@@ -11,6 +11,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -40,15 +41,14 @@ public class ModelService {
     }
 
 
-    public void addModel(AddModelDto modelDto) {
-        modelDto.setCreated(LocalDateTime.now());
-        modelDto.setModified(LocalDateTime.now());
-        modelDto.setImageURL("ooopss...");
 
-        Models model = modelMapper.map(modelDto, Models.class);
-        model.setBrand(brandRepository.findBrandByName(modelDto.getBrand()).orElse(null));
+    public void addModel(AddModelDto addModelDto) {
+        addModelDto.setCreated(LocalDateTime.now());
+        addModelDto.setModified(LocalDateTime.now());
+        addModelDto.setImageURL("ooopss...");
+        Models model = modelMapper.map(addModelDto, Models.class);
+        model.setBrand(brandRepository.findByName(addModelDto.getBrand()).orElse(null));
         modelRepository.saveAndFlush(model);
-
     }
 
 

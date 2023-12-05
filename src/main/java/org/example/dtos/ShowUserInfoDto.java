@@ -1,6 +1,6 @@
 package org.example.dtos;
 
-import org.example.models.Enums.RoleEnum;
+import org.example.Enums.RoleEnum;
 
 import java.time.LocalDateTime;
 

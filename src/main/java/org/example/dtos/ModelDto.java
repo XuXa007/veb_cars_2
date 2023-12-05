@@ -3,7 +3,7 @@ package org.example.dtos;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import org.example.models.Enums.Category;
+import org.example.Enums.Category;
 
 import java.time.LocalDateTime;
 

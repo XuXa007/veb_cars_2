@@ -4,13 +4,14 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "brand")
 public class Brand extends Base {
 
     @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL)
-    private List<Models> models;
+    private Set<Models> models;
 
     private String name;
 
@@ -22,11 +23,11 @@ public class Brand extends Base {
     public Brand() {
     }
 
-    public List<Models> getModels() {
+    public Set<Models> getModels() {
         return models;
     }
 
-    public void setModels(List<Models> models) {
+    public void setModels(Set<Models> models) {
         this.models = models;
     }
 

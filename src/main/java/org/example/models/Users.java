@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -15,7 +16,7 @@ public class Users extends Base {
     private Role role;
     @OneToMany(mappedBy = "users", cascade = CascadeType.REMOVE)
     @JsonIgnore
-    private List<Offer> offers;
+    private Set<Offer> offers;
     @Column(name="userName", length = 255, nullable = false)
     private String userName;
     @Column(name="password", length = 255, nullable = false)
@@ -43,11 +44,11 @@ public class Users extends Base {
         this.role = role;
     }
 
-    public List<Offer> getOffers() {
+    public Set<Offer> getOffers() {
         return offers;
     }
 
-    public void setOffers(List<Offer> offers) {
+    public void setOffers(Set<Offer> offers) {
         this.offers = offers;
     }
 

@@ -1,14 +1,14 @@
 package org.example.dtos;
 
-import org.example.models.Enums.Engine;
-import org.example.models.Enums.Transmission;
+import org.example.Enums.Engine;
+import org.example.Enums.Transmission;
 
 import java.math.BigDecimal;
 
 public class ShowOfferInfoDto {
     private String id;
-    private ModelDto model;
-    private UsersDto users;
+    private String model;
+    private String users;
     private String description;
     private Engine engine;
     private int mileage;
@@ -24,19 +24,19 @@ public class ShowOfferInfoDto {
         this.id = id;
     }
 
-    public ModelDto getModel() {
+    public String getModel() {
         return model;
     }
 
-    public void setModel(ModelDto model) {
+    public void setModel(String model) {
         this.model = model;
     }
 
-    public UsersDto getUsers() {
+    public String getUsers() {
         return users;
     }
 
-    public void setUsers(UsersDto users) {
+    public void setUsers(String users) {
         this.users = users;
     }
 
