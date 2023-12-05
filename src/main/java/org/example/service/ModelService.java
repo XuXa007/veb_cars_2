@@ -1,7 +1,6 @@
 package org.example.service;
 
 import org.example.dtos.AddModelDto;
-import org.example.dtos.ModelDto;
 import org.example.dtos.ShowModelInfoDto;
 import org.example.models.Models;
 import org.example.repo.BrandRepository;
@@ -52,12 +51,12 @@ public class ModelService {
     }
 
 
-    public List<ModelDto> findModelByBrandName(String brandName) {
-        return modelRepository.findAllByBrandName(brandName)
-                .stream()
-                .map((s) -> modelMapper.map(s, ModelDto.class))
-                .collect(Collectors.toList());
-    }
+//    public List<ModelDto> findModelByBrandName(String brandName) {
+//        return modelRepository.findAllByBrandName(brandName)
+//                .stream()
+//                .map((s) -> modelMapper.map(s, ModelDto.class))
+//                .collect(Collectors.toList());
+//    }
 
 
 

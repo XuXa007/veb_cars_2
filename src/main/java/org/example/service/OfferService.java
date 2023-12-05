@@ -39,29 +39,29 @@ public class OfferService {
 
     private String offer = "offer";
 
-    public List<OfferDto> getAllOffers() {
-        return offerRepository.findAll().stream().map((s) -> modelMapper.map(s, OfferDto.class)).collect(Collectors.toList());
-    }
+//    public List<OfferDto> getAllOffers() {
+//        return offerRepository.findAll().stream().map((s) -> modelMapper.map(s, OfferDto.class)).collect(Collectors.toList());
+//    }
 
-    public OfferDto registerOffer(OfferDto offer) {
-
-        if(!this.validationUtil.isValid(offer)) {
-            this.validationUtil
-                    .violations(offer)
-                    .stream()
-                    .map(ConstraintViolation::getMessage)
-                    .forEach(System.out::println);
-            throw new IllegalArgumentException("Illegal arguments in Offer!");
-        }
-
-        Offer o = modelMapper.map(offer, Offer.class);
-        String offerId = o.getId();
-        if (offerId == null || offerRepository.findById(offerId).isEmpty()) {
-            return modelMapper.map(offerRepository.save(o), OfferDto.class);
-        } else {
-            throw new NotFoundException("A offer with this id already exists");
-        }
-    }
+//    public OfferDto registerOffer(OfferDto offer) {
+//
+//        if(!this.validationUtil.isValid(offer)) {
+//            this.validationUtil
+//                    .violations(offer)
+//                    .stream()
+//                    .map(ConstraintViolation::getMessage)
+//                    .forEach(System.out::println);
+//            throw new IllegalArgumentException("Illegal arguments in Offer!");
+//        }
+//
+//        Offer o = modelMapper.map(offer, Offer.class);
+//        String offerId = o.getId();
+//        if (offerId == null || offerRepository.findById(offerId).isEmpty()) {
+//            return modelMapper.map(offerRepository.save(o), OfferDto.class);
+//        } else {
+//            throw new NotFoundException("A offer with this id already exists");
+//        }
+//    }
 
     public void deleteOffer(String offerID) {
         Offer offer = offerRepository.findById(offerID)
@@ -69,29 +69,29 @@ public class OfferService {
         offerRepository.delete(offer);
     }
 
-    public OfferDto updateOffer(String offerID, OfferDto updateOffer) {
-        Offer existingOffer = offerRepository.findById(offerID).orElseThrow(() -> new NotFoundException("Could not find" + offer + " by id: " + offerID));
-
-        Models existingModels = modelMapper.map(updateOffer.getModel(), Models.class);
-        Users existingUser = modelMapper.map(updateOffer.getUsers(), Users.class);
-
-        existingOffer.setModel(existingModels);
-        existingOffer.setUsers(existingUser);
-
-//        existingOffer.setId(updateOffer.getId());
-        existingOffer.setDescription(updateOffer.getDescription());
-        existingOffer.setEngine(updateOffer.getEngine());
-//        existingOffer.setImageUrl(updateOffer.getImageURL());
-        existingOffer.setMileage(updateOffer.getMileage());
-        existingOffer.setPrice(updateOffer.getPrice());
-        existingOffer.setTransmission(updateOffer.getTransmission());
-        existingOffer.setYear(updateOffer.getYear());
-        existingOffer.setCreated(updateOffer.getCreated());
-        existingOffer.setModified(updateOffer.getModified());
-
-        Offer savedOffer = offerRepository.save(existingOffer);
-        return modelMapper.map(savedOffer, OfferDto.class);
-    }
+//    public OfferDto updateOffer(String offerID, OfferDto updateOffer) {
+//        Offer existingOffer = offerRepository.findById(offerID).orElseThrow(() -> new NotFoundException("Could not find" + offer + " by id: " + offerID));
+//
+//        Models existingModels = modelMapper.map(updateOffer.getModel(), Models.class);
+//        Users existingUser = modelMapper.map(updateOffer.getUsers(), Users.class);
+//
+//        existingOffer.setModel(existingModels);
+//        existingOffer.setUsers(existingUser);
+//
+////        existingOffer.setId(updateOffer.getId());
+//        existingOffer.setDescription(updateOffer.getDescription());
+//        existingOffer.setEngine(updateOffer.getEngine());
+////        existingOffer.setImageUrl(updateOffer.getImageURL());
+//        existingOffer.setMileage(updateOffer.getMileage());
+//        existingOffer.setPrice(updateOffer.getPrice());
+//        existingOffer.setTransmission(updateOffer.getTransmission());
+//        existingOffer.setYear(updateOffer.getYear());
+//        existingOffer.setCreated(updateOffer.getCreated());
+//        existingOffer.setModified(updateOffer.getModified());
+//
+//        Offer savedOffer = offerRepository.save(existingOffer);
+//        return modelMapper.map(savedOffer, OfferDto.class);
+//    }
 
 
     public ShowOfferInfoDto offerDetails(String offerId) {

@@ -3,7 +3,6 @@ package org.example.service;
 import jakarta.validation.ConstraintViolation;
 import org.example.dtos.AddUserDto;
 import org.example.dtos.ShowUserInfoDto;
-import org.example.dtos.UsersDto;
 import org.example.exception.NotFoundException;
 import org.example.models.*;
 import org.example.repo.UsersRepository;
@@ -33,59 +32,59 @@ public class UsersService {
 
     private String user = "user";
 
-    public List<UsersDto> getAllUsers() {
-        return usersRepository.findAll().stream().map((s) -> modelMapper.map(s, UsersDto.class)).collect(Collectors.toList());
+    public List<ShowUserInfoDto> getAllUsers() {
+        return usersRepository.findAll().stream().map((s) -> modelMapper.map(s, ShowUserInfoDto.class)).collect(Collectors.toList());
     }
 
-    public UsersDto registerUser(UsersDto users) {
+//    public UsersDto registerUser(UsersDto users) {
+//
+//        if(!this.validationUtil.isValid(users)) {
+//            this.validationUtil
+//                    .violations(users)
+//                    .stream()
+//                    .map(ConstraintViolation::getMessage)
+//                    .forEach(System.out::println);
+//            throw new IllegalArgumentException("Illegal arguments in Users!");
+//        }
+//
+//        Users u = modelMapper.map(users, Users.class);
+//        String userId = u.getId();
+//        if (u.getId() == null || usersRepository.findById(userId).isEmpty()) {
+//            return modelMapper.map(usersRepository.save(u), UsersDto.class);
+//        } else {
+//            throw new NotFoundException("A user with this id already exists");
+//        }
+//    }
 
-        if(!this.validationUtil.isValid(users)) {
-            this.validationUtil
-                    .violations(users)
-                    .stream()
-                    .map(ConstraintViolation::getMessage)
-                    .forEach(System.out::println);
-            throw new IllegalArgumentException("Illegal arguments in Users!");
-        }
 
-        Users u = modelMapper.map(users, Users.class);
-        String userId = u.getId();
-        if (u.getId() == null || usersRepository.findById(userId).isEmpty()) {
-            return modelMapper.map(usersRepository.save(u), UsersDto.class);
-        } else {
-            throw new NotFoundException("A user with this id already exists");
-        }
-    }
-
-
-    public UsersDto updateUser(String userID, UsersDto updateUser) {
-        Users existingUser = usersRepository.findById(userID).orElseThrow(() -> new NotFoundException("Could not find" + user + " by id: " + userID));
-
-        Role existingRole = modelMapper.map(updateUser.getRole(), Role.class);
-
-        existingUser.setRole(existingRole);
-
-//        existingRole.setId(updateUser.getId());
-        existingUser.setUserName(updateUser.getUserName());
-        existingUser.setPassword(updateUser.getPassword());
-        existingUser.setFirstName(updateUser.getFirstName());
-        existingUser.setLastName(updateUser.getLastName());
-        existingUser.setActive(updateUser.isActive());
-        existingUser.setImageURL(updateUser.getImageURL());
-        existingUser.setCreated(updateUser.getCreated());
-        existingUser.setModified(updateUser.getModified());
-
-        Users savedUser = usersRepository.save(existingUser);
-        return modelMapper.map(savedUser, UsersDto.class);
-    }
+//    public UsersDto updateUser(String userID, UsersDto updateUser) {
+//        Users existingUser = usersRepository.findById(userID).orElseThrow(() -> new NotFoundException("Could not find" + user + " by id: " + userID));
+//
+//        Role existingRole = modelMapper.map(updateUser.getRole(), Role.class);
+//
+//        existingUser.setRole(existingRole);
+//
+////        existingRole.setId(updateUser.getId());
+//        existingUser.setUserName(updateUser.getUserName());
+//        existingUser.setPassword(updateUser.getPassword());
+//        existingUser.setFirstName(updateUser.getFirstName());
+//        existingUser.setLastName(updateUser.getLastName());
+//        existingUser.setActive(updateUser.isActive());
+//        existingUser.setImageURL(updateUser.getImageURL());
+//        existingUser.setCreated(updateUser.getCreated());
+//        existingUser.setModified(updateUser.getModified());
+//
+//        Users savedUser = usersRepository.save(existingUser);
+//        return modelMapper.map(savedUser, UsersDto.class);
+//    }
 
     public List<Models> findModelsByUserName(String userName) {
         return null;
     }
 
-    public List<UsersDto> findUsersByRole(int role) {
-        return usersRepository.findUsersByRole(role).stream().map((s) -> modelMapper.map(s, UsersDto.class)).collect(Collectors.toList());
-    }
+//    public List<UsersDto> findUsersByRole(int role) {
+//        return usersRepository.findUsersByRole(role).stream().map((s) -> modelMapper.map(s, UsersDto.class)).collect(Collectors.toList());
+//    }
 
     public void addUser(AddUserDto userModel) {
         userModel.setCreated(LocalDateTime.now());

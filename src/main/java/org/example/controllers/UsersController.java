@@ -2,7 +2,7 @@ package org.example.controllers;
 
 import jakarta.validation.Valid;
 import org.example.dtos.AddUserDto;
-import org.example.dtos.UsersDto;
+import org.example.dtos.ShowUserInfoDto;
 import org.example.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ public class UsersController {
     private UsersService usersService;
 
     @GetMapping("/")
-    Iterable<UsersDto> all() {
+    Iterable<ShowUserInfoDto> all() {
         return usersService.getAllUsers();
     }
 
@@ -48,15 +48,6 @@ public class UsersController {
         return new AddUserDto();
     }
 
-    @DeleteMapping("/{userID}")
-    void deleteUser(@PathVariable("userID") UsersDto usersDto) {
-        usersService.registerUser(usersDto);
-    }
-
-    @PutMapping("/{userID}")
-    public UsersDto updateUser(@PathVariable("userID") String userID, @RequestBody UsersDto updateUser) {
-        return usersService.updateUser(userID, updateUser);
-    }
     @GetMapping("/all")
     public String showAllUser(Model model) {
         model.addAttribute("userInfos", usersService.allUsers());

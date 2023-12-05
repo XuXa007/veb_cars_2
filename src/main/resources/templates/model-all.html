@@ -13,10 +13,7 @@
           <h2 th:text="'Model: ' + ${m.name}"></h2>
           <h4 th:text="'Category: ' + ${m.category}"></h4>
           <h4 th:text="'Brand: ' + ${m.brand}"></h4>
-          <!--          <h4 th:text="'Start year: ' + ${m.startYear}"></h4>-->
-          <!--          <h4 th:text="'Start year: ' + ${m.endYear}"></h4>-->
-            <h4><a class="btn-block" th:href="@{/model/model-details/{models-name}(models-name=${m.name})}">Detail
-              info</a></h4>
+          <h4><a class="btn-block" th:href="@{/model/model-details/{models-name}(models-name=${m.name}, brand-name=${m.brand})}">Detail info</a></h4>
         </div>
       </div>
     </div>

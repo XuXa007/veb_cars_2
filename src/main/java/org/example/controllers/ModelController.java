@@ -40,7 +40,7 @@ public class ModelController {
     @GetMapping("/all")
     public String showAllModels(Model model) {
         model.addAttribute("modelInfos", modelService.getAllModels());
-        model.addAttribute("brand", brandService.getAll());
+        model.addAttribute("brands", brandService.getAll());
         return "model-all";
     }
 
@@ -51,12 +51,6 @@ public class ModelController {
         return "model-details";
     }
 
-
-    public String getModelsByBrandName(@RequestParam String brandName, ModelMap model) {
-        List<ModelDto> models = modelService.findModelByBrandName(brandName);
-        model.addAttribute("models", models);
-        return "modelList";
-    }
 
     @PostMapping("/add")
     public String addModel(@Valid AddModelDto modelModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {

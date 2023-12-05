@@ -1,7 +1,6 @@
 package org.example.service;
 
 import org.example.dtos.AddBrandDto;
-import org.example.dtos.BrandDto;
 import org.example.dtos.ShowBrandInfoDto;
 import org.example.models.Brand;
 import org.example.repo.BrandRepository;
@@ -59,8 +58,4 @@ public class BrandService  {
         return brandRepository.findAll().stream().map((brand) -> modelMapper.map(brand, ShowBrandInfoDto.class)).collect(Collectors.toList());
     }
 
-
-    public List<BrandDto> findBrandByName (String name) {
-        return brandRepository.findAllByName(name).stream().map((s) -> modelMapper.map(s, BrandDto.class)).collect(Collectors.toList());
-    }
 }
