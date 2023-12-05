@@ -1,7 +1,6 @@
 package org.example.dtos;
 
-import org.example.Enums.Category;
-import org.example.models.Brand;
+import org.example.models.Enums.Category;
 
 import java.time.LocalDateTime;
 

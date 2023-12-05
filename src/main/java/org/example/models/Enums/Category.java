@@ -1,4 +1,4 @@
-package org.example.Enums;
+package org.example.models.Enums;
 
 
 public enum Category {

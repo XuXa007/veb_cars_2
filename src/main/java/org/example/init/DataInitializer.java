@@ -1,20 +1,11 @@
 package org.example.init;
 
-import org.example.Enums.Category;
-import org.example.Enums.Engine;
-import org.example.Enums.RoleEnum;
-import org.example.Enums.Transmission;
-import org.example.dtos.*;
 import org.example.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID;
 
 @Component
 public class DataInitializer implements CommandLineRunner {

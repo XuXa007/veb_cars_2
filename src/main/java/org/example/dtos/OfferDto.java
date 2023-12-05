@@ -1,14 +1,11 @@
 package org.example.dtos;
 
 
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-import org.example.Enums.Engine;
-import org.example.Enums.Transmission;
+import org.example.models.Enums.Engine;
+import org.example.models.Enums.Transmission;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class OfferDto {
     private String id;

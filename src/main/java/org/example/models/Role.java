@@ -1,7 +1,7 @@
 package org.example.models;
 
 import jakarta.persistence.*;
-import org.example.Enums.RoleEnum;
+import org.example.models.Enums.RoleEnum;
 
 import java.util.List;
 

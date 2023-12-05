@@ -1,17 +1,10 @@
 package org.example.controllers;
 
-import org.example.dtos.BrandDto;
-import org.example.dtos.OfferDto;
 import org.example.dtos.RoleDto;
-import org.example.models.Role;
 import org.example.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/role")

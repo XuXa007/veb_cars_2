@@ -1,8 +1,7 @@
 package org.example.models;
 
 import jakarta.persistence.*;
-import org.example.Enums.Category;
-import org.example.dtos.ShowModelInfoDto;
+import org.example.models.Enums.Category;
 
 import java.time.LocalDateTime;
 import java.util.List;

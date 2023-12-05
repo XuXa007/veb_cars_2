@@ -1,7 +1,7 @@
 package org.example.dtos;
 
-import org.example.Enums.Engine;
-import org.example.Enums.Transmission;
+import org.example.models.Enums.Engine;
+import org.example.models.Enums.Transmission;
 
 import java.math.BigDecimal;
 

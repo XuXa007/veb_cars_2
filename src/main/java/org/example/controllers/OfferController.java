@@ -1,10 +1,7 @@
 package org.example.controllers;
 
 import jakarta.validation.Valid;
-import org.apache.catalina.User;
 import org.example.dtos.*;
-import org.example.models.Models;
-import org.example.models.Users;
 import org.example.service.ModelService;
 import org.example.service.OfferService;
 import org.example.service.UsersService;
@@ -17,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/offer")

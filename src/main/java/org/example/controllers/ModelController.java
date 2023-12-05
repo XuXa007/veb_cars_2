@@ -2,12 +2,9 @@ package org.example.controllers;
 
 import jakarta.validation.Valid;
 import org.example.dtos.*;
-import org.example.models.Brand;
-import org.example.models.Models;
 import org.example.service.BrandService;
 import org.example.service.ModelService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -15,9 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/model")

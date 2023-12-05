@@ -3,11 +3,9 @@ package org.example.dtos;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import org.example.Enums.Category;
-import org.hibernate.validator.constraints.Length;
+import org.example.models.Enums.Category;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class ModelDto {
     private String id;

@@ -11,13 +11,22 @@ import java.time.Year;
 public class AddModelDto {
     @UniqueModelName
     private String name;
-    private BrandDto brand;
+    private String brand;
+    private String brandId;
     private String category;
     private int startYear;
     private int endYear;
     private String imageURL;
     private LocalDateTime created;
     private LocalDateTime modified;
+
+    public String getBrandId() {
+        return brandId;
+    }
+
+    public void setBrandId(String brandId) {
+        this.brandId = brandId;
+    }
 
     @NotEmpty(message = "Model name must not be null or empty!")
     @Size(min = 2, message = "Model name should be at least 2 characters long!")
@@ -82,11 +91,11 @@ public class AddModelDto {
         this.imageURL = imageURL;
     }
 
-    public BrandDto getBrand() {
+    public String getBrand() {
         return brand;
     }
 
-    public void setBrand(BrandDto brand) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
 }

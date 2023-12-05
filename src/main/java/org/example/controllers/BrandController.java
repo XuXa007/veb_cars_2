@@ -2,9 +2,6 @@ package org.example.controllers;
 
 import jakarta.validation.Valid;
 import org.example.dtos.AddBrandDto;
-import org.example.dtos.AddModelDto;
-import org.example.dtos.BrandDto;
-import org.example.models.Brand;
 import org.example.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,10 +1,8 @@
 package org.example.dtos;
 
 import jakarta.validation.constraints.*;
-import org.example.Enums.Engine;
-import org.example.Enums.Transmission;
-import org.example.models.Models;
-import org.example.models.Users;
+import org.example.models.Enums.Engine;
+import org.example.models.Enums.Transmission;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

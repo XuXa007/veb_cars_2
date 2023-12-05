@@ -1,9 +1,7 @@
 package org.example.dtos;
 
 
-import org.example.Enums.RoleEnum;
-
-import java.util.UUID;
+import org.example.models.Enums.RoleEnum;
 
 public class RoleDto {
     private String id;
