@@ -9,17 +9,17 @@ public class ShowModelInfoDto {
     private Category category;
     private int startYear;
     private int endYear;
-    private String brand;
+    private ShowBrandInfoDto brand;
 
     public LocalDateTime created;
 
     private LocalDateTime modified;
 
-    public String getBrand() {
+    public ShowBrandInfoDto getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(ShowBrandInfoDto brand) {
         this.brand = brand;
     }
 

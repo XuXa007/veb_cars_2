@@ -12,9 +12,8 @@
         <div th:each="m : ${modelInfos}" class="d-flex flex-column bg-text mb-3">
           <h2 th:text="'Model: ' + ${m.name}"></h2>
           <h4 th:text="'Category: ' + ${m.category}"></h4>
-          <h4 th:text="'Brand: ' + ${m.brand}"></h4>
-          <h4><a class="btn-block" th:href="@{/model/model-details/{models-name}(models-name=${m.name}, brand-name=${m.brand})}">Detail info</a></h4>
-        </div>
+          <h4 th:text="'Brand: ' + ${m.brand.name}"></h4>
+          <a class="btn-block" th:href="@{/model/model-details/{models-name}(models-name=${m.name}, brand-name=${m.brand.name})}">Detail info</a>        </div>
       </div>
     </div>
   </div>
