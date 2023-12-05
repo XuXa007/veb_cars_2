@@ -112,4 +112,8 @@ public class UsersService {
         return usersRepository.findById(modelId).orElse(null);
 
     }
+
+    public List<ShowUserInfoDto> getAll() {
+        return usersRepository.findAll().stream().map((user) -> modelMapper.map(user, ShowUserInfoDto.class)).collect(Collectors.toList());
+    }
 }

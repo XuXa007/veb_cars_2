@@ -29,14 +29,14 @@ public class OfferController {
 
 
 
-    @GetMapping("/add")
-    public String addOffer(Model model) {
-        List<ModelDto> modelList = modelService.getAllModels();
-        List<UsersDto> userList = usersService.getAllUsers();
-        model.addAttribute("modelList", modelList);
-        model.addAttribute("userList", userList);
-        return "offer-add";
-    }
+//    @GetMapping("/add")
+//    public String addOffer(Model model) {
+//        List<ModelDto> modelList = modelService.getAllModels();
+//        List<UsersDto> userList = usersService.getAllUsers();
+//        model.addAttribute("modelList", modelList);
+//        model.addAttribute("userList", userList);
+//        return "offer-add";
+//    }
 
 
     @ModelAttribute("offerModel")
@@ -68,10 +68,11 @@ public class OfferController {
     }
 
 
-    @GetMapping("/all")
-    public String showAllOffer(Model model) {
-        model.addAttribute("allOffers", offerService.allOffers());
-        return "offer-all";
+    @GetMapping("/add")
+    public String addOffer(Model model) {
+        model.addAttribute("listModels", modelService.getAllModels());
+        model.addAttribute("listUsers", usersService.getAll());
+        return "offer-add";
     }
 
     @GetMapping("/offer-details/{offer-id}")
@@ -79,5 +80,12 @@ public class OfferController {
         model.addAttribute("offerDetails", offerService.offerDetails(offerId));
 
         return "offer-details";
+    }
+
+    @GetMapping("/all")
+    public String showAllOffers(Model model) {
+        model.addAttribute("allOffers", offerService.getAll());
+
+        return "offer-all";
     }
 }

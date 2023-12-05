@@ -8,50 +8,33 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class AddOfferDto {
-    private ModelDto model;
-    private UsersDto users;
+    private String model;
+    private String users;
     private String description;
     private Engine engine;
     private int mileage;
     private BigDecimal price;
     private Transmission transmission;
     private int year;
-    private String modelId;
-    private String userId;
 
     private LocalDateTime created;
     private LocalDateTime modified;
 
-    public String getUserId() {
-        return userId;
-    }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public ModelDto getModel() {
+    public String getModel() {
         return model;
     }
 
-    public void setModel(ModelDto model) {
+    public void setModel(String model) {
         this.model = model;
     }
 
-    public UsersDto getUsers() {
+    public String getUsers() {
         return users;
     }
 
-    public void setUsers(UsersDto users) {
+    public void setUsers(String users) {
         this.users = users;
-    }
-
-    public String getModelId() {
-        return modelId;
-    }
-
-    public void setModelId(String modelId) {
-        this.modelId = modelId;
     }
 
     @NotEmpty(message = "Description must not be null or empty!")

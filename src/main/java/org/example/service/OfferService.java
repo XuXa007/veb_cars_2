@@ -81,7 +81,7 @@ public class OfferService {
 //        existingOffer.setId(updateOffer.getId());
         existingOffer.setDescription(updateOffer.getDescription());
         existingOffer.setEngine(updateOffer.getEngine());
-        existingOffer.setImageUrl(updateOffer.getImageURL());
+//        existingOffer.setImageUrl(updateOffer.getImageURL());
         existingOffer.setMileage(updateOffer.getMileage());
         existingOffer.setPrice(updateOffer.getPrice());
         existingOffer.setTransmission(updateOffer.getTransmission());
@@ -93,10 +93,6 @@ public class OfferService {
         return modelMapper.map(savedOffer, OfferDto.class);
     }
 
-    public List<ShowOfferInfoDto> allOffers() {
-        return offerRepository.findAll().stream().map(offer -> modelMapper.map(offer, ShowOfferInfoDto.class))
-                .collect(Collectors.toList());
-    }
 
     public ShowOfferInfoDto offerDetails(String offerId) {
         return modelMapper.map(offerRepository.findById(offerId).orElse(null), ShowOfferInfoDto.class);
@@ -111,5 +107,9 @@ public class OfferService {
 //        offer.setUsers(usersRepository.findUsersByUserName(offerDto.getUsers()).orElse(null));
 
         offerRepository.saveAndFlush(offer);
+    }
+
+    public List<ShowOfferInfoDto> getAll() {
+        return offerRepository.findAll().stream().map((offer) -> modelMapper.map(offer, ShowOfferInfoDto.class)).collect(Collectors.toList());
     }
 }

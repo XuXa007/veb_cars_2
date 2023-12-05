@@ -26,8 +26,8 @@ public class Offer extends Base {
     private String description;
     @Column(name="engine", length = 11, nullable = false)
     private Engine engine;
-    @Column(name="imageURL", length = 255, nullable = false)
-    private String imageUrl;
+//    @Column(name="imageURL", length = 255, nullable = false)
+//    private String imageUrl;
     @Column(name="mileage", length = 11, nullable = false)
     private int mileage;
     @Column(name="price", length = 20, nullable = false)
@@ -76,13 +76,13 @@ public class Offer extends Base {
         this.engine = engine;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
+//    public String getImageUrl() {
+//        return imageUrl;
+//    }
+//
+//    public void setImageUrl(String imageUrl) {
+//        this.imageUrl = imageUrl;
+//    }
 
     public int getMileage() {
         return mileage;
