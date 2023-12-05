@@ -12,6 +12,7 @@
         <div th:each="m : ${modelInfos}" class="d-flex flex-column bg-text mb-3">
           <h2 th:text="'Model: ' + ${m.name}"></h2>
           <h4 th:text="'Category: ' + ${m.category}"></h4>
+          <h4 th:text="'Brand: ' + ${m.brand.name}"></h4>
           <!--          <h4 th:text="'Start year: ' + ${m.startYear}"></h4>-->
           <!--          <h4 th:text="'Start year: ' + ${m.endYear}"></h4>-->
             <h4><a class="btn-block" th:href="@{/model/model-details/{models-name}(models-name=${m.name})}">Detail

@@ -11,7 +11,7 @@ import java.time.Year;
 public class AddModelDto {
     @UniqueModelName
     private String name;
-    private String brand;
+    private BrandDto brand;
     private String category;
     private int startYear;
     private int endYear;
@@ -82,12 +82,11 @@ public class AddModelDto {
         this.imageURL = imageURL;
     }
 
-    public String getBrand() {
+    public BrandDto getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(BrandDto brand) {
         this.brand = brand;
     }
-
 }

@@ -16,12 +16,12 @@
               th:object="${offerModel}"
               class="m-md-auto w-50 pb-3">
           <div class="mb-3">
-            <label class="form-label" for="model">Model name</label>
-            <select name="model" id="model" class="form-control">
-              <option th:each="modelItem : ${modelList}" th:value="${modelItem.id}" th:text="${#strings.capitalize(modelItem.name)}"
-                      th:selected="${offerModel.model != null and modelItem.id == offerModel.model}"></option>
-            </select>
-            <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger">Please select a valid models</small>
+              <label class="form-label" for="models">Model name</label>
+              <select name="models" id="models" class="form-control">
+                <option th:each="modelItem : ${modelList}" th:value="${modelItem.id}" th:text="${#strings.capitalize(modelItem.name)}"
+                        th:selected="${offerModel.model != null and modelItem.id == offerModel.model.id}"></option>
+              </select>
+              <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger">Please select a valid model</small>
           </div>
 
 

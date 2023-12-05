@@ -52,7 +52,7 @@ public class ModelServiceImpl implements ModelService {
         modelDto.setImageURL("ooopss...");
 
         Models model = modelMapper.map(modelDto, Models.class);
-        model.setBrand(brandRepository.findBrandByName(modelDto.getBrand()).orElse(null));
+//        model.setBrand(brandRepository.findBrandByName(modelDto.getBrand()).orElse(null));
         modelRepository.saveAndFlush(model);
     }
 

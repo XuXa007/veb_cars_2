@@ -10,17 +10,17 @@ public class ShowModelInfoDto {
     private Category category;
     private int startYear;
     private int endYear;
-    private Brand brand;
+    private BrandDto brand;
 
     public LocalDateTime created;
 
     private LocalDateTime modified;
 
-    public Brand getBrand() {
+    public BrandDto getBrand() {
         return brand;
     }
 
-    public void setBrand(Brand brand) {
+    public void setBrand(BrandDto brand) {
         this.brand = brand;
     }
 

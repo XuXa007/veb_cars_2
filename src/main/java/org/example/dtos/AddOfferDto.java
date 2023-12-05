@@ -10,8 +10,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class AddOfferDto {
-    private String model;
-    private String users;
+    private ModelDto model;
+    private UsersDto users;
     private String description;
     private Engine engine;
     private int mileage;
@@ -32,19 +32,19 @@ public class AddOfferDto {
         this.userId = userId;
     }
 
-    public String getModel() {
+    public ModelDto getModel() {
         return model;
     }
 
-    public void setModel(String model) {
+    public void setModel(ModelDto model) {
         this.model = model;
     }
 
-    public String getUsers() {
+    public UsersDto getUsers() {
         return users;
     }
 
-    public void setUsers(String users) {
+    public void setUsers(UsersDto users) {
         this.users = users;
     }
 

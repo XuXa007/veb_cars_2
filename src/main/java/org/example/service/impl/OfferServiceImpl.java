@@ -114,8 +114,8 @@ public class OfferServiceImpl implements OfferService {
         offerDto.setModified(LocalDateTime.now());
 
         Offer offer = modelMapper.map(offerDto, Offer.class);
-        offer.setModel(modelRepository.findModelsByName(offerDto.getModel()).orElse(null));
-        offer.setUsers(usersRepository.findUsersByUserName(offerDto.getUsers()).orElse(null));
+//        offer.setModel(modelRepository.findModelsByName(offerDto.getModel()).orElse(null));
+//        offer.setUsers(usersRepository.findUsersByUserName(offerDto.getUsers()).orElse(null));
 
         offerRepository.saveAndFlush(offer);
     }
