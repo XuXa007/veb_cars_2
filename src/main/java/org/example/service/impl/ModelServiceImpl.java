@@ -51,9 +51,9 @@ public class ModelServiceImpl implements ModelService {
         modelDto.setModified(LocalDateTime.now());
         modelDto.setImageURL("ooopss...");
 
-        Models models = modelMapper.map(modelDto, Models.class);
-        modelRepository.saveAndFlush(models);
-
+        Models model = modelMapper.map(modelDto, Models.class);
+        model.setBrand(brandRepository.findBrandByName(modelDto.getBrand()).orElse(null));
+        modelRepository.saveAndFlush(model);
     }
 
 

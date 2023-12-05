@@ -24,4 +24,5 @@ public interface ModelRepository extends JpaRepository<Models, String> {
     @Transactional
     void deleteByName(String name);
 
+    Optional<Models> findModelsByName(String model);
 }

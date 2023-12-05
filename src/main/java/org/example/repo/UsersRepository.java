@@ -1,5 +1,6 @@
 package org.example.repo;
 
+import org.apache.catalina.User;
 import org.example.models.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -22,4 +23,6 @@ public interface UsersRepository extends JpaRepository<Users, String> {
     @Modifying
     @Transactional
     void deleteByUserName(String userName);
+
+    Optional<Users> findUsersByUserName(String users);
 }

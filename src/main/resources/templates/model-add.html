@@ -17,11 +17,21 @@
               class="m-md-auto w-50 pb-3">
           <div class="mb-3">
             <label class="form-label" for="brand">Brand name</label>
-            <select name="brand" id="brand" class="form-control" th:field="*{brand.id}">
+            <select name="brand" id="brand" class="form-control">
               <option th:each="brandItem : ${brandList}" th:value="${brandItem.id}" th:text="${#strings.capitalize(brandItem.name)}"></option>
             </select>
             <small th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}" class="text-danger">Please select a valid brand</small>
           </div>
+
+<!--          <div class="mb-3">-->
+<!--            <label class="form-label" for="model">Model name</label>-->
+<!--            <select name="model" id="model" class="form-control">-->
+<!--              <option th:each="modelItem : ${modelList}" th:value="${modelItem.id}" th:text="${#strings.capitalize(modelItem.name)}"-->
+<!--                      th:selected="${offerModel.modelDto != null and modelItem.id == offerModel.modelDto.id}"></option>-->
+<!--            </select>-->
+<!--            <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger">Please select a valid models</small>-->
+<!--          </div>-->
+
 
           <div class="mb-3">
             <label class="form-label" for="name">Name</label>

@@ -6,7 +6,9 @@ import org.example.exception.NotFoundException;
 import org.example.models.Models;
 import org.example.models.Offer;
 import org.example.models.Users;
+import org.example.repo.ModelRepository;
 import org.example.repo.OfferRepository;
+import org.example.repo.UsersRepository;
 import org.example.service.OfferService;
 import org.example.util.ValidationUtil;
 import org.modelmapper.ModelMapper;
@@ -20,14 +22,18 @@ import java.util.stream.Collectors;
 @Component
 public class OfferServiceImpl implements OfferService {
     private final OfferRepository offerRepository;
+    private final ModelRepository modelRepository;
+    private final UsersRepository usersRepository;
 
     private final ModelMapper modelMapper;
 
     private final ValidationUtil validationUtil;
 
     @Autowired
-    public OfferServiceImpl(OfferRepository offerRepository, ModelMapper modelMapper, ValidationUtil validationUtil) {
+    public OfferServiceImpl(OfferRepository offerRepository, ModelRepository modelRepository, UsersRepository usersRepository, ModelMapper modelMapper, ValidationUtil validationUtil) {
         this.offerRepository = offerRepository;
+        this.modelRepository = modelRepository;
+        this.usersRepository = usersRepository;
         this.modelMapper = modelMapper;
         this.validationUtil = validationUtil;
     }
@@ -107,11 +113,10 @@ public class OfferServiceImpl implements OfferService {
         offerDto.setCreated(LocalDateTime.now());
         offerDto.setModified(LocalDateTime.now());
 
-//        Offer offer = modelMapper.map(offerDto, Offer.class);
-//        offer.setModel(offerRepository.findBrandByName(modelDto.getBrand()).orElse(null));
-//        modelRepository.saveAndFlush(model);
-
         Offer offer = modelMapper.map(offerDto, Offer.class);
+        offer.setModel(modelRepository.findModelsByName(offerDto.getModel()).orElse(null));
+        offer.setUsers(usersRepository.findUsersByUserName(offerDto.getUsers()).orElse(null));
+
         offerRepository.saveAndFlush(offer);
     }
 }

@@ -3,13 +3,15 @@ package org.example.dtos;
 import jakarta.validation.constraints.*;
 import org.example.Enums.Engine;
 import org.example.Enums.Transmission;
+import org.example.models.Models;
+import org.example.models.Users;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class AddOfferDto {
-    private ModelDto model;
-    private UsersDto users;
+    private String model;
+    private String users;
     private String description;
     private Engine engine;
     private int mileage;
@@ -30,8 +32,20 @@ public class AddOfferDto {
         this.userId = userId;
     }
 
-    public ModelDto getModel() {
+    public String getModel() {
         return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getUsers() {
+        return users;
+    }
+
+    public void setUsers(String users) {
+        this.users = users;
     }
 
     public String getModelId() {
@@ -40,22 +54,6 @@ public class AddOfferDto {
 
     public void setModelId(String modelId) {
         this.modelId = modelId;
-    }
-
-    public ModelDto getModels() {
-        return model;
-    }
-
-    public void setModel(ModelDto model) {
-        this.model = model;
-    }
-
-    public UsersDto getUsers() {
-        return users;
-    }
-
-    public void setUsers(UsersDto users) {
-        this.users = users;
     }
 
     @NotEmpty(message = "Description must not be null or empty!")

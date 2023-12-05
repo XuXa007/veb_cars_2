@@ -57,14 +57,14 @@ public class OfferController {
             return "redirect:/offer/add";
         }
 
-        String modelId = offerModel.getModelId();
-        String userId = offerModel.getUserId();
-
-        Models models = modelService.getModelById(modelId);
-        Users users = usersService.getUserById(userId);
-
-        offerModel.setModelId(modelId);
-        offerModel.setUserId(userId);
+//        String modelId = offerModel.getModelId();
+//        String userId = offerModel.getUserId();
+//
+//        Models models = modelService.getModelById(modelId);
+//        Users users = usersService.getUserById(userId);
+//
+//        offerModel.setModelId(modelId);
+//        offerModel.setUserId(userId);
 
         offerService.addOffer(offerModel);
 
