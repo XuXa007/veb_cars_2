@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.example.Enums.Engine;
 import org.example.Enums.Transmission;
+import org.hibernate.annotations.Cascade;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -14,11 +15,13 @@ public class Offer extends Base {
 
     @ManyToOne
     @JoinColumn(name = "models_id")
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @JsonIgnore
     private Models models;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @JsonIgnore
     private Users users;
 

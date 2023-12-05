@@ -14,7 +14,7 @@ public class Users extends Base {
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
-    @OneToMany(mappedBy = "users", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "users", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JsonIgnore
     private Set<Offer> offers;
     @Column(name="userName", length = 255, nullable = false)

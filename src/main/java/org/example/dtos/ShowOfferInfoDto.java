@@ -7,8 +7,8 @@ import java.math.BigDecimal;
 
 public class ShowOfferInfoDto {
     private String id;
-    private ShowModelInfoDto model;
-    private ShowUserInfoDto users;
+    private String modelName;
+    private String usersName;
     private String description;
     private Engine engine;
     private int mileage;
@@ -24,20 +24,20 @@ public class ShowOfferInfoDto {
         this.id = id;
     }
 
-    public ShowModelInfoDto getModel() {
-        return model;
+    public String getModelName() {
+        return modelName;
     }
 
-    public void setModel(ShowModelInfoDto model) {
-        this.model = model;
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
     }
 
-    public ShowUserInfoDto getUsers() {
-        return users;
+    public String getUsersName() {
+        return usersName;
     }
 
-    public void setUsers(ShowUserInfoDto users) {
-        this.users = users;
+    public void setUsersName(String usersName) {
+        this.usersName = usersName;
     }
 
     public String getDescription() {

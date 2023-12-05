@@ -37,7 +37,7 @@ public class ModelService {
     private String model = "model";
 
     public List<ShowModelInfoDto> getAllModels() {
-        return modelRepository.findAll().stream().map((s) -> modelMapper.map(s, ShowModelInfoDto.class)).collect(Collectors.toList());
+        return modelRepository.findAll().stream().map((models) -> modelMapper.map(models, ShowModelInfoDto.class)).collect(Collectors.toList());
     }
 
 

@@ -18,28 +18,28 @@
 
           <div class="mb-3">
             <label class="form-label" for="model">Model name</label>
-            <select name="model" id="model" class="form-control" th:field="*{model}">
+            <select name="model" id="model" class="form-control" th:field="*{modelName}">
               <option th:each="modelItem : ${listModels}"
                       th:value="${modelItem.name}"
                       th:text="${#strings.capitalize(modelItem.name)}"
-                      th:selected="${offerModel.model != null and modelItem.name == offerModel.model}">
+                      th:selected="${offerModel.modelName != null and modelItem.name == offerModel.modelName}">
 
               </option>
             </select>
-            <small th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger">Please select a valid model</small>
+            <small th:if="${#fields.hasErrors('modelName')}" th:errors="*{modelName}" class="text-danger">Please select a valid model</small>
           </div>
 
           <div class="mb-3">
             <label class="form-label" for="users">Model name</label>
-            <select name="users" id="users" class="form-control" th:field="*{users}">
+            <select name="users" id="users" class="form-control" th:field="*{usersName}">
               <option th:each="user : ${userList}"
                       th:value="${user.userName}"
                       th:text="${#strings.capitalize(user.userName)}"
-                      th:selected="${offerModel.users != null and user.userName == offerModel.users}">
+                      th:selected="${offerModel.usersName != null and user.userName == offerModel.usersName}">
 
               </option>
             </select>
-            <small th:if="${#fields.hasErrors('users')}" th:errors="*{users}" class="text-danger">Please select a valid model</small>
+            <small th:if="${#fields.hasErrors('usersName')}" th:errors="*{usersName}" class="text-danger">Please select a valid user</small>
           </div>
 
           <div class="mb-3">

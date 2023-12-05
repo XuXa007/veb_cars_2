@@ -14,7 +14,7 @@ public class Models extends Base {
     @JoinColumn(name = "brand_id")
     private Brand brand;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "models", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "models", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private Set<Offer> offers;
 
     @Column(name="name", length = 255, nullable = false)
