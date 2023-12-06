@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head"></head>
+<head th:replace="fragments/head">
+  <!-- Add Font Awesome CSS link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
 <body class="d-flex flex-column h-100">
 <div th:replace="fragments/navbar">Navbar</div>
 <main class="flex-shrink-0">
@@ -8,41 +11,59 @@
     <div class="row">
       <div class="col-md-2"></div>
       <div class="jumbotron text-center rounded col-md-8 align-self-center pt-5">
-        <h2 class="text-center text-dark mt-5">All Offers</h2>
+        <h2 class="text-center text-dark mt-5">Cars</h2>
 
-        <div th:each="offer : ${offerInfos}" class="d-flex flex-column bg-text mb-3">
-          <h3 th:text="'Model: ' + ${offer.models}"></h3>
-          <h3 th:text="'User: ' + ${offer.users}"></h3>
-          <p th:text="'Description: ' + ${offer.description}"></p>
-          <p th:text="'Engine: ' + ${offer.engine}"></p>
-          <p th:text="'Mileage: ' + ${offer.mileage}"></p>
-          <p th:text="'Price: ' + ${offer.price}"></p>
-          <p th:text="'Transmission: ' + ${offer.transmission}"></p>
-          <p th:text="'Year: ' + ${offer.year}"></p>
-        </div>
-
-
-        <div th:each="model : ${modelInfos}" class="d-flex flex-column bg-text mb-3">
-
-          <!-- Additional details from associated models and users -->
-          <p th:text="'Model Start Year: ' + ${model.startYear}"></p>
-          <p th:text="'Model End Year: ' + ${model.endYear}"></p>
-          <p th:text="'Model Category: ' + ${model.category}"></p>
-        </div>
-
-        <div th:each="user : ${usersInfos}" class="d-flex flex-column bg-text mb-3">
-
-          <p th:text="'User First Name: ' + ${user.firstName}"></p>
-          <p th:text="'User Last Name: ' + ${user.lastName}"></p>
-          <p th:text="'User Role: ' + ${user.roleEnum}"></p>
-
-            info</a></h4>
-        </div>
+        <table class="table table-bordered" id="carTable">
+          <thead>
+          <tr>
+            <th>Model</th>
+            <th>User</th>
+            <th>Description</th>
+            <th>Engine</th>
+            <th>
+              <a href="javascript:void(0);" onclick="sortTable('mileage')">
+                Mileage <i id="sortOrderIcon" class="fas fa-sort"></i>
+              </a>
+            </th>
+            <th>Price</th>
+            <th>Transmission</th>
+            <th>Year</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="offer : ${offerInfos}">
+            <td th:text="${offer.models}"></td>
+            <td th:text="${offer.users}"></td>
+            <td th:text="${offer.description}"></td>
+            <td th:text="${offer.engine}"></td>
+            <td th:text="${offer.mileage}"></td>
+            <td th:text="${offer.price}"></td>
+            <td th:text="${offer.transmission}"></td>
+            <td th:text="${offer.year}"></td>
+          </tr>
+          </tbody>
+        </table>
 
       </div>
     </div>
   </div>
 </main>
 <footer th:replace="fragments/footer"/>
+
+<script>
+  function sortTable(sortBy) {
+    var sortOrderIcon = document.getElementById('sortOrderIcon');
+
+    if (sortOrderIcon.classList.contains('fa-sort')) {
+      sortOrderIcon.classList.replace('fa-sort', 'fa-sort-desc');
+    } else if (sortOrderIcon.classList.contains('fa-sort-asc')) {
+      sortOrderIcon.classList.replace('fa-sort-asc', 'fa-sort-desc');
+    } else {
+      sortOrderIcon.classList.replace('fa-sort-desc', 'fa-sort-asc');
+    }
+
+    var sortOrder = sortOrderIcon.classList.contains('fa-sort-desc') ? 'desc' : 'asc';
+  }
+</script>
 </body>
 </html>
