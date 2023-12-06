@@ -10,8 +10,8 @@
             <div class="jumbotron text-center rounded col-md-8 align-self-center pt-5">
                 <h2 class="text-center text-dark mt-5">All Offers</h2>
                 <div th:each="a : ${addOffer}" class="d-flex flex-column bg-text mb-3">
-                    <h2 th:text="'Model: ' + ${a.modelName}"></h2>
-                    <h2 th:text="'User: ' + ${a.usersName}"></h2>
+                    <h2 th:text="'Model: ' + ${a.models}"></h2>
+                    <h2 th:text="'User: ' + ${a.users}"></h2>
                     <h4 th:text="'Price: ' + ${a.price}"></h4>
                     <h4 th:text="'Year: ' + ${a.year}"></h4>
                     <h5 th:text="'Description: ' + ${a.description}"></h5>

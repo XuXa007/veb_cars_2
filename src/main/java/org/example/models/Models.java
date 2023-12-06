@@ -20,7 +20,7 @@ public class Models extends Base {
     @Column(name="name", length = 255, nullable = false)
     private String name;
     @Enumerated(EnumType.ORDINAL)
-    @Column(name="category", length = 11, nullable = false)
+    @Column(name="category")
     private Category category;
     @Column(name="imageURL", length = 255)
     private String imageURL;
@@ -112,4 +112,8 @@ public class Models extends Base {
         this.modified = modified;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }

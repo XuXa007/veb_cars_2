@@ -115,4 +115,9 @@ public class Users extends Base {
     public void setModified(LocalDateTime modified) {
         this.modified = modified;
     }
+
+    @Override
+    public String toString() {
+        return userName;
+    }
 }

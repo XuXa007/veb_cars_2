@@ -8,8 +8,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class AddOfferDto {
-    private String modelName;
-    private String usersName;
+    private String models;
+    private String users;
     private String description;
     private Engine engine;
     private int mileage;
@@ -20,21 +20,20 @@ public class AddOfferDto {
     private LocalDateTime created;
     private LocalDateTime modified;
 
-
-    public String getModelName() {
-        return modelName;
+    public String getModels() {
+        return models;
     }
 
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
+    public void setModels(String models) {
+        this.models = models;
     }
 
-    public String getUsersName() {
-        return usersName;
+    public String getUsers() {
+        return users;
     }
 
-    public void setUsersName(String usersName) {
-        this.usersName = usersName;
+    public void setUsers(String users) {
+        this.users = users;
     }
 
     @NotEmpty(message = "Description must not be null or empty!")

@@ -13,16 +13,12 @@ import java.time.LocalDateTime;
 @Table(name = "offer")
 public class Offer extends Base {
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "models_id")
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
-    @JsonIgnore
     private Models models;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
-    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "users_id")
     private Users users;
 
     @Column(name="description", length = 500, nullable = false)
@@ -134,5 +130,6 @@ public class Offer extends Base {
     public void setModified(LocalDateTime modified) {
         this.modified = modified;
     }
+
 
 }

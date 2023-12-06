@@ -13,7 +13,6 @@
           <thead>
           <tr>
             <th>Username</th>
-            <th>Role</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Active</th>
@@ -21,17 +20,16 @@
           </tr>
           </thead>
           <tbody>
-          <tr th:each="user : ${userInfos}">
-            <td th:text="${user.userName}"></td>
-            <td th:text="${user.getRoleEnum}"></td>
-            <td th:text="${user.firstName}"></td>
-            <td th:text="${user.lastName}"></td>
-            <td th:text="${user.active}"></td>
-            <td><a class="btn btn-secondary" th:href="@{/user/user-details/{user-userName}(user-userName=${user.userName})}">Detail info</a></td>
+          <tr th:each="users : ${infoUsers}">
+            <td th:text="${users.userName}"></td>
+            <td th:text="${users.firstName}"></td>
+            <td th:text="${users.lastName}"></td>
+            <td th:text="${users.active}"></td>
+            <td><a class="btn btn-secondary" th:href="@{/user/user-details/{user-userName}(user-userName=${users.userName})}">Detail info</a></td>
           </tr>
           </tbody>
         </table>
-        <p th:if="${#lists.isEmpty(userInfos)}">No users available.</p>
+        <p th:if="${#lists.isEmpty(infoUsers)}">No users available.</p>
       </div>
     </div>
   </div>

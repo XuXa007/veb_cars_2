@@ -50,20 +50,20 @@ public class UsersController {
 
     @GetMapping("/all")
     public String showAllUser(Model model) {
-        model.addAttribute("userInfos", usersService.allUsers());
+        model.addAttribute("infoUsers", usersService.allUsers());
 
         return "user-all";
     }
 
-    @GetMapping("/user-details/{user-userName}")
-    public String userDetails(@PathVariable("user-userName") String userName, Model model) {
+    @GetMapping("/user-details/{user-name}")
+    public String UserDetails(@PathVariable("user-name") String userName, Model model) {
         model.addAttribute("userDetails", usersService.userDetails(userName));
 
         return "user-details";
     }
 
-    @GetMapping("/user-delete/{user-userName}")
-    public String deleteUser(@PathVariable("user-userName") String userName) {
+    @GetMapping("/user-delete/{user-name}")
+    public String deleteUser(@PathVariable("user-name") String userName) {
         usersService.removeUser(userName);
 
         return "redirect:/user/all";

@@ -68,4 +68,11 @@ public class OfferController {
 
         return "offer-all";
     }
+
+    @GetMapping("/delete/{offer-id}")
+    public String deleteOffer(@PathVariable("offer-id") String id) {
+        offerService.removeOffer(id);
+
+        return "redirect:/offer/all";
+    }
 }
