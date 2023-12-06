@@ -17,16 +17,10 @@
               class="m-md-auto w-50 pb-3">
           <div class="mb-3">
             <label class="form-label" for="brand"><h5>All available brands</h5></label>
-            <select multiple="false" class="form-control text-center"
-                    id="brand" name="name" th:field="*{brand}">
-              <option th:each="a : ${availableBrands}"
-                      th:value="${a.name}"
-                      th:text="${a.name}">Brand name
-              </option>
+            <select class="form-control text-center" id="brand" name="name" th:field="*{brand}">
+              <option th:each="a : ${availableBrands}" th:value="${a.name}" th:text="${a.name}"></option>
             </select>
-            <small th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}"
-                   class="text-danger">Error
-              message</small>
+            <small th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}" class="text-danger">Error message</small>
           </div>
           <div class="mb-3">
             <label class="form-label" for="name">Name</label>
@@ -41,54 +35,25 @@
           </div>
           <fieldset class="mb-3">
             <legend>Choose Category</legend>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input th:field="*{categoryEnum}"
-                       th:value="Car"
-                       th:errorclass="is-invalid"
-                       type="radio" class="form-check-input" name="categoryEnum"/>
-                <span>Car</span>
-              </label>
+            <div class="mb-3">
+              <label class="form-label" for="category">Category</label>
+              <select th:field="*{category}" class="form-control" id="category" name="category">
+                <option th:each="cat : ${T(org.example.Enums.Category).values()}"
+                        th:value="${cat}" th:text="${#strings.capitalize(cat.name())}"></option>
+              </select>
+              <small th:if="${#fields.hasErrors('category')}" th:errors="*{category}"
+                     class="text-danger">Error message</small>
             </div>
-            <div class="form-check disabled">
-              <label class="form-check-label">
-                <input th:field="*{categoryEnum}"
-                       th:value="Buss"
-                       th:errorclass="is-invalid"
-                       type="radio" class="form-check-input" name="categoryEnum"/>
-                <span>Buss</span>
-              </label>
-            </div>
-            <div class="form-check disabled">
-              <label class="form-check-label">
-                <input th:field="*{categoryEnum}"
-                       th:value="Truck"
-                       th:errorclass="is-invalid"
-                       type="radio" class="form-check-input " name="categoryEnum"/>
-                <span>Truck</span>
-              </label>
-            </div>
-            <div class="form-check disabled">
-              <label class="form-check-label">
-                <input th:field="*{categoryEnum}"
-                       th:value="Motorcycle"
-                       th:errorclass="is-invalid"
-                       type="radio" class="form-check-input " name="categoryEnum"/>
-                <span>Motorcycle</span>
-              </label>
-            </div>
-            <small th:if="${#fields.hasErrors('categoryEnum')}" th:errors="*{categoryEnum}"
-                   class="text-danger">Error message</small>
           </fieldset>
-          <div class="mb-3">
-            <label class="form-label" for="imageURL">URL Of Image</label>
-            <input th:field="*{imageURL}"
-                   th:errorclass="is-invalid"
-                   type="text" class="form-control text-center"
-                   id="imageURL" aria-describedby="imageURL" name="imageURL"/>
-            <small th:if="${#fields.hasErrors('imageURL')}" th:errors="*{imageURL}" class="text-danger">Error
-              message</small>
-          </div>
+<!--          <div class="mb-3">-->
+<!--            <label class="form-label" for="imageURL">URL Of Image</label>-->
+<!--            <input th:field="*{imageURL}"-->
+<!--                   th:errorclass="is-invalid"-->
+<!--                   type="text" class="form-control text-center"-->
+<!--                   id="imageURL" aria-describedby="imageURL" name="imageURL"/>-->
+<!--            <small th:if="${#fields.hasErrors('imageURL')}" th:errors="*{imageURL}" class="text-danger">Error-->
+<!--              message</small>-->
+<!--          </div>-->
           <div class="mb-3">
             <label class="form-label" for="startYear">Start Year</label>
             <input th:field="*{startYear}"

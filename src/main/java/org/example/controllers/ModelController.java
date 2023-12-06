@@ -72,4 +72,26 @@ public class ModelController {
 
         return "redirect:/model/all";
     }
+
+    @GetMapping("/edit/{model-name}")
+    public String editModelForm(@PathVariable("model-name") String modelName, Model model) {
+
+        AddModelDto modelDto = modelService.findModelByName(modelName);
+        model.addAttribute("availableBrands", brandService.getAll());
+
+        model.addAttribute("model", modelDto);
+        return "model-edit";
+    }
+    @PostMapping("/edit/{model-name}")
+    public String editModel(@PathVariable("model-name") String modelName, @Valid AddModelDto modelDto, BindingResult result, Model model) {
+
+        model.addAttribute("availableBrands", brandService.getAll());
+        if (result.hasErrors()) {
+            model.addAttribute("model", modelDto);
+            return "model-edit";
+        }
+
+        modelService.editModel(modelName, modelDto);
+        return "redirect:/model/all";
+    }
 }

@@ -47,8 +47,9 @@
                     </tr>
                     </tbody>
                 </table>
-                <div class="align-bottom"><a class="btn btn-danger align-bottom"
-                                             th:href="@{/model/model-delete/{model-name}(model-name=${modelDetails.name})}">Delete model</a>
+                <div class="btn-group">
+                    <a class="btn btn-success btn-lg mx-2" th:href="@{/model/edit/{model-name}(model-name=${modelDetails.name})}">Edit Model</a>
+                    <a class="btn btn-danger btn-lg" th:href="@{/model/model-delete/{model-name}(model-name=${modelDetails.name})}">Delete model</a>
                 </div>
             </main>
         </div>

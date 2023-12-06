@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head"></head>
+<body class="d-flex flex-column h-100">
+<div th:replace="fragments/navbar">Navbar</div>
+<main class="flex-shrink-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="jumbotron text-center rounded col-md-8 align-self-center pt-5">
+        <h2 class="text-center text-dark mt-5">All Offers</h2>
+
+        <div th:each="offer : ${offerInfos}" class="d-flex flex-column bg-text mb-3">
+          <h3 th:text="'Model: ' + ${offer.models}"></h3>
+          <h3 th:text="'User: ' + ${offer.users}"></h3>
+          <p th:text="'Description: ' + ${offer.description}"></p>
+          <p th:text="'Engine: ' + ${offer.engine}"></p>
+          <p th:text="'Mileage: ' + ${offer.mileage}"></p>
+          <p th:text="'Price: ' + ${offer.price}"></p>
+          <p th:text="'Transmission: ' + ${offer.transmission}"></p>
+          <p th:text="'Year: ' + ${offer.year}"></p>
+        </div>
+
+
+        <div th:each="model : ${modelInfos}" class="d-flex flex-column bg-text mb-3">
+
+          <!-- Additional details from associated models and users -->
+          <p th:text="'Model Start Year: ' + ${model.startYear}"></p>
+          <p th:text="'Model End Year: ' + ${model.endYear}"></p>
+          <p th:text="'Model Category: ' + ${model.category}"></p>
+        </div>
+
+        <div th:each="user : ${usersInfos}" class="d-flex flex-column bg-text mb-3">
+
+          <p th:text="'User First Name: ' + ${user.firstName}"></p>
+          <p th:text="'User Last Name: ' + ${user.lastName}"></p>
+          <p th:text="'User Role: ' + ${user.roleEnum}"></p>
+
+            info</a></h4>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+<footer th:replace="fragments/footer"/>
+</body>
+</html>

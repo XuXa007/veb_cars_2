@@ -5,20 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="change for postman">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/brand-edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/CarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/car-all.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/ModelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/ModelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/UsersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddModelDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/AddModelDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/BrandDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/ModelDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/OfferDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/RoleDto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ModelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ModelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/brand-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/brand-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/BrandController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/BrandController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/repo/ModelRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/repo/ModelRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/BrandService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/BrandService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/model-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/model-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/model-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/model-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/ModelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/ModelService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/UsersService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +172,7 @@
       <workItem from="1701687037377" duration="3939000" />
       <workItem from="1701697870813" duration="2226000" />
       <workItem from="1701781841910" duration="20686000" />
-      <workItem from="1701817717925" duration="8478000" />
+      <workItem from="1701817717925" duration="12225000" />
     </task>
     <task id="LOCAL-00001" summary="do something with html">
       <option name="closed" value="true" />

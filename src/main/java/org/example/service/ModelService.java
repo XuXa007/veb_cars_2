@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -81,5 +83,37 @@ public class ModelService {
         return models.stream()
                 .map(model -> modelMapper.map(model, ShowModelInfoDto.class))
                 .collect(Collectors.toList());
+    }
+
+    public void editModel(String originalModelName, AddModelDto modelDto) {
+        Optional<Models> existingModelOptional = modelRepository.findByName(originalModelName);
+
+        if (existingModelOptional.isPresent()) {
+            Models existingModel = existingModelOptional.get();
+
+            Optional<Brand> brandOptional = brandRepository.findByName(modelDto.getBrand());
+            if (brandOptional.isPresent()) {
+                existingModel.setBrand(brandOptional.get());
+            } else {
+                throw new NoSuchElementException("Brand not found: " + modelDto.getBrand());
+            }
+
+            existingModel.setName(modelDto.getName());
+            existingModel.setCategory(modelDto.getCategory());
+//            existingModel.setImageUrl(modelDto.getImageURL());
+            existingModel.setStartYear(modelDto.getStartYear());
+            existingModel.setEndYear(modelDto.getEndYear());
+            existingModel.setModified(LocalDateTime.now());
+
+            modelRepository.saveAndFlush(existingModel);
+        } else {
+            throw new NoSuchElementException("Model not found for update: " + originalModelName);
+        }
+    }
+
+    public AddModelDto findModelByName(String modelName) {
+        return modelRepository.findByName(modelName)
+                .map(model -> modelMapper.map(model, AddModelDto.class))
+                .orElse(null);
     }
 }

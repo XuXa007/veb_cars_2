@@ -1,6 +1,7 @@
 package org.example.dtos;
 
 import jakarta.validation.constraints.*;
+import org.example.Enums.Category;
 import org.example.models.Brand;
 import org.example.utils.validation.UniqueBrandName;
 import org.example.utils.validation.UniqueModelName;
@@ -13,7 +14,7 @@ public class AddModelDto {
     private String name;
     private String brand;
     private String brandId;
-    private String category;
+    private Category category;
     private int startYear;
     private int endYear;
     private String imageURL;
@@ -38,11 +39,11 @@ public class AddModelDto {
         this.name = name;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
