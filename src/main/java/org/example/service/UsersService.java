@@ -11,6 +11,7 @@ import org.example.repo.UsersRepository;
 import org.example.utils.validation.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.expression.ExpressionException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -68,4 +69,5 @@ public class UsersService {
     public List<ShowUserInfoDto> getAllUsersForOffer() {
         return usersRepository.findAll().stream().map((users) -> modelMapper.map(users, ShowUserInfoDto.class)).collect(Collectors.toList());
     }
+
 }

@@ -18,9 +18,33 @@
             <h4 th:text="'Name: ' + ${brandDetails.name}"></h4>
             <h4 th:text="'Created: ' + ${brandDetails.created}"></h4>
             <h4 th:text="'Modified: ' + ${brandDetails.modified}"></h4>
-            <div class="align-bottom"><a class="btn btn-danger align-bottom"
-                                         th:href="@{/brand/brand-delete/{brand-name}(brand-name=${brandDetails.name})}">Delete brand</a>
+            <div class="btn-group">
+              <a class="btn btn-success btn-lg mx-2" th:href="@{/brand/edit/{brand-name}(brand-name=${brandDetails.name})}">Edit Brand</a>
+              <a class="btn btn-danger btn-lg" th:href="@{/brand/brand-delete/{brand-name}(brand-name=${brandDetails.name})}">Delete Brand</a>
             </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-12">
+            <h2 class="display-5">Models</h2>
+            <table class="table table-bordered mt-3">
+              <thead>
+              <tr>
+                <th>Model Name</th>
+                <th>Created</th>
+                <th>Start year</th>
+                <th>End year</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="model : ${models}">
+                <td th:text="${model.name}"></td>
+                <td th:text="${model.category}"></td>
+                <td th:text="${model.startYear}"></td>
+                <td th:text="${model.endYear}"></td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </main>

@@ -26,4 +26,5 @@ public interface UsersRepository extends JpaRepository<Users, String> {
     void deleteByUserName(String userName);
 
     Optional<Users> findUsersByUserName(String users);
+
 }

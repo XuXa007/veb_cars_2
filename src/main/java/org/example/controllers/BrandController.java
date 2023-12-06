@@ -2,7 +2,11 @@ package org.example.controllers;
 
 import jakarta.validation.Valid;
 import org.example.dtos.AddBrandDto;
+import org.example.dtos.ShowBrandInfoDto;
+import org.example.models.Brand;
 import org.example.service.BrandService;
+import org.example.service.ModelService;
+import org.example.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -16,6 +20,16 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class BrandController {
     @Autowired
     private BrandService brandService;
+    @Autowired
+    private ModelService modelService;
+
+    @Autowired
+    private UsersService usersService;
+
+    public BrandController(BrandService brandService, ModelService modelService) {
+        this.brandService = brandService;
+        this.modelService = modelService;
+    }
 
     @GetMapping("/add")
     public String addBrand() {
@@ -48,17 +62,39 @@ public class BrandController {
         return "brand-all";
     }
 
-    @GetMapping("/brand-details/{brand-name}")
-    public String brandDetails(@PathVariable("brand-name") String brandName, Model model) {
-        model.addAttribute("brandDetails", brandService.brandDetails(brandName));
-
-        return "brand-details";
-    }
 
     @GetMapping("/brand-delete/{brand-name}")
     public String deleteBrand(@PathVariable("brand-name") String name) {
         brandService.removeBrand(name);
 
+        return "redirect:/brand/all";
+    }
+
+    @GetMapping("/brand-details/{brand-name}")
+    public String brandDetails(@PathVariable("brand-name") String brandName, Model model) {
+        model.addAttribute("models", modelService.getModelsByBrand(brandName));
+        model.addAttribute("brandDetails", brandService.brandDetails(brandName));
+
+        return "brand-details";
+    }
+
+    @GetMapping("/edit/{brand-name}")
+    public String editBrandForm(@PathVariable("brand-name") String brandName, Model model) {
+
+        AddBrandDto brand = brandService.findBrandByName(brandName);
+
+        model.addAttribute("brand", brand);
+        return "brand-edit";
+    }
+    @PostMapping("/edit/{brand-name}")
+    public String editBrand(@PathVariable("brand-name") String brandName, @Valid AddBrandDto brandDto, BindingResult result, Model model) {
+
+        if (result.hasErrors()) {
+            model.addAttribute("brand", brandDto);
+            return "brand-edit";
+        }
+
+        brandService.editBrand(brandName, brandDto);
         return "redirect:/brand/all";
     }
 }

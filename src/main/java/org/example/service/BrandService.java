@@ -7,10 +7,15 @@ import org.example.repo.BrandRepository;
 import org.example.utils.validation.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.expression.ExpressionException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -58,4 +63,34 @@ public class BrandService  {
         return brandRepository.findAll().stream().map((brand) -> modelMapper.map(brand, ShowBrandInfoDto.class)).collect(Collectors.toList());
     }
 
+
+    @Transactional
+    public void updateBrand(String brandName, String updatedName) {
+        Brand brand = brandRepository.findByName(brandName)
+                .orElseThrow(() -> new ExpressionException("Brand not found with name: " + brandName));
+
+        // Обновление информации о бренде
+        brand.setName(updatedName);
+        brandRepository.save(brand);
+    }
+
+    public AddBrandDto findBrandByName(String brandName) {
+        return brandRepository.findByName(brandName)
+                .map(brand -> modelMapper.map(brand, AddBrandDto.class))
+                .orElse(null);
+    }
+
+    public void editBrand(String originalBrandName, AddBrandDto brandDto) {
+        Optional<Brand> existingBrandOptional = brandRepository.findByName(originalBrandName);
+
+        if (existingBrandOptional.isPresent()) {
+            Brand existingBrand = existingBrandOptional.get();
+            existingBrand.setName(brandDto.getName());
+            existingBrand.setModified(LocalDateTime.now());
+
+            brandRepository.saveAndFlush(existingBrand);
+        } else {
+            throw new NoSuchElementException("Brand not found for update: " + originalBrandName);
+        }
+    }
 }

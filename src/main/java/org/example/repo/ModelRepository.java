@@ -1,6 +1,7 @@
 package org.example.repo;
 
 
+import org.example.models.Brand;
 import org.example.models.Models;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -25,4 +26,6 @@ public interface ModelRepository extends JpaRepository<Models, String> {
     void deleteByName(String name);
 
     Optional<Models> findModelsByName(String model);
+
+    List<Models> findByBrand(Brand brand);
 }

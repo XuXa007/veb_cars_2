@@ -3,12 +3,14 @@ package org.example.service;
 import org.example.dtos.AddModelDto;
 import org.example.dtos.ShowBrandInfoDto;
 import org.example.dtos.ShowModelInfoDto;
+import org.example.models.Brand;
 import org.example.models.Models;
 import org.example.repo.BrandRepository;
 import org.example.repo.ModelRepository;
 import org.example.utils.validation.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.expression.ExpressionException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -70,5 +72,14 @@ public class ModelService {
 
     public List<ShowModelInfoDto> getAllModelsForOffer() {
         return modelRepository.findAll().stream().map((model) -> modelMapper.map(model, ShowModelInfoDto.class)).collect(Collectors.toList());
+    }
+
+    public List<ShowModelInfoDto> getModelsByBrand(String brandName) {
+        Brand brand = brandRepository.findByName(brandName).orElseThrow(() -> new ExpressionException("Brand not found with name: " + brandName));
+
+        List<Models> models = modelRepository.findByBrand(brand);
+        return models.stream()
+                .map(model -> modelMapper.map(model, ShowModelInfoDto.class))
+                .collect(Collectors.toList());
     }
 }
