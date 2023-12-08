@@ -9,25 +9,22 @@ import java.util.Set;
 @Table(name = "roles")
 public class Role extends Base {
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "role", cascade = CascadeType.REMOVE)
-    private Set<Users> users;
-    @Column(name="name", length = 11, nullable = false)
-    private RoleEnum roleEnum;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "name", nullable = false, length = 50)
+    private RoleEnum name;
 
-
-    public Set<Users> getUsers() {
-        return users;
+    public Role(RoleEnum name) {
+        this.name = name;
     }
 
-    public void setUsers(Set<Users> users) {
-        this.users = users;
+    public Role() {
     }
 
-    public RoleEnum getRoleEnum() {
-        return roleEnum;
+    public RoleEnum getName() {
+        return name;
     }
 
-    public void setRoleEnum(RoleEnum roleEnum) {
-        this.roleEnum = roleEnum;
+    public void setName(RoleEnum name) {
+        this.name = name;
     }
 }

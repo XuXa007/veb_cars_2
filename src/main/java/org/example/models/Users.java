@@ -11,9 +11,13 @@ import java.util.UUID;
 @Entity
 @Table(name = "users")
 public class Users extends Base {
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<Role> role;
+
     @OneToMany(mappedBy = "users", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JsonIgnore
     private Set<Offer> offers;
@@ -21,13 +25,15 @@ public class Users extends Base {
     private String userName;
     @Column(name="password", length = 255, nullable = false)
     private String password;
-    @Column(name="firstName", length = 255, nullable = false)
-    private String firstName;
-    @Column(name="lastName", length = 255, nullable = false)
-    private String lastName;
+
+    @Column(name = "full_name")
+    private String fullName;
+
     private boolean isActive;
-    @Column(name="imageURL", length = 255, nullable = false)
-    private String imageURL;
+
+    private String email;
+    private int age;
+
     @Column(name="created", length = 6, nullable = false)
     private LocalDateTime created;
     @Column(name="modified", length = 6, nullable = false)
@@ -36,11 +42,25 @@ public class Users extends Base {
     public Users() {
     }
 
-    public Role getRole() {
+    public Users(String userName, String password, String fullName, String email, int age) {
+        this.userName = userName;
+        this.password = password;
+        this.fullName = fullName;
+        this.email = email;
+        this.age = age;
+    }
+
+    public Users(Object username, String password, Object collect) {
+        super();
+    }
+
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    public List<Role> getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(List<Role> role) {
         this.role = role;
     }
 
@@ -60,6 +80,7 @@ public class Users extends Base {
         this.userName = userName;
     }
 
+    @Column(nullable = false)
     public String getPassword() {
         return password;
     }
@@ -68,36 +89,12 @@ public class Users extends Base {
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public boolean isActive() {
         return isActive;
     }
 
     public void setActive(boolean active) {
         isActive = active;
-    }
-
-    public String getImageURL() {
-        return imageURL;
-    }
-
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
     }
 
     public LocalDateTime getCreated() {
@@ -116,8 +113,29 @@ public class Users extends Base {
         this.modified = modified;
     }
 
-    @Override
-    public String toString() {
-        return userName;
+    @Column(unique = true)
+    public String getEmail() {
+        return email;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
 }

@@ -15,16 +15,16 @@ import java.util.UUID;
 
 @Repository
 public interface UsersRepository extends JpaRepository<Users, String> {
-    @Query("SELECT u FROM Users u JOIN u.role r WHERE r.roleEnum = :role")
+    @Query("SELECT u FROM Users u JOIN u.role r WHERE r.name = :role")
     List<Users> findUsersByRole(@Param("role") int role);
-
-    Optional<Users> findByUserName(String userName);
-
 
     @Modifying
     @Transactional
     void deleteByUserName(String userName);
 
     Optional<Users> findUsersByUserName(String users);
+
+    Optional<Users> findByUserName(String username);
+    Optional<Users> findByEmail(String email);
 
 }

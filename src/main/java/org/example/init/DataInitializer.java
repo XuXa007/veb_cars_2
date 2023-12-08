@@ -10,8 +10,6 @@ import java.io.IOException;
 @Component
 public class DataInitializer implements CommandLineRunner {
     @Autowired
-    private RoleService roleService;
-    @Autowired
     private BrandService brandService;
     @Autowired
     private UsersService usersService;
