@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="change for postman">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pic/i-8(2).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pic/i-8.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/OfferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/car-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/car-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/OfferService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/OfferService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/model-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/model-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/model-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/model-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/offer-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/offer-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +83,11 @@
       <recent name="org.example.service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static/pic" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/main/resources/static/css/css" />
       <recent name="$PROJECT_DIR$/src/main/resources/static/css" />
-      <recent name="$PROJECT_DIR$/src/main/resources/image" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.WebWorkApplication">
@@ -163,6 +170,7 @@
       <workItem from="1701697870813" duration="2226000" />
       <workItem from="1701781841910" duration="20686000" />
       <workItem from="1701817717925" duration="17551000" />
+      <workItem from="1701979073329" duration="8936000" />
     </task>
     <task id="LOCAL-00001" summary="do something with html">
       <option name="closed" value="true" />

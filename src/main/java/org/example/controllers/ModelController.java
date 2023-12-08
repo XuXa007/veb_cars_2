@@ -38,10 +38,19 @@ public class ModelController {
     }
 
 
-
     @GetMapping("/model-details/{model-name}")
     public String modelDetails(@PathVariable("model-name") String modelName, Model model) {
-        model.addAttribute("modelDetails", modelService.modelDetails(modelName));
+        ShowModelInfoDto modelDetails = modelService.modelDetails(modelName);
+
+        String brand = modelDetails.getBrandName();
+        String modelDetailsName = modelDetails.getName();
+
+        // Генерируем URL для изображения
+        String imageUrl = "https://ya.ru/images/search?img_url=https%3A%2F%2Fwww.turkey-visit.com%2Fimages%2Funited-states%2F"+brand+modelDetailsName +".jpg&lr=10393&nl=1&pos=3&rpt=simage&source=morda&text=i-8&utm_source=main_stripe_big";
+
+        // Передаем URL в Thymeleaf
+        model.addAttribute("imageUrl", imageUrl);
+        model.addAttribute("modelDetails", modelDetails);
 
         return "model-details";
     }

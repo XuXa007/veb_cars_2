@@ -6,55 +6,51 @@
 <main class="flex-shrink-0">
     <div class="container">
         <div class="row">
-            <div class="col-md-4"></div>
-            <main class="jumbotron text-center rounded col-md-12 align-self-center pt-5">
-                <div class="justify-content-center">
-                    <h1>Model Details</h1>
+            <div class="col-md-6 mt-4">
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img th:src="@{/pic/i-8.png}" class="d-block w-100 img-fluid" alt="Model Image" style="height: 350px; width: 100%;">
+                        </div>
+                        <div class="carousel-item">
+                            <img th:src="@{/pic/i-8(2).png}" class="d-block w-100 img-fluid" alt="Model Image" style="height: 350px; width: 100%;">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Предыдущий</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Следующий</span>
+                    </button>
                 </div>
-                <table class="table">
-                    <tbody>
-                    <tr>
-                        <td>Brand</td>
-                        <td th:text="'Brand: ' + ${modelDetails.brandName}"></td>
-                    </tr>
-                    <tr>
-                        <td>Model</td>
-                        <td th:text="'Model: ' + ${modelDetails.name}"></td>
-                    </tr>
-                    <tr>
-                        <td>Category</td>
-                        <td th:text="'Category: ' + ${modelDetails.category}"></td>
-                    </tr>
-                    <tr>
-                        <td>Start year</td>
-                        <td th:text="'Start year: ' + ${modelDetails.startYear}"></td>
-                    </tr>
-                    <tr>
-                        <td>End year</td>
-                        <td th:text="'End year: ' + ${modelDetails.endYear}"></td>
-                    </tr>
-                    <tr>
-                        <td>Created</td>
-                        <td th:text="'Created: ' + ${modelDetails.created}"></td>
-                    </tr>
-                    <tr>
-                        <td>Modified</td>
-                        <td th:text="'Modified: ' + ${modelDetails.modified}"></td>
-                    </tr>
-                    <tr>
-                        <td>Image</td>
-                        <td><img th:src="@{/pic/model.png}" height="100px" alt="Model Image"></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="btn-group">
-                    <a class="btn btn-success btn-lg mx-2" th:href="@{/model/edit/{model-name}(model-name=${modelDetails.name})}">Edit Model</a>
-                    <a class="btn btn-danger btn-lg" th:href="@{/model/model-delete/{model-name}(model-name=${modelDetails.name})}">Delete model</a>
-                </div>
-            </main>
+            </div>
+
+            <div class="col-md-6 mt-4">
+                <main class="jumbotron text-center rounded pt-5">
+                    <div class="justify-content-center">
+                        <h1 th:text="${modelDetails.brandName + ' ' + modelDetails.name}">Brand and Model Name</h1>
+                    </div>
+                    <div>
+                        <p th:text="'Category: ' + ${modelDetails.category}"></p>
+                        <p th:text="'Start year: ' + ${modelDetails.startYear}"></p>
+                        <p th:text="'End year: ' + ${modelDetails.endYear}"></p>
+                        <p th:text="'Created: ' + ${modelDetails.created}"></p>
+                        <p th:text="'Modified: ' + ${modelDetails.modified}"></p>
+                    </div>
+                    <div class="btn-group mt-3">
+                        <a class="btn btn-success btn-lg mx-2" th:href="@{/model/edit/{model-name}(model-name=${modelDetails.name})}">Edit Model</a>
+                        <a class="btn btn-danger btn-lg" th:href="@{/model/model-delete/{model-name}(model-name=${modelDetails.name})}">Delete model</a>
+                    </div>
+                </main>
+            </div>
         </div>
     </div>
 </main>
 <footer th:replace="fragments/footer"/>
+<!-- Bootstrap JavaScript (включая Popper.js и jQuery) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -41,16 +41,12 @@
             </select>
             <small th:if="${#fields.hasErrors('users')}" th:errors="*{users}" class="text-danger">Please select a valid user</small>
           </div>
-
           <div class="mb-3">
             <label class="form-label" for="description">Description</label>
-            <input th:field="*{description}"
-                   th:errorclass="is-invalid"
-                   type="text" class="form-control text-center" id="description" aria-describedby="description"
-                   name="category"/>
-            <small th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-danger">Error
-              message</small>
+            <textarea th:field="*{description}" th:errorclass="is-invalid" class="form-control text-left" id="description" rows="3"></textarea>
+            <small th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-danger">Error message</small>
           </div>
+
 
           <div class="mb-3">
             <label class="form-label" for="engine">Engine</label>
