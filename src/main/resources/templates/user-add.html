@@ -26,25 +26,16 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label" for="firstName">Firstname</label>
-            <input th:field="*{firstName}"
+            <label class="form-label" for="fullname">Full name</label>
+            <input th:field="*{fullname}"
                    th:errorclass="is-invalid"
-                   type="text" class="form-control text-center" id="firstName" aria-describedby="firstName"
-                   name="firstName"/>
-            <small th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="text-danger">Error
+                   type="text" class="form-control text-center" id="fullname" aria-describedby="fullname"
+                   name="fullname"/>
+            <small th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}" class="text-danger">Error
               message</small>
           </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="lastName">Lastname</label>
-            <input th:field="*{lastName}"
-                   th:errorclass="is-invalid"
-                   type="text" class="form-control text-center"
-                   id="lastName" aria-describedby="lastName" name="lastName"/>
-            <small th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
-                   class="text-danger">Error
-              message</small>
-          </div>
+
           <div class="mb-4">
             <label class="form-label" for="password">Password</label>
             <input th:field="*{password}"

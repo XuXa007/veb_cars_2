@@ -1,6 +1,7 @@
 package org.example.service;
 
 import org.example.Enums.RoleEnum;
+import org.example.dtos.AddUserDto;
 import org.example.dtos.UserRegistrationDto;
 import org.example.models.Role;
 import org.example.models.Users;

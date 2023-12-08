@@ -43,7 +43,7 @@ public class UsersService {
     public void addUser(AddUserDto userModel) {
         userModel.setCreated(LocalDateTime.now());
         userModel.setModified(LocalDateTime.now());
-        userModel.setImageURL("ooopss...");
+//        userModel.setImageURL("ooopss...");
         Users users = modelMapper.map(userModel, Users.class);
         usersRepository.saveAndFlush(users);
     }

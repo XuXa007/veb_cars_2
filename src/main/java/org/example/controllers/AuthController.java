@@ -27,10 +27,15 @@ public class AuthController {
         return "register";
     }
 
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
+
     @ModelAttribute("userRegistrationDto")
     public UserRegistrationDto initForm() {
         return new UserRegistrationDto();
     }
+
 
 
     @PostMapping("/register")

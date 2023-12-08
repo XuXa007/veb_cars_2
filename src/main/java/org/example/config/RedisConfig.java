@@ -20,28 +20,28 @@ public class RedisConfig {
     @Value("${redis.port}")
     private int redisPort;
 
-//    @Bean
-//    public LettuceConnectionFactory redisConnectionFactory() {
-//        RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration(redisHost, redisPort);
-//
-//        return new LettuceConnectionFactory(configuration);
-//    }
-//
-//    @Bean
-//    public RedisCacheManager cacheManager() {
-//        RedisCacheConfiguration cacheConfig = myDefaultCacheConfig(Duration.ofMinutes(10)).disableCachingNullValues();
-//
-//        return RedisCacheManager.builder(redisConnectionFactory())
-//                .cacheDefaults(cacheConfig)
-//                .withCacheConfiguration("companies", myDefaultCacheConfig(Duration.ofMinutes(10)))
-//                .withCacheConfiguration("employees", myDefaultCacheConfig(Duration.ofMinutes(10)))
-//                .build();
-//    }
-//
-//    private RedisCacheConfiguration myDefaultCacheConfig(Duration duration) {
-//        return RedisCacheConfiguration
-//                .defaultCacheConfig()
-//                .entryTtl(duration)
-//                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
-//    }
+    @Bean
+    public LettuceConnectionFactory redisConnectionFactory() {
+        RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration(redisHost, redisPort);
+
+        return new LettuceConnectionFactory(configuration);
+    }
+
+    @Bean
+    public RedisCacheManager cacheManager() {
+        RedisCacheConfiguration cacheConfig = myDefaultCacheConfig(Duration.ofMinutes(10)).disableCachingNullValues();
+
+        return RedisCacheManager.builder(redisConnectionFactory())
+                .cacheDefaults(cacheConfig)
+                .withCacheConfiguration("offer", myDefaultCacheConfig(Duration.ofMinutes(10)))
+                .withCacheConfiguration("model", myDefaultCacheConfig(Duration.ofMinutes(10)))
+                .build();
+    }
+
+    private RedisCacheConfiguration myDefaultCacheConfig(Duration duration) {
+        return RedisCacheConfiguration
+                .defaultCacheConfig()
+                .entryTtl(duration)
+                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
+    }
 }

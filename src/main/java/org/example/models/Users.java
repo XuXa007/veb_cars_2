@@ -34,10 +34,10 @@ public class Users extends Base {
     private String email;
     private int age;
 
-    @Column(name="created", length = 6, nullable = false)
-    private LocalDateTime created;
-    @Column(name="modified", length = 6, nullable = false)
-    private LocalDateTime modified;
+//    @Column(name="created", length = 6, nullable = false)
+//    private LocalDateTime created;
+//    @Column(name="modified", length = 6, nullable = false)
+//    private LocalDateTime modified;
 
     public Users() {
     }
@@ -97,21 +97,21 @@ public class Users extends Base {
         isActive = active;
     }
 
-    public LocalDateTime getCreated() {
-        return created;
-    }
-
-    public void setCreated(LocalDateTime created) {
-        this.created = created;
-    }
-
-    public LocalDateTime getModified() {
-        return modified;
-    }
-
-    public void setModified(LocalDateTime modified) {
-        this.modified = modified;
-    }
+//    public LocalDateTime getCreated() {
+//        return created;
+//    }
+//
+//    public void setCreated(LocalDateTime created) {
+//        this.created = created;
+//    }
+//
+//    public LocalDateTime getModified() {
+//        return modified;
+//    }
+//
+//    public void setModified(LocalDateTime modified) {
+//        this.modified = modified;
+//    }
 
     @Column(unique = true)
     public String getEmail() {
