@@ -33,12 +33,12 @@ public class AppSecurityConfiguration {
                                 authorizeHttpRequests.
                                         requestMatchers(PathRequest.toStaticResources().atCommonLocations())
                                         .permitAll().
-                                        requestMatchers("/", "/users/login", "/users/register", "/users/login-error")
+                                        // Доступ для всех пользователей
+                                        requestMatchers("/", "/users/login", "/users/register", "/users/login-error", "/offer/all", "/model/all", "/model/add","/brand/all")
                                         .permitAll().
-                                        requestMatchers("/users/profile").authenticated().
-//                                        requestMatchers("/employees/add", "/employees/employee-delete/").hasRole(RoleEnum.Moderator.name()).
-//                                        requestMatchers("/companies/add","/companies/company-delete/","/employees/add", "/employees/employee-delete/").hasRole(RoleEnum.Admin.name()).
-                                        requestMatchers("/offer/add","/offer/delete/","/offer/add").hasRole("Admin").
+                                        // Доступ только для зарегистрированных пользователей
+                                        requestMatchers("/users/profile", "/offer/add").authenticated().
+                                        requestMatchers("/offer/add","/offer/delete/","/offer/add", "/brand/add", "/user/all",  "/user/add").hasRole("Admin").
                                         anyRequest().authenticated()
                 )
                 .formLogin(

@@ -6,8 +6,8 @@
 <main class="flex-shrink-0">
     <div class="container">
         <div class="row">
-            <div class="col-md-2"></div>
-            <div class="jumbotron text-center rounded col-md-8 align-self-center pt-5">
+            <div class="col-md-2 "></div>
+            <div class="jumbotron text-center rounded col-md-8 align-self-center pt-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
                 <h2 class="text-center text-dark mt-5">All Offers</h2>
                 <div th:each="a : ${addOffer}" class="d-flex flex-column bg-text mb-3">
                     <h2 th:text="'Model: ' + ${a.models}"></h2>
