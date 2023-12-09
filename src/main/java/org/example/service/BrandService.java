@@ -93,4 +93,18 @@ public class BrandService  {
             throw new NoSuchElementException("Brand not found for update: " + originalBrandName);
         }
     }
-}
+
+    public ShowBrandInfoDto getBrandByName(String brandName) {
+        Optional<Brand> optionalBrand = brandRepository.findByName(brandName);
+
+        return optionalBrand.map(this::mapBrandToDto).orElse(null);
+    }
+
+        private ShowBrandInfoDto mapBrandToDto(Brand brand) {
+            ShowBrandInfoDto brandInfoDto = new ShowBrandInfoDto();
+            brandInfoDto.setName(brand.getName());
+
+            return brandInfoDto;
+        }
+    }
+

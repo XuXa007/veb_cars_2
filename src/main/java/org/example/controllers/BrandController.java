@@ -3,6 +3,7 @@ package org.example.controllers;
 import jakarta.validation.Valid;
 import org.example.dtos.AddBrandDto;
 import org.example.dtos.ShowBrandInfoDto;
+import org.example.dtos.ShowModelInfoDto;
 import org.example.models.Brand;
 import org.example.service.BrandService;
 import org.example.service.ModelService;
@@ -13,6 +14,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 
 
 @Controller
@@ -56,11 +59,24 @@ public class BrandController {
     }
 
     @GetMapping("/all")
-    public String showAllBrands(Model model) {
-        model.addAttribute("brandInfos", brandService.allBrands());
+    public String showAllBrands(@RequestParam(name = "brandName", required = false) String brandName, Model model) {
+        List<ShowBrandInfoDto> allBrands = brandService.allBrands();
+        model.addAttribute("brandInfos", allBrands);
+
+        if (brandName != null && !brandName.isEmpty()) {
+            ShowBrandInfoDto brandInfo = brandService.getBrandByName(brandName);
+            List<ShowModelInfoDto> modelsForBrand = modelService.getModelsByBrand(brandName);
+
+            model.addAttribute("brandInfo", brandInfo);
+            model.addAttribute("modelsForBrand", modelsForBrand);
+        } else {
+            List<ShowModelInfoDto> allModels = modelService.getAllModels();
+            model.addAttribute("modelsForBrand", allModels);
+        }
 
         return "brand-all";
     }
+
 
 
     @GetMapping("/brand-delete/{brand-name}")

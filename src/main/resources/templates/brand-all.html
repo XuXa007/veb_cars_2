@@ -1,24 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head"></head>
+<head th:replace="~{fragments/head}">
+  <style>
+    a {
+      color: black;
+    }
+  </style>
+  <title>Бренд</title>
+</head>
 <body class="d-flex flex-column h-100">
-<div th:replace="fragments/navbar">Navbar</div>
-<main class="flex-shrink-0">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="jumbotron text-center rounded col-md-8 align-self-center pt-5">
-        <h2 class="text-center text-dark mt-5">All Brands</h2>
-        <div th:each="b : ${brandInfos}" class="d-flex flex-column bg-text mb-3">
-          <h2 th:text="'Brand: ' + ${b.name}"></h2>
-          <h4 th:if="${#authorization.expression('hasRole(''Admin'')')}">
-            <a class="btn-block" th:href="@{/brand/brand-details/{brand-name}(brand-name=${b.name})}">Detail
-            info</a></h4>
+<div th:replace="~{fragments/navbar}">Navbar</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-5 text-center">
+      <h6 class="font-weight-bold display-4 text-dark" th:unless="${brandInfo != null}" th:text="'Models'"></h6>
+      <h6 class="font-weight-bold display-4 text-dark" th:if="${brandInfo != null}" th:text="'Models for ' + ${brandInfo.name}"></h6>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mt-4">
+      <main class="flex-shrink-0 text-center">
+        <div class="container">
+          <div class="row">
+            <div th:each="b : ${brandInfos}" class="col-6 col-md-4 col-lg-2">
+              <a th:href="@{/brand/all(brandName=${b.name})}" th:text="${b.name}" style="color: black;"></a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="col-md-8">
+      <div class="card-deck">
+        <div th:each="m : ${modelsForBrand}" class="card mb-3 shadow-sm p-3 mb-3 bg-body-tertiary rounded mt-4">
+          <div class="row no-gutters">
+            <div class="col-md-3">
+              <div class="overflow-hidden" style="height: 100%; object-fit: cover;">
+                <img src="/pic/i-8.png" alt="Company Logo" class="img-fluid h-100 w-100">
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="card-body">
+                <h5 class="card-title" th:text="'Model: ' + ${m.name}"></h5>
+                <h5 class="card-text" th:text="'Brand: ' + ${m.brandName}"></h5>
+                <h6 class="card-subtitle mb-2 text-muted" th:text="'Category: ' + ${m.category}"></h6>
+                <a type="button" class="btn btn-outline-primary" th:href="@{/model/model-details/{models-name}(models-name=${m.name}, brand-name=${m.brandName})}">Detail info</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</main>
-<footer th:replace="fragments/footer"/>
+</div>
+<footer th:replace="~{fragments/footer}"></footer>
 </body>
 </html>
