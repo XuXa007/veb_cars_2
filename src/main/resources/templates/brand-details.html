@@ -12,7 +12,7 @@
           <h1>Brand Details</h1>
         </div>
         <div class="row bg-light rounded">
-          <div class="col-md-6"><img src="/pic/company.png" height="350px"></div>
+          <div class="col-md-6"><img th:src="@{'/pic/' + ${brandDetails.name} + '_image.png'}" height="350px"></div>
           <div class="col-md-6 pt-3">
             <h2>Brand</h2>
             <h4 th:text="'Name: ' + ${brandDetails.name}"></h4>

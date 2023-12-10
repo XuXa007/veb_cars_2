@@ -1,6 +1,8 @@
 package org.example.dtos;
 
 import org.example.Enums.Category;
+import org.example.Enums.Engine;
+import org.example.Enums.Transmission;
 
 import java.time.LocalDateTime;
 
@@ -10,11 +12,28 @@ public class ShowModelInfoDto {
     private int startYear;
     private int endYear;
     private String brandName;
+    private Engine engine;
+    private Transmission transmission;
 
     public LocalDateTime created;
 
     private LocalDateTime modified;
 
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public Transmission getTransmission() {
+        return transmission;
+    }
+
+    public void setTransmission(Transmission transmission) {
+        this.transmission = transmission;
+    }
 
     public String getBrandName() {
         return brandName;

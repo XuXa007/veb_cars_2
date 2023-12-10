@@ -1,6 +1,8 @@
 package org.example.repo;
 
 
+import org.example.Enums.Category;
+import org.example.Enums.Engine;
 import org.example.models.Brand;
 import org.example.models.Models;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -28,4 +30,18 @@ public interface ModelRepository extends JpaRepository<Models, String> {
     Optional<Models> findModelsByName(String model);
 
     List<Models> findByBrand(Brand brand);
+
+//    Optional<Models> findByBrandNameAndCategoryAndEngine(String brandName, Category category, Engine engine);
+//
+//    Optional<Object> findByBrandNameAndCategory(String brandName, Category category);
+//
+//    Optional<Object> findByBrandNameAndEngine(String brandName, Engine engine);
+//
+//    Optional<Object> findByBrandName(String brandName);
+//
+//    Optional<Object> findByCategoryAndEngine(Category category, Engine engine);
+//
+//    Optional<Object> findByCategory(Category category);
+//
+//    Optional<Object> findByEngine(Engine engine);
 }
