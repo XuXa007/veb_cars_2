@@ -40,10 +40,12 @@ public class ModelService {
         this.validationUtil = validationUtil;
     }
 
+    @Cacheable("model")
     public List<ShowModelInfoDto> getAllModels() {
         return modelRepository.findAll().stream().map((models) -> modelMapper.map(models, ShowModelInfoDto.class)).collect(Collectors.toList());
     }
 
+    @CacheEvict(cacheNames = "model", allEntries = true)
     public void addModel(AddModelDto addModelDto) {
         addModelDto.setCreated(LocalDateTime.now());
         addModelDto.setModified(LocalDateTime.now());
@@ -63,9 +65,9 @@ public class ModelService {
         return modelMapper.map(modelRepository.findByName(modelName).orElse(null), ShowModelInfoDto.class);
     }
 
-    public Models getModelById(String modelId) {
-        return modelRepository.findById(modelId).orElse(null);
-    }
+//    public Models getModelById(String modelId) {
+//        return modelRepository.findById(modelId).orElse(null);
+//    }
 
     @CacheEvict(cacheNames = "model", allEntries = true)
     public void removeModel(String name) {
@@ -77,7 +79,7 @@ public class ModelService {
         return modelRepository.findAll().stream().map((model) -> modelMapper.map(model, ShowModelInfoDto.class)).collect(Collectors.toList());
     }
 
-    @Cacheable("model")
+//    @Cacheable("model")
     public List<ShowModelInfoDto> getModelsByBrand(String brandName) {
         Brand brand = brandRepository.findByName(brandName).orElseThrow(() -> new ExpressionException("Brand not found with name: " + brandName));
 

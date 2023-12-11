@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="change for postman">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ModelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ModelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/BrandService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/BrandService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/ModelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/ModelService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +172,7 @@
       <workItem from="1701781841910" duration="20686000" />
       <workItem from="1701817717925" duration="17551000" />
       <workItem from="1701979073329" duration="28403000" />
-      <workItem from="1702210596027" duration="8693000" />
+      <workItem from="1702210596027" duration="10984000" />
     </task>
     <task id="LOCAL-00001" summary="do something with html">
       <option name="closed" value="true" />
