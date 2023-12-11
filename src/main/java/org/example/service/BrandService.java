@@ -41,7 +41,7 @@ public class BrandService  {
                 .collect(Collectors.toList());
     }
 
-
+    @Cacheable("brand")
     public ShowBrandInfoDto brandDetails(String brandName) {
         return modelMapper.map(brandRepository.findByName(brandName).orElse(null), ShowBrandInfoDto.class);
     }
@@ -58,12 +58,18 @@ public class BrandService  {
         return brandRepository.findById(brandId).orElse(null);
 
     }
-
+    @CacheEvict(cacheNames = "brand", allEntries = true)
     public void removeBrand(String name) {
         brandRepository.deleteByName(name);
     }
 
+    @Cacheable("brand")
     public List<ShowBrandInfoDto> getAll() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return brandRepository.findAll().stream().map((brand) -> modelMapper.map(brand, ShowBrandInfoDto.class)).collect(Collectors.toList());
     }
 
@@ -78,12 +84,14 @@ public class BrandService  {
         brandRepository.save(brand);
     }
 
+    @Cacheable("brand")
     public AddBrandDto findBrandByName(String brandName) {
         return brandRepository.findByName(brandName)
                 .map(brand -> modelMapper.map(brand, AddBrandDto.class))
                 .orElse(null);
     }
 
+    @CacheEvict(cacheNames = "brand", allEntries = true)
     public void editBrand(String originalBrandName, AddBrandDto brandDto) {
         Optional<Brand> existingBrandOptional = brandRepository.findByName(originalBrandName);
 

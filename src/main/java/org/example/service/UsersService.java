@@ -11,6 +11,8 @@ import org.example.repo.UsersRepository;
 import org.example.utils.validation.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.expression.ExpressionException;
 import org.springframework.stereotype.Service;
 
@@ -33,39 +35,42 @@ public class UsersService {
         this.validationUtil = validationUtil;
     }
 
-    private String user = "user";
 
+    @Cacheable("user")
     public List<ShowUserInfoDto> getAllUsers() {
         return usersRepository.findAll().stream().map((s) -> modelMapper.map(s, ShowUserInfoDto.class)).collect(Collectors.toList());
     }
 
-
+    @CacheEvict(cacheNames = "user", allEntries = true)
     public void addUser(AddUserDto userModel) {
         userModel.setCreated(LocalDateTime.now());
         userModel.setModified(LocalDateTime.now());
-//        userModel.setImageURL("ooopss...");
         Users users = modelMapper.map(userModel, Users.class);
         usersRepository.saveAndFlush(users);
     }
 
+    @Cacheable("user")
     public List<ShowUserInfoDto> allUsers() {
         return usersRepository.findAll().stream().map(model -> modelMapper.map(model, ShowUserInfoDto.class))
                 .collect(Collectors.toList());
     }
 
+    @Cacheable("user")
     public ShowUserInfoDto userDetails(String userName) {
         return modelMapper.map(usersRepository.findByUserName(userName).orElse(null), ShowUserInfoDto.class);
     }
 
+    @CacheEvict(cacheNames = "user", allEntries = true)
     public void removeUser(String userName) {
         usersRepository.deleteByUserName(userName);
     }
 
-
+    @Cacheable("user")
     public List<ShowUserInfoDto> getAll() {
         return usersRepository.findAll().stream().map((users) -> modelMapper.map(users, ShowUserInfoDto.class)).collect(Collectors.toList());
     }
 
+//    @Cacheable("user")
     public List<ShowUserInfoDto> getAllUsersForOffer() {
         return usersRepository.findAll().stream().map((users) -> modelMapper.map(users, ShowUserInfoDto.class)).collect(Collectors.toList());
     }

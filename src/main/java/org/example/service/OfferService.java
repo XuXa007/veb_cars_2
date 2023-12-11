@@ -12,6 +12,8 @@ import org.example.repo.UsersRepository;
 import org.example.utils.validation.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -39,19 +41,11 @@ public class OfferService {
         this.validationUtil = validationUtil;
     }
 
-    private String offer = "offer";
-
-    public void deleteOffer(String offerID) {
-        Offer offer = offerRepository.findById(offerID)
-                .orElseThrow(() -> new NotFoundException("Could not find user by id: " + offerID));
-        offerRepository.delete(offer);
-    }
-
-
     public ShowOfferInfoDto offerDetails(String offerId) {
         return modelMapper.map(offerRepository.findById(offerId).orElse(null), ShowOfferInfoDto.class);
     }
 
+    @CacheEvict(cacheNames = "offer", allEntries = true)
     public void addOffer(AddOfferDto offer) {
         offer.setCreated(LocalDateTime.now());
         offer.setModified(LocalDateTime.now());
@@ -61,35 +55,34 @@ public class OfferService {
         offerRepository.saveAndFlush(of);
     }
 
+    @Cacheable("offer")
     public List<ShowOfferInfoDto> getAll() {
         return offerRepository.findAll().stream().map((offer) -> modelMapper.map(offer, ShowOfferInfoDto.class)).collect(Collectors.toList());
     }
 
+    @CacheEvict(cacheNames = "offer", allEntries = true)
     public void removeOffer(String id) {
         offerRepository.deleteById(id);
     }
+
+//    @Cacheable("offer")
     public List<ShowOfferInfoDto> getAllSortedByMileage(String sortBy, String sortOrder) {
         List<Offer> offers = offerRepository.findAll();
 
-        // Convert List<Offer> to List<ShowOfferInfoDto> using ModelMapper
         List<ShowOfferInfoDto> offerInfos = offers.stream()
                 .map(offer -> modelMapper.map(offer, ShowOfferInfoDto.class))
                 .collect(Collectors.toList());
 
-        // Sort the list based on mileage
         offerInfos.sort((o1, o2) -> {
             int comparison;
             switch (sortBy.toLowerCase()) {
                 case "mileage":
-                    // Directly compare primitive int values
                     comparison = o1.getMileage() - o2.getMileage();
                     break;
-                // Add more cases for other possible sorting fields
                 default:
-                    comparison = 0; // Default case, no sorting
+                    comparison = 0;
             }
 
-            // Adjust the order based on sortOrder
             return sortOrder.equalsIgnoreCase("desc") ? -comparison : comparison;
         });
 
