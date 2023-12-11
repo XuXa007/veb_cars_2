@@ -15,12 +15,18 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.Principal;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 
 @Controller
 @RequestMapping("/brand")
 public class BrandController {
+//    private static final Logger LOG = LogManager.getLog(Controller.class);
+
     @Autowired
     private BrandService brandService;
     @Autowired
@@ -28,11 +34,11 @@ public class BrandController {
 
     @Autowired
     private UsersService usersService;
-
     public BrandController(BrandService brandService, ModelService modelService) {
         this.brandService = brandService;
         this.modelService = modelService;
     }
+
 
     @GetMapping("/add")
     public String addBrand() {
@@ -59,7 +65,9 @@ public class BrandController {
     }
 
     @GetMapping("/all")
-    public String showAllBrands(@RequestParam(name = "brandName", required = false) String brandName, Model model) {
+    public String showAllBrands(@RequestParam(name = "brandName", required = false) String brandName, Principal principal, Model model) {
+//        LOG.log(Level.INFO, "Show all brands and models for " + principal.getName());
+
         List<ShowBrandInfoDto> allBrands = brandService.allBrands();
         model.addAttribute("brandInfos", allBrands);
 

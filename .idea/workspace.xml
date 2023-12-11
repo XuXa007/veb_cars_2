@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="change for postman">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pic/CX-5_image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pic/Countryman Cooper_image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b3ac05af-3245-4c84-ac50-06639c9af7c1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b3ac05af-3245-4c84-ac50-06639c9af7c1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/AppSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/AppSecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/RoleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowModelInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowModelInfoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/ModelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/ModelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pic/i-8(2).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pic/i-8_image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/brand-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/brand-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/brand-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/brand-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/BrandService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ModelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ModelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/RoleService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +29,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/3.1.4/spring-boot-autoconfigure-3.1.4.jar!/org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -76,6 +75,9 @@
     ]
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.service" />
@@ -169,6 +171,7 @@
       <workItem from="1701781841910" duration="20686000" />
       <workItem from="1701817717925" duration="17551000" />
       <workItem from="1701979073329" duration="28403000" />
+      <workItem from="1702210596027" duration="7942000" />
     </task>
     <task id="LOCAL-00001" summary="do something with html">
       <option name="closed" value="true" />

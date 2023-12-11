@@ -10,6 +10,8 @@ import org.example.repo.ModelRepository;
 import org.example.utils.validation.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.expression.ExpressionException;
 import org.springframework.stereotype.Service;
 
@@ -55,6 +57,7 @@ public class ModelService {
         modelRepository.saveAndFlush(model);
     }
 
+    @Cacheable("model")
     public List<ShowModelInfoDto> allModels() {
         return modelRepository.findAll().stream().map(model -> modelMapper.map(model, ShowModelInfoDto.class))
                 .collect(Collectors.toList());
@@ -68,6 +71,7 @@ public class ModelService {
         return modelRepository.findById(modelId).orElse(null);
     }
 
+    @CacheEvict(cacheNames = "model", allEntries = true)
     public void removeModel(String name) {
         modelRepository.deleteByName(name);
     }

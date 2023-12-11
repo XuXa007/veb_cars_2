@@ -7,6 +7,8 @@ import org.example.repo.BrandRepository;
 import org.example.utils.validation.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.expression.ExpressionException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +35,7 @@ public class BrandService  {
 
     private String brand = "brand";
 
+    @Cacheable("brand")
     public List<ShowBrandInfoDto> allBrands() {
         return brandRepository.findAll().stream().map(brand -> modelMapper.map(brand, ShowBrandInfoDto.class))
                 .collect(Collectors.toList());
@@ -43,6 +46,7 @@ public class BrandService  {
         return modelMapper.map(brandRepository.findByName(brandName).orElse(null), ShowBrandInfoDto.class);
     }
 
+    @CacheEvict(cacheNames = "brand", allEntries = true)
     public void addBrand(AddBrandDto brandDto) {
         brandDto.setCreated(LocalDateTime.now());
         brandDto.setModified(LocalDateTime.now());
@@ -100,11 +104,12 @@ public class BrandService  {
         return optionalBrand.map(this::mapBrandToDto).orElse(null);
     }
 
-        private ShowBrandInfoDto mapBrandToDto(Brand brand) {
-            ShowBrandInfoDto brandInfoDto = new ShowBrandInfoDto();
-            brandInfoDto.setName(brand.getName());
+    private ShowBrandInfoDto mapBrandToDto(Brand brand) {
+        ShowBrandInfoDto brandInfoDto = new ShowBrandInfoDto();
+        brandInfoDto.setName(brand.getName());
 
-            return brandInfoDto;
-        }
+        return brandInfoDto;
     }
+}
+
 
