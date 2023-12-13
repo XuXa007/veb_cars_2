@@ -1,6 +1,7 @@
 package org.example.controllers;
 
 import jakarta.validation.Valid;
+import org.apache.logging.log4j.Level;
 import org.example.dtos.AddBrandDto;
 import org.example.dtos.ShowBrandInfoDto;
 import org.example.dtos.ShowModelInfoDto;
@@ -14,19 +15,16 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.security.Principal;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 
 @Controller
 @RequestMapping("/brand")
 public class BrandController {
-//    private static final Logger LOG = LogManager.getLog(Controller.class);
-
+    private static final Logger LOG = LogManager.getLogger(Controller.class);
     @Autowired
     private BrandService brandService;
     @Autowired
@@ -66,8 +64,7 @@ public class BrandController {
 
     @GetMapping("/all")
     public String showAllBrands(@RequestParam(name = "brandName", required = false) String brandName, Principal principal, Model model) {
-//        LOG.log(Level.INFO, "Show all brands and models for " + principal.getName());
-
+        LOG.log(Level.INFO, "Show all brands for " + principal.getName());
         List<ShowBrandInfoDto> allBrands = brandService.allBrands();
         model.addAttribute("brandInfos", allBrands);
 

@@ -1,6 +1,7 @@
 package org.example.controllers;
 
 import jakarta.validation.Valid;
+import org.apache.logging.log4j.Level;
 import org.example.dtos.*;
 import org.example.service.BrandService;
 import org.example.service.ModelService;
@@ -11,12 +12,16 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
 @RequestMapping("/model")
 public class ModelController {
+    private static final Logger LOG = LogManager.getLogger(Controller.class);
     @Autowired
     private ModelService modelService;
 
@@ -24,7 +29,8 @@ public class ModelController {
     private BrandService brandService;
 
     @GetMapping("/add")
-    public String addModel(Model model) {
+    public String addModel(Model model, Principal principal) {
+//        LOG.log(Level.INFO, "Add model by " + principal.getName());
         model.addAttribute("brandList", brandService.getAll());
         return "model-add";
     }
@@ -37,6 +43,7 @@ public class ModelController {
 
     @GetMapping("/model-details/{model-name}")
     public String modelDetails(@PathVariable("model-name") String modelName, Model model) {
+
         ShowModelInfoDto modelDetails = modelService.modelDetails(modelName);
 
         String brand = modelDetails.getBrandName();
@@ -51,14 +58,17 @@ public class ModelController {
     }
 
     @GetMapping("/all")
-    public String showAllModels(Model model) {
+    public String showAllModels(Model model, Principal principal) {
+        LOG.log(Level.INFO, "Show all model for " + principal.getName());
+
         model.addAttribute("modelInfos", modelService.getAllModels());
         model.addAttribute("brands", brandService.getAll());
         return "model-all";
     }
 
     @PostMapping("/add")
-    public String addModel(@Valid AddModelDto modelModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String addModel(@Valid AddModelDto modelModel, BindingResult bindingResult, RedirectAttributes redirectAttributes, Principal principal) {
+        LOG.log(Level.INFO, "Add model by " + principal.getName());
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("modelModel", modelModel);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.modelModel",

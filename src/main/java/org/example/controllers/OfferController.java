@@ -1,6 +1,7 @@
 package org.example.controllers;
 
 import jakarta.validation.Valid;
+import org.apache.logging.log4j.Level;
 import org.example.dtos.*;
 import org.example.service.ModelService;
 import org.example.service.OfferService;
@@ -12,12 +13,16 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
 @RequestMapping("/offer")
 public class OfferController {
+    private static final Logger LOG = LogManager.getLogger(Controller.class);
     @Autowired
     private OfferService offerService;
 
@@ -34,7 +39,8 @@ public class OfferController {
     }
 
     @PostMapping("/add")
-    public String addOffer(@Valid AddOfferDto offerModel, BindingResult bindingResult, RedirectAttributes redirectAttributes, ModelMap modelMap) {
+    public String addOffer(@Valid AddOfferDto offerModel, BindingResult bindingResult, RedirectAttributes redirectAttributes, ModelMap modelMap, Principal principal) {
+        LOG.log(Level.INFO, "Add offer by " + principal.getName());
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("offerModel", offerModel);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.offerModel",
@@ -63,7 +69,9 @@ public class OfferController {
     }
 
     @GetMapping("/all")
-    public String showAllOffers(Model model) {
+    public String showAllOffers(Model model, Principal principal) {
+        LOG.log(Level.INFO, "Show all offers by " + principal.getName());
+
         model.addAttribute("addOffer", offerService.getAll());
 
         return "offer-all";

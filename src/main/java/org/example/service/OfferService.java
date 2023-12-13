@@ -65,7 +65,7 @@ public class OfferService {
         offerRepository.deleteById(id);
     }
 
-//    @Cacheable("offer")
+    @Cacheable("offer")
     public List<ShowOfferInfoDto> getAllSortedByMileage(String sortBy, String sortOrder) {
         List<Offer> offers = offerRepository.findAll();
 
