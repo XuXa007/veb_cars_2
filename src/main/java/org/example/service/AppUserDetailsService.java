@@ -23,7 +23,7 @@ public class AppUserDetailsService implements UserDetailsService {
                 .map(u -> new User(
                         u.getUserName(),
                         u.getPassword(),
-                        u.getRole().stream()
+                        u.getRoles().stream()
                                 .map(r -> new SimpleGrantedAuthority("ROLE_" + r.getName().name()))
                                 .collect(Collectors.toList())
                 )).orElseThrow(() -> new UsernameNotFoundException(username + " was not found!"));

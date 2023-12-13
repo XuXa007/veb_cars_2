@@ -6,36 +6,43 @@ import java.time.LocalDateTime;
 
 public class ShowUserInfoDto {
     private String userName;
-    private String firstName;
-    private String lastName;
+    private String fullName;
+    private int age;
+    private String email;
+    private RoleEnum roles;
     private boolean isActive;
-    private RoleEnum roleEnum;
+
     private LocalDateTime created;
     private LocalDateTime modified;
 
+    public ShowUserInfoDto(String userName, String fullName, int age, String email) {
+        this.userName = userName;
+        this.fullName = fullName;
+        this.age = age;
+        this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public String getUserName() {
         return userName;
     }
-
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public boolean isActive() {
@@ -62,11 +69,19 @@ public class ShowUserInfoDto {
         this.modified = modified;
     }
 
-    public RoleEnum getRoleEnum() {
-        return roleEnum;
+    public RoleEnum getRoles() {
+        return roles;
     }
 
-    public void setRoleEnum(RoleEnum roleEnum) {
-        this.roleEnum = roleEnum;
+    public void setRoles(RoleEnum roles) {
+        this.roles = roles;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

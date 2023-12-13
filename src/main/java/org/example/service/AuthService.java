@@ -41,14 +41,14 @@ public class AuthService {
                 findRoleByName(RoleEnum.User).orElseThrow();
 
         Users user = new Users(
-                registrationDTO.getUsername(),
+                registrationDTO.getUserName(),
                 passwordEncoder.encode(registrationDTO.getPassword()),
                 registrationDTO.getEmail(),
-                registrationDTO.getFullname(),
+                registrationDTO.getFullName(),
                 registrationDTO.getAge()
         );
 
-        user.setRole(List.of(userRole));
+        user.setRoles(List.of(userRole));
 
         this.userRepository.save(user);
     }

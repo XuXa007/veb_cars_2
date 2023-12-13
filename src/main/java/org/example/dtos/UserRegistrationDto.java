@@ -7,51 +7,49 @@ import org.example.utils.validation.UniqueUserName;
 public class UserRegistrationDto {
 
     @UniqueUserName
-    private String username;
+    private String userName;
 
-
-    private String fullname;
+    private String fullName;
 
     @UniqueEmail
     private String email;
 
-
     private int age;
 
-
     private String password;
-
 
     private String confirmPassword;
 
     public UserRegistrationDto() {
     }
 
-    public UserRegistrationDto(String username, String fullname, String email, int age, String password, String confirmPassword) {
-        this.username = username;
-        this.fullname = fullname;
+    public UserRegistrationDto(String userName, String fullName, String email, int age, String password, String confirmPassword) {
+        this.userName = userName;
+        this.fullName = fullName;
         this.email = email;
         this.age = age;
         this.password = password;
         this.confirmPassword = confirmPassword;
     }
+
     @NotEmpty(message = "User name cannot be null or empty!")
     @Size(min = 5, max = 20)
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
+
     @NotEmpty(message = "Full name cannot be null or empty!")
     @Size(min = 5, max = 20)
-    public String getFullname() {
-        return fullname;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
     @NotEmpty(message = "Email cannot be null or empty!")
     @Email
@@ -93,8 +91,8 @@ public class UserRegistrationDto {
     @Override
     public String toString() {
         return "UserRegistrationDTO{" +
-                "username='" + username + '\'' +
-                ", fullName='" + fullname + '\'' +
+                "username='" + userName + '\'' +
+                ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 ", age=" + age +
                 ", password='" + password + '\'' +

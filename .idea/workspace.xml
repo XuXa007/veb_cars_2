@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="change for postman">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/validation/UniqueEmail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/validation/UniqueEmailValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/validation/UniqueUserName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/validation/UniqueUserNameValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b3ac05af-3245-4c84-ac50-06639c9af7c1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b3ac05af-3245-4c84-ac50-06639c9af7c1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b3ac05af-3245-4c84-ac50-06639c9af7c1/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b3ac05af-3245-4c84-ac50-06639c9af7c1/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowUserInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/ShowUserInfoDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dtos/UserRegistrationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dtos/UserRegistrationDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/init/Init.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/init/Init.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/UsersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/AppUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/AppUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/UsersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/models/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/models/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/repo/UsersRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/repo/UsersRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +185,7 @@
       <workItem from="1701817717925" duration="17551000" />
       <workItem from="1701979073329" duration="28403000" />
       <workItem from="1702210596027" duration="10984000" />
-      <workItem from="1702425375328" duration="3717000" />
+      <workItem from="1702425375328" duration="11785000" />
     </task>
     <task id="LOCAL-00001" summary="do something with html">
       <option name="closed" value="true" />

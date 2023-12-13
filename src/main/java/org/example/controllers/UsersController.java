@@ -50,7 +50,7 @@ public class UsersController {
 
     @GetMapping("/all")
     public String showAllUser(Model model) {
-        model.addAttribute("infoUsers", usersService.allUsers());
+        model.addAttribute("infoProfile", usersService.allUsers());
 
         return "user-all";
     }

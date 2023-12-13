@@ -16,22 +16,22 @@
               th:object="${userRegistrationDto}"
               class="m-md-auto w-50 pb-3">
           <div class="mb-3">
-            <label class="form-label" for="username">Username</label>
-            <input th:field="*{username}"
+            <label class="form-label" for="userName">Username</label>
+            <input th:field="*{userName}"
                    th:errorclass="is-invalid"
-                   type="text" class="form-control text-center" id="username" aria-describedby="usernameHelp"
-                   name="username"/>
-            <small th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="text-danger">Error
+                   type="text" class="form-control text-center" id="userName" aria-describedby="userNameHelp"
+                   name="userName"/>
+            <small th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" class="text-danger">Error
               message</small>
           </div>
 
           <div class="mb-3">
-            <label class="form-label" for="fullname">Full Name</label>
-            <input th:field="*{fullname}"
+            <label class="form-label" for="fullName">Full Name</label>
+            <input th:field="*{fullName}"
                    th:errorclass="is-invalid"
-                   type="text" class="form-control text-center" id="fullname" aria-describedby="fullname"
-                   name="fullname"/>
-            <small th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}" class="text-danger">Error
+                   type="text" class="form-control text-center" id="fullName" aria-describedby="fullName"
+                   name="fullName"/>
+            <small th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}" class="text-danger">Error
               message</small>
           </div>
 
@@ -67,7 +67,6 @@
                    class="text-danger">Error
               message</small>
           </div>
-
 
           <div class="mb-3">
             <label class="form-label" for="confirmPassword">Confirm password</label>

@@ -11,26 +11,29 @@ import java.util.UUID;
 @Entity
 @Table(name = "users")
 public class Users extends Base {
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List<Role> role;
+    private List<Role> roles;
 
     @OneToMany(mappedBy = "users", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JsonIgnore
     private Set<Offer> offers;
     @Column(name="userName", length = 255, nullable = false)
     private String userName;
+    @Column(name = "full_name")
+    private String fullName;
+    private int age;
+    private String email;
+
     @Column(name="password", length = 255, nullable = false)
     private String password;
 
-    @Column(name = "full_name")
-    private String fullName;
     private boolean isActive;
-    private String email;
-    private int age;
+
 
 //    @Column(name="created", length = 6, nullable = false)
 //    private LocalDateTime created;
@@ -40,26 +43,17 @@ public class Users extends Base {
     public Users() {
     }
 
-    public Users(String userName, String password, String fullName, String email, int age) {
-        this.userName = userName;
-        this.password = password;
-        this.fullName = fullName;
-        this.email = email;
-        this.age = age;
-    }
-
     public Users(Object username, String password, Object collect) {
         super();
     }
 
-
     @ManyToMany(fetch = FetchType.EAGER)
-    public List<Role> getRole() {
-        return role;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(List<Role> role) {
-        this.role = role;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 
     public Set<Offer> getOffers() {
@@ -95,22 +89,6 @@ public class Users extends Base {
         isActive = active;
     }
 
-//    public LocalDateTime getCreated() {
-//        return created;
-//    }
-//
-//    public void setCreated(LocalDateTime created) {
-//        this.created = created;
-//    }
-//
-//    public LocalDateTime getModified() {
-//        return modified;
-//    }
-//
-//    public void setModified(LocalDateTime modified) {
-//        this.modified = modified;
-//    }
-
     @Column(unique = true)
     public String getEmail() {
         return email;
@@ -135,5 +113,4 @@ public class Users extends Base {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
-
 }

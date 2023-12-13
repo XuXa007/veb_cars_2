@@ -10,8 +10,8 @@
             <div class="jumbotron text-center rounded col-md-8 align-self-center pt-5">
                 <h2 class="text-center text-dark mt-5">User Details</h2>
                 <h2 th:text="'User: ' + ${userDetails.userName}"></h2>
-                <h2 th:text="'First Name: ' + ${userDetails.firstName}"></h2>
-                <h2 th:text="'Last Name: ' + ${userDetails.lastName}"></h2>
+                <h2 th:text="'Full Name: ' + ${userDetails.email}"></h2>
+                <h2 th:text="'Email: ' + ${userDetails.fullName}"></h2>
                 <h2 th:text="'Created: ' + ${userDetails.created}"></h2>
                 <h4><a class="btn btn-danger align-bottom"
                        th:href="@{/user/user-delete/{user-name}(user-name=${userDetails.userName})}">Delete

@@ -1,6 +1,8 @@
 package org.example.service;
 
 import jakarta.validation.ConstraintViolation;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
 import org.example.dtos.AddUserDto;
 import org.example.dtos.ShowBrandInfoDto;
 import org.example.dtos.ShowModelInfoDto;
@@ -16,9 +18,12 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.expression.ExpressionException;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Service
 public class UsersService {
