@@ -28,26 +28,25 @@
             </select>
             <small th:if="${#fields.hasErrors('models')}" th:errors="*{models}" class="text-danger">Please select a valid model</small>
           </div>
+<!--          <div class="mb-3">-->
+<!--            <label class="form-label" for="users">User name</label>-->
+<!--            <select name="users" id="users" class="form-control" th:field="*{users}">-->
+<!--              <option th:each="user : ${userList}"-->
+<!--                      th:value="${user.userName}"-->
+<!--                      th:text="${#strings.capitalize(user.userName)}"-->
+<!--                      th:selected="${offerModel.users != null and user.userName == offerModel.users}">-->
 
-          <div class="mb-3">
-            <label class="form-label" for="users">User name</label>
-            <select name="users" id="users" class="form-control" th:field="*{users}">
-              <option th:each="user : ${userList}"
-                      th:value="${user.userName}"
-                      th:text="${#strings.capitalize(user.userName)}"
-                      th:selected="${offerModel.users != null and user.userName == offerModel.users}">
+<!--              </option>-->
+<!--            </select>-->
+<!--            <small th:if="${#fields.hasErrors('users')}" th:errors="*{users}" class="text-danger">Please select a valid user</small>-->
+<!--          </div>-->
 
-              </option>
-            </select>
-            <small th:if="${#fields.hasErrors('users')}" th:errors="*{users}" class="text-danger">Please select a valid user</small>
-          </div>
           <div class="mb-3">
             <label class="form-label" for="description">Description</label>
             <textarea th:field="*{description}" th:errorclass="is-invalid" class="form-control text-left" id="description" rows="3"></textarea>
             <small th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-danger">Error message</small>
           </div>
-
-
+          
           <div class="mb-3">
             <label class="form-label" for="engine">Engine</label>
             <select name="engine" id="engine" class="form-control">

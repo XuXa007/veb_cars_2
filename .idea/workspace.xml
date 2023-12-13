@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="change for postman">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/my-offers.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/AppSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/AppSecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ModelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/BeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/BeanConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/OfferController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/OfferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/offer-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/offer-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/OfferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/OfferController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/OfferService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/OfferService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +173,7 @@
       <workItem from="1701817717925" duration="17551000" />
       <workItem from="1701979073329" duration="28403000" />
       <workItem from="1702210596027" duration="10984000" />
-      <workItem from="1702425375328" duration="311000" />
+      <workItem from="1702425375328" duration="2197000" />
     </task>
     <task id="LOCAL-00001" summary="do something with html">
       <option name="closed" value="true" />

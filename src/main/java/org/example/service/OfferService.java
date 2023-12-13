@@ -1,5 +1,6 @@
 package org.example.service;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.validation.ConstraintViolation;
 import org.example.dtos.*;
 import org.example.exception.NotFoundException;
@@ -11,6 +12,7 @@ import org.example.repo.OfferRepository;
 import org.example.repo.UsersRepository;
 import org.example.utils.validation.ValidationUtil;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -46,23 +48,32 @@ public class OfferService {
     }
 
     @CacheEvict(cacheNames = "offer", allEntries = true)
-    public void addOffer(AddOfferDto offer) {
+    public void addOffer(AddOfferDto offer, String username) {
         offer.setCreated(LocalDateTime.now());
         offer.setModified(LocalDateTime.now());
         Offer of = modelMapper.map(offer, Offer.class);
         of.setModel(modelRepository.findByName(offer.getModels()).orElse(null));
-        of.setUsers(usersRepository.findByUserName(offer.getUsers()).orElse(null));
+        of.setUsers(usersRepository.findByUserName(username).orElse(null));
         offerRepository.saveAndFlush(of);
     }
 
     @Cacheable("offer")
     public List<ShowOfferInfoDto> getAll() {
-        return offerRepository.findAll().stream().map((offer) -> modelMapper.map(offer, ShowOfferInfoDto.class)).collect(Collectors.toList());
+        List<Offer> offers = offerRepository.findAll();
+        return offers.stream()
+                .map(offer -> modelMapper.map(offer, ShowOfferInfoDto.class))
+                .collect(Collectors.toList());
     }
 
     @CacheEvict(cacheNames = "offer", allEntries = true)
     public void removeOffer(String id) {
         offerRepository.deleteById(id);
+    }
+
+    @PostConstruct
+    public void initializeTypeMap() {
+        TypeMap<Offer, ShowOfferInfoDto> typeMap = modelMapper.createTypeMap(Offer.class, ShowOfferInfoDto.class);
+        typeMap.addMapping(src -> src.getUsers().getUserName(), ShowOfferInfoDto::setUsers);
     }
 
     @Cacheable("offer")

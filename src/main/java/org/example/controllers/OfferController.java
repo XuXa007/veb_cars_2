@@ -48,7 +48,7 @@ public class OfferController {
             return "redirect:/offer/add";
         }
 
-        offerService.addOffer(offerModel);
+        offerService.addOffer(offerModel, principal.getName());
 
         return "redirect:/offer/all";
     }
