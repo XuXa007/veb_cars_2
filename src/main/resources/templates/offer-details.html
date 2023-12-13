@@ -12,9 +12,12 @@
           <h1>Offer Details</h1>
         </div>
         <div class="row bg-light rounded">
-          <div class="col-md-6"><img src="/pic/company.png" height="350px"></div>
+          <div class="col-md-6 mt-3">
+            <div class="overflow-hidden" style="height: 100%; object-fit: cover;">
+              <img th:src="@{'/pic/' + ${offerDetails.models} + '_image.png'}" alt="Image" class="img-fluid h-100 w-100">
+            </div>
+          </div>
           <div class="col-md-6 pt-3">
-            <h2>Offer</h2>
             <h2 th:text="'Model: ' + ${offerDetails.models}"></h2>
             <h2 th:text="'User: ' + ${offerDetails.users}"></h2>
             <h4 th:text="'Price: ' + ${offerDetails.price}"></h4>

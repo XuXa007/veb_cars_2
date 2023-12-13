@@ -10,14 +10,14 @@
         <li class="nav-item">
             <a class="nav-link" href="/brand/all">All Brand</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link " href="/model/add">Add Model</a>
-        </li>
-        <li class="nav-item">
+        <li class="nav-item" sec:authorize="hasRole('Admin')">
             <a class="nav-link " href="/model/all">All Model</a>
         </li>
         <li class="nav-item">
             <a class="nav-link " href="/offer/all">All Offer</a>
+        </li>
+        <li class="nav-item" sec:authorize="hasRole('User')">
+            <a class="nav-link " href="/model/add">Add Model</a>
         </li>
         <li class="nav-item" sec:authorize="hasRole('User')">
             <a class="nav-link " href="/offer/add">Add Offer</a>

@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head"></head>
+<head th:replace="fragments/head">
+    <style>
+        a {
+            color: black;
+        }
+
+    </style>
+    <title>Your Title</title>
+</head>
 <body class="d-flex flex-column h-100">
 <div th:replace="fragments/navbar">Navbar</div>
 <main class="flex-shrink-0">
     <div class="container">
         <div class="row">
-            <div class="col-md-2 "></div>
-            <div class="jumbotron text-center rounded col-md-8 align-self-center pt-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                <h2 class="text-center text-dark mt-5">All Offers</h2>
-                <div th:each="a : ${addOffer}" class="d-flex flex-column bg-text mb-3">
-                    <h2 th:text="'Model: ' + ${a.models}"></h2>
-                    <h2 th:text="'User: ' + ${a.users}"></h2>
-                    <h4 th:text="'Price: ' + ${a.price}"></h4>
-                    <h4 th:text="'Year: ' + ${a.year}"></h4>
-                    <h5 th:text="'Description: ' + ${a.description}"></h5>
-                    <h4><a class="btn-block" th:href="@{/offer/offer-details/{offer-id}(offer-id=${a.id})}">Detail
-                        info</a></h4>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h2 class="font-weight-bold display-4 text-center text-dark mt-5">Offers</h2>
+                <div class="card-deck">
+                    <div th:each="a : ${addOffer}" class="card mb-3 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <div class="overflow-hidden" style="height: 100%; object-fit: cover;">
+                                    <img  th:src="@{'/pic/' + ${a.models} + '_image.png'}" alt="Image" class="img-fluid h-100 w-100">
+<!--                                    <img th:each="image : ${imageModel}" th:src="@{${image.}}" alt="Image" class="img-fluid h-100 w-100"> <img/>-->
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h5 th:text="${'User ' + a.users + ' buy ' + a.models}">User and Model</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted" th:text="'Price: ' + ${a.price}"></h6>
+                                    <h4><a type="button" class="btn btn-outline-primary" th:href="@{/offer/offer-details/{offer-id}(offer-id=${a.id})}">Detail info</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
-<footer th:replace="fragments/footer"/>
+<footer th:replace="fragments/footer"></footer>
 </body>
 </html>

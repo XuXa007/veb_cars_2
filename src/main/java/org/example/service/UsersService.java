@@ -75,7 +75,7 @@ public class UsersService {
         return usersRepository.findAll().stream().map((users) -> modelMapper.map(users, ShowUserInfoDto.class)).collect(Collectors.toList());
     }
 
-//    @Cacheable("user")
+    @Cacheable("user")
     public List<ShowUserInfoDto> getAllUsersForOffer() {
         return usersRepository.findAll().stream().map((users) -> modelMapper.map(users, ShowUserInfoDto.class)).collect(Collectors.toList());
     }

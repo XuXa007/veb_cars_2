@@ -15,12 +15,6 @@ public class ShowUserInfoDto {
     private LocalDateTime created;
     private LocalDateTime modified;
 
-    public ShowUserInfoDto(String userName, String fullName, int age, String email) {
-        this.userName = userName;
-        this.fullName = fullName;
-        this.age = age;
-        this.email = email;
-    }
 
     public int getAge() {
         return age;

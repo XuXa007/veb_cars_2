@@ -64,7 +64,9 @@ public class BrandController {
 
     @GetMapping("/all")
     public String showAllBrands(@RequestParam(name = "brandName", required = false) String brandName, Principal principal, Model model) {
-        LOG.log(Level.INFO, "Show all brands for " + principal.getName());
+        if (principal != null) {
+            LOG.log(Level.INFO, "Show all brands for " + principal.getName());
+        }
         List<ShowBrandInfoDto> allBrands = brandService.allBrands();
         model.addAttribute("brandInfos", allBrands);
 

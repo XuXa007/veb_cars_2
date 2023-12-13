@@ -69,6 +69,17 @@
               message</small>
           </div>
 
+          <div class="mb-3">
+            <label class="form-label" for="imageURL">imageURL</label>
+            <input th:field="*{imageURL}"
+                   th:errorclass="is-invalid"
+                   type="text" class="form-control text-center"
+                   id="imageURL" aria-describedby="imageURL" name="imageURL"/>
+            <small th:if="${#fields.hasErrors('imageURL')}" th:errors="*{imageURL}"
+                   class="text-danger">Error
+              message</small>
+          </div>
+
           <button type="submit" class="btn btn-secondary">Add Model</button>
         </form>
       </div>

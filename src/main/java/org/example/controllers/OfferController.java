@@ -70,8 +70,9 @@ public class OfferController {
 
     @GetMapping("/all")
     public String showAllOffers(Model model, Principal principal) {
-        LOG.log(Level.INFO, "Show all offers by " + principal.getName());
-
+        if (principal != null) {
+            LOG.log(Level.INFO, "Show all offers by " + principal.getName());
+        }
         model.addAttribute("addOffer", offerService.getAll());
 
         return "offer-all";

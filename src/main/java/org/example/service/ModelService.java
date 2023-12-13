@@ -49,7 +49,7 @@ public class ModelService {
     public void addModel(AddModelDto addModelDto) {
         addModelDto.setCreated(LocalDateTime.now());
         addModelDto.setModified(LocalDateTime.now());
-        addModelDto.setImageURL("ooopss...");
+//        addModelDto.setImageURL("ooopss...");
         Models model = modelMapper.map(addModelDto, Models.class);
         model.setBrand(brandRepository.findByName(addModelDto.getBrand()).orElse(null));
         modelRepository.saveAndFlush(model);
@@ -61,6 +61,8 @@ public class ModelService {
                 .collect(Collectors.toList());
     }
 
+
+    @Cacheable("model")
     public ShowModelInfoDto modelDetails(String modelName) {
         return modelMapper.map(modelRepository.findByName(modelName).orElse(null), ShowModelInfoDto.class);
     }
@@ -79,7 +81,7 @@ public class ModelService {
         return modelRepository.findAll().stream().map((model) -> modelMapper.map(model, ShowModelInfoDto.class)).collect(Collectors.toList());
     }
 
-//    @Cacheable("model")
+    @Cacheable("model")
     public List<ShowModelInfoDto> getModelsByBrand(String brandName) {
         Brand brand = brandRepository.findByName(brandName).orElseThrow(() -> new ExpressionException("Brand not found with name: " + brandName));
 

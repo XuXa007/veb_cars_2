@@ -34,12 +34,12 @@ public class AppSecurityConfiguration {
                                         requestMatchers(PathRequest.toStaticResources().atCommonLocations())
                                         .permitAll().
                                         // Доступ для всех пользователей
-                                        requestMatchers("/", "/users/login", "/users/register", "/users/login-error" , "/model/all", "/model/add","/brand/all", "/pic/**")
+                                        requestMatchers("/model/add", "/", "/users/login", "/users/register", "/users/login-error", "/pic/**", "/offer/all", "/brand/all")
 //                                        .antMatchers("/pic/**").permitAll()
                                         .permitAll().
                                         // Доступ только для зарегистрированных пользователей
-                                        requestMatchers("/users/profile", "/offer/add", "/offer/all").authenticated().
-                                        requestMatchers("/offer/add","/offer/delete/","/offer/add", "/brand/add", "/user/all",  "/user/add").hasRole("Admin").
+                                        requestMatchers("/users/profile", "/offer/add", "/model/add").authenticated().
+                                        requestMatchers("/model/all", "/offer/add","/offer/delete/", "/brand/add", "/user/all",  "/user/add").hasRole("Admin").
                                         anyRequest().authenticated()
                 )
                 .formLogin(

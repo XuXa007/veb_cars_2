@@ -43,6 +43,14 @@ public class Users extends Base {
     public Users() {
     }
 
+    public Users(String userName, String password, String fullName, String email, int age) {
+        this.userName = userName;
+        this.password = password;
+        this.fullName = fullName;
+        this.email = email;
+        this.age = age;
+    }
+
     public Users(Object username, String password, Object collect) {
         super();
     }

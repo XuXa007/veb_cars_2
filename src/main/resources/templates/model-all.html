@@ -8,13 +8,13 @@
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8">
-        <h2 class="font-weight-bold display-4 text-center text-dark mt-5">All Models</h2>
+        <h2 class="font-weight-bold display-4 text-center text-dark mt-5">Models</h2>
         <div class="card-deck">
           <div th:each="m : ${modelInfos}" class="card mb-3 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
             <div class="row no-gutters">
               <div class="col-md-3">
                 <div class="overflow-hidden" style="height: 100%; object-fit: cover;">
-                  <img src="/pic/i-8.png" alt="Company Logo" class="img-fluid h-100 w-100">
+                  <img th:src="@{'/pic/' + ${m.name} + '_image.png'}" alt="Image" class="img-fluid h-100 w-100">
                 </div>
               </div>
               <div class="col-md-9">
@@ -34,3 +34,5 @@
 <footer th:replace="fragments/footer"/>
 </body>
 </html>
+
+

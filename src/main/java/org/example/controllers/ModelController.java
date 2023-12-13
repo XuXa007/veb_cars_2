@@ -30,7 +30,6 @@ public class ModelController {
 
     @GetMapping("/add")
     public String addModel(Model model, Principal principal) {
-//        LOG.log(Level.INFO, "Add model by " + principal.getName());
         model.addAttribute("brandList", brandService.getAll());
         return "model-add";
     }
@@ -59,11 +58,18 @@ public class ModelController {
 
     @GetMapping("/all")
     public String showAllModels(Model model, Principal principal) {
-        LOG.log(Level.INFO, "Show all model for " + principal.getName());
+        if (principal != null) {
+            LOG.log(Level.INFO, "Show all models for " + principal.getName());
+        }
 
         model.addAttribute("modelInfos", modelService.getAllModels());
         model.addAttribute("brands", brandService.getAll());
+
         return "model-all";
+    }
+
+    private void populateModel(Model model) {
+
     }
 
     @PostMapping("/add")
@@ -76,14 +82,14 @@ public class ModelController {
             return "redirect:/model/add";
         }
         modelService.addModel(modelModel);
-        return "redirect:/model/all";
+        return "redirect:/brand/all";
     }
 
     @GetMapping("/model-delete/{model-name}")
     public String deleteModel(@PathVariable("model-name") String name) {
         modelService.removeModel(name);
 
-        return "redirect:/model/all";
+        return "redirect:/brand/all";
     }
 
     @GetMapping("/edit/{model-name}")
