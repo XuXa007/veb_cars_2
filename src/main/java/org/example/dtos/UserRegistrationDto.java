@@ -1,16 +1,18 @@
 package org.example.dtos;
 
 import jakarta.validation.constraints.*;
+import org.example.utils.validation.UniqueEmail;
+import org.example.utils.validation.UniqueUserName;
 
 public class UserRegistrationDto {
 
-    // Делайте проверку на уникальность
+    @UniqueUserName
     private String username;
 
 
     private String fullname;
 
-    // Делайте проверку на уникальность
+    @UniqueEmail
     private String email;
 
 

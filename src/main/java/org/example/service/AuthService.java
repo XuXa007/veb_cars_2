@@ -31,7 +31,7 @@ public class AuthService {
             throw new RuntimeException("passwords.match");
         }
 
-        Optional<Users> byEmail = this.userRepository.findByEmail(registrationDTO.getEmail());
+        Optional<Users> byEmail = this.userRepository.findUserByEmail(registrationDTO.getEmail());
 
         if (byEmail.isPresent()) {
             throw new RuntimeException("email.used");

@@ -28,9 +28,7 @@ public class Users extends Base {
 
     @Column(name = "full_name")
     private String fullName;
-
     private boolean isActive;
-
     private String email;
     private int age;
 
