@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-6 mt-4">
                 <div class="overflow-hidden" style="height: 100%; object-fit: cover;">
-                    <img th:src="@{'/pic/' + ${modelDetails.name} + '_image.png'}" alt="Image" class="img-fluid h-100 w-100">
+                    <img th:src="@{${modelDetails.imageURL}}" alt="Image" class="img-fluid h-100 w-100">
                 </div>
             </div>
 
@@ -21,8 +21,6 @@
                         <p th:text="'Category: ' + ${modelDetails.category}"></p>
                         <p th:text="'Start year: ' + ${modelDetails.startYear}"></p>
                         <p th:text="'End year: ' + ${modelDetails.endYear}"></p>
-                        <p th:text="'Created: ' + ${modelDetails.created}"></p>
-                        <p th:text="'Modified: ' + ${modelDetails.modified}"></p>
                     </div>
                     <div class="btn-group mt-3">
                         <a class="btn btn-success btn-lg mx-2" th:href="@{/model/edit/{model-name}(model-name=${modelDetails.name})}">Edit Model</a>

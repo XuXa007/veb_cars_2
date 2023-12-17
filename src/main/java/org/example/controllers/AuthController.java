@@ -36,8 +36,6 @@ public class AuthController {
         return new UserRegistrationDto();
     }
 
-
-
     @PostMapping("/register")
     public String doRegister(@Valid UserRegistrationDto userRegistrationDto,
                              BindingResult bindingResult,

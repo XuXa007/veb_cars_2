@@ -49,7 +49,6 @@ public class ModelService {
     public void addModel(AddModelDto addModelDto) {
         addModelDto.setCreated(LocalDateTime.now());
         addModelDto.setModified(LocalDateTime.now());
-//        addModelDto.setImageURL("ooopss...");
         Models model = modelMapper.map(addModelDto, Models.class);
         model.setBrand(brandRepository.findByName(addModelDto.getBrand()).orElse(null));
         modelRepository.saveAndFlush(model);
@@ -107,7 +106,7 @@ public class ModelService {
 
             existingModel.setName(modelDto.getName());
             existingModel.setCategory(modelDto.getCategory());
-//            existingModel.setImageUrl(modelDto.getImageURL());
+            existingModel.setImageUrl(modelDto.getImageURL());
             existingModel.setStartYear(modelDto.getStartYear());
             existingModel.setEndYear(modelDto.getEndYear());
             existingModel.setModified(LocalDateTime.now());

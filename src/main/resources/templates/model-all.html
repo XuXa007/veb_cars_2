@@ -14,7 +14,7 @@
             <div class="row no-gutters">
               <div class="col-md-3">
                 <div class="overflow-hidden" style="height: 100%; object-fit: cover;">
-                  <img th:src="@{'/pic/' + ${m.name} + '_image.png'}" alt="Image" class="img-fluid h-100 w-100">
+                  <img th:src="@{${m.imageURL}}" alt="Image" class="img-fluid h-100 w-100">
                 </div>
               </div>
               <div class="col-md-9">

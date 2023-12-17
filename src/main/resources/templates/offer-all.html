@@ -5,7 +5,6 @@
         a {
             color: black;
         }
-
     </style>
     <title>Your Title</title>
 </head>
@@ -22,8 +21,8 @@
                         <div class="row no-gutters">
                             <div class="col-md-3">
                                 <div class="overflow-hidden" style="height: 100%; object-fit: cover;">
-                                    <img  th:src="@{'/pic/' + ${a.models} + '_image.png'}" alt="Image" class="img-fluid h-100 w-100">
-<!--                                    <img th:each="image : ${imageModel}" th:src="@{${image.}}" alt="Image" class="img-fluid h-100 w-100"> <img/>-->
+                                    <!-- Iterate over modelInfos for each addOffer -->
+                                    <img  th:src="@{${a.modelImageURL}}" alt="Image" class="img-fluid h-100 w-100">
                                 </div>
                             </div>
                             <div class="col-md-9">

@@ -14,9 +14,8 @@ public class ShowModelInfoDto {
     private String brandName;
     private Engine engine;
     private Transmission transmission;
-
+    private String imageURL;
     public LocalDateTime created;
-
     private LocalDateTime modified;
 
     public Engine getEngine() {
@@ -89,5 +88,13 @@ public class ShowModelInfoDto {
 
     public void setEndYear(int endYear) {
         this.endYear = endYear;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }

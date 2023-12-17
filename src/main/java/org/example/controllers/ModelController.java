@@ -101,6 +101,7 @@ public class ModelController {
         model.addAttribute("model", modelDto);
         return "model-edit";
     }
+
     @PostMapping("/edit/{model-name}")
     public String editModel(@PathVariable("model-name") String modelName, @Valid AddModelDto modelDto, BindingResult result, Model model) {
 
@@ -111,6 +112,9 @@ public class ModelController {
         }
 
         modelService.editModel(modelName, modelDto);
-        return "redirect:/model/all";
+        return "redirect:/all";
     }
+
+
+
 }

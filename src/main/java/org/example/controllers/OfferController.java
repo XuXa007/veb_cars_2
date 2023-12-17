@@ -74,6 +74,7 @@ public class OfferController {
             LOG.log(Level.INFO, "Show all offers by " + principal.getName());
         }
         model.addAttribute("addOffer", offerService.getAll());
+        model.addAttribute("modelInfos", modelService.getAllModels());
 
         return "offer-all";
     }

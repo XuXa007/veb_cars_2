@@ -38,10 +38,11 @@ public class AppSecurityConfiguration {
 //                                        .antMatchers("/pic/**").permitAll()
                                         .permitAll().
                                         // Доступ только для зарегистрированных пользователей
-                                        requestMatchers("/users/profile", "/offer/add", "/model/add").authenticated().
+                                        requestMatchers("/users/profile", "/offer/add", "/model/add", "/model/edit").authenticated().
                                         requestMatchers("/model/all", "/offer/add","/offer/delete/", "/brand/add", "/user/all",  "/user/add").hasRole("Admin").
                                         anyRequest().authenticated()
                 )
+
                 .formLogin(
                         (formLogin) ->
                                 formLogin.

@@ -15,6 +15,7 @@ public class ShowOfferInfoDto {
     private BigDecimal price;
     private Transmission transmission;
     private int year;
+    private String modelImageURL;
 
     public String getId() {
         return id;
@@ -86,5 +87,13 @@ public class ShowOfferInfoDto {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public String getModelImageURL() {
+        return modelImageURL;
+    }
+
+    public void setModelImageURL(String modelImageURL) {
+        this.modelImageURL = modelImageURL;
     }
 }

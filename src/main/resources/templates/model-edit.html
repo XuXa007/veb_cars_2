@@ -18,10 +18,11 @@
           <div class="mb-3">
             <label class="form-label" for="brand"><h5>All available brands</h5></label>
             <select class="form-control text-center" id="brand" name="name" th:field="*{brand}">
-              <option th:each="a : ${availableBrands}" th:value="${a.name}" th:text="${a.name}"></option>
+              <option th:each="a : ${availableBrands}" th:value="${a.name}" th:text="${a.name}" th:selected="${a.name == model.brand.name}"></option>
             </select>
             <small th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}" class="text-danger">Error message</small>
           </div>
+
           <div class="mb-3">
             <label class="form-label" for="name">Name</label>
             <input th:value="${model.name}"
@@ -45,15 +46,6 @@
                      class="text-danger">Error message</small>
             </div>
           </fieldset>
-<!--          <div class="mb-3">-->
-<!--            <label class="form-label" for="imageURL">URL Of Image</label>-->
-<!--            <input th:field="*{imageURL}"-->
-<!--                   th:errorclass="is-invalid"-->
-<!--                   type="text" class="form-control text-center"-->
-<!--                   id="imageURL" aria-describedby="imageURL" name="imageURL"/>-->
-<!--            <small th:if="${#fields.hasErrors('imageURL')}" th:errors="*{imageURL}" class="text-danger">Error-->
-<!--              message</small>-->
-<!--          </div>-->
           <div class="mb-3">
             <label class="form-label" for="startYear">Start Year</label>
             <input th:field="*{startYear}"
@@ -68,6 +60,16 @@
                    th:errorclass="is-invalid" type="text" class="form-control text-center"
                    id="endYear" aria-describedby="endYear" name="endYear"/>
             <small th:if="${#fields.hasErrors('endYear')}" th:errors="*{endYear}" class="text-danger">Error
+              message</small>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="imageURL">imageURL</label>
+            <input th:field="*{imageURL}"
+                   th:errorclass="is-invalid"
+                   type="text" class="form-control text-center"
+                   id="imageURL" aria-describedby="imageURL" name="imageURL"/>
+            <small th:if="${#fields.hasErrors('imageURL')}" th:errors="*{imageURL}"
+                   class="text-danger">Error
               message</small>
           </div>
           <button type="submit" class="btn btn-secondary">Save Changes</button>

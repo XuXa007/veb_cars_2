@@ -60,11 +60,21 @@ public class OfferService {
     @Cacheable("offer")
     public List<ShowOfferInfoDto> getAll() {
         List<Offer> offers = offerRepository.findAll();
+//        return offers.stream()
+//                .map(offer -> modelMapper.map(offer, ShowOfferInfoDto.class))
+//                .collect(Collectors.toList());
         return offers.stream()
-                .map(offer -> modelMapper.map(offer, ShowOfferInfoDto.class))
+                .map(offer -> {
+                    ShowOfferInfoDto dto = modelMapper.map(offer, ShowOfferInfoDto.class);
+                    Models models = offer.getModel();
+                    if (models != null) {
+                        // Включите нужные свойства модели в DTO
+                        dto.setModelImageURL(models.getImageURL());
+                    }
+                    return dto;
+                })
                 .collect(Collectors.toList());
     }
-
     @CacheEvict(cacheNames = "offer", allEntries = true)
     public void removeOffer(String id) {
         offerRepository.deleteById(id);
