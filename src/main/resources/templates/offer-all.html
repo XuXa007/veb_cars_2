@@ -16,6 +16,10 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <h2 class="font-weight-bold display-4 text-center text-dark mt-5">Offers</h2>
+                <form method="get" th:action="@{/offer/all}" class="mb-3">
+                    <input type="hidden" name="sortOrder" th:value="${sortOrder}" />
+                    <button type="submit" class="btn btn-secondary">Change Sort Order</button>
+                </form>
                 <div class="card-deck">
                     <div th:each="a : ${addOffer}" class="card mb-3 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
                         <div class="row no-gutters">

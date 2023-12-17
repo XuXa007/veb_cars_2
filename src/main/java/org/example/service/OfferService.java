@@ -110,4 +110,17 @@ public class OfferService {
         return offerInfos;
     }
 
+    public List<ShowOfferInfoDto> getAllOffersSortedByPriceAsc() {
+        List<Offer> offers = offerRepository.findAllByOrderByPriceAsc();
+        return offers.stream()
+                .map(offer -> modelMapper.map(offer, ShowOfferInfoDto.class))
+                .collect(Collectors.toList());
+    }
+
+    public List<ShowOfferInfoDto> getAllOffersSortedByPriceDesc() {
+        List<Offer> offers = offerRepository.findAllByOrderByPriceDesc();
+        return offers.stream()
+                .map(offer -> modelMapper.map(offer, ShowOfferInfoDto.class))
+                .collect(Collectors.toList());
+    }
 }

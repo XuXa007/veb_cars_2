@@ -84,8 +84,6 @@ public class BrandController {
         return "brand-all";
     }
 
-
-
     @GetMapping("/brand-delete/{brand-name}")
     public String deleteBrand(@PathVariable("brand-name") String name) {
         brandService.removeBrand(name);
