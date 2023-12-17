@@ -27,18 +27,13 @@ public class Users extends Base {
     @Column(name = "full_name")
     private String fullName;
     private int age;
+    @Column(name = "email")
     private String email;
 
     @Column(name="password", length = 255, nullable = false)
     private String password;
 
     private boolean isActive;
-
-
-//    @Column(name="created", length = 6, nullable = false)
-//    private LocalDateTime created;
-//    @Column(name="modified", length = 6, nullable = false)
-//    private LocalDateTime modified;
 
     public Users() {
     }

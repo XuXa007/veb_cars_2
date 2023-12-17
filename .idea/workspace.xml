@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3850beb8-f414-4299-8a36-5170992adf9f" name="Changes" comment="change for postman">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/BrandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/OfferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repo/OfferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repo/OfferRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/OfferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/offer-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/offer-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/ModelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controllers/OfferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/controllers/OfferController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/OfferService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/OfferService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
