@@ -66,9 +66,6 @@ public class ModelService {
         return modelMapper.map(modelRepository.findByName(modelName).orElse(null), ShowModelInfoDto.class);
     }
 
-//    public Models getModelById(String modelId) {
-//        return modelRepository.findById(modelId).orElse(null);
-//    }
 
     @CacheEvict(cacheNames = "model", allEntries = true)
     public void removeModel(String name) {

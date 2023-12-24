@@ -12,12 +12,9 @@ import java.util.UUID;
 @Table(name = "users")
 public class Users extends Base {
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List<Role> roles;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role roles;
 
     @OneToMany(mappedBy = "users", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JsonIgnore
@@ -50,12 +47,11 @@ public class Users extends Base {
         super();
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    public List<Role> getRoles() {
+    public Role getRoles() {
         return roles;
     }
 
-    public void setRoles(List<Role> roles) {
+    public void setRoles(Role roles) {
         this.roles = roles;
     }
 

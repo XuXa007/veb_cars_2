@@ -48,7 +48,7 @@ public class AuthService {
                 registrationDTO.getAge()
         );
 
-        user.setRoles(List.of(userRole));
+        user.setRoles(userRole);
 
         this.userRepository.save(user);
     }

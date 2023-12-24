@@ -60,7 +60,7 @@ public class Init implements CommandLineRunner {
                 findRoleByName(RoleEnum.Admin).orElseThrow();
 
         var adminUser = new Users("admin", passwordEncoder.encode(defaultPassword), "admin@example.com", "Admin Adminovich", 30);
-        adminUser.setRoles(List.of(adminRole));
+        adminUser.setRoles(adminRole);
 
         userRepository.save(adminUser);
     }
@@ -71,7 +71,7 @@ public class Init implements CommandLineRunner {
                 findRoleByName(RoleEnum.Moderator).orElseThrow();
 
         var moderatorUser = new Users("moderator", passwordEncoder.encode(defaultPassword), "moderator@example.com", "Moder Moderovich", 24);
-        moderatorUser.setRoles(List.of(moderatorRole));
+        moderatorUser.setRoles(moderatorRole);
 
         userRepository.save(moderatorUser);
     }
@@ -81,7 +81,7 @@ public class Init implements CommandLineRunner {
                 findRoleByName(RoleEnum.User).orElseThrow();
 
         var normalUser = new Users("user", passwordEncoder.encode(defaultPassword), "user@example.com", "User Userovich", 22);
-        normalUser.setRoles(List.of(userRole));
+        normalUser.setRoles(userRole);
 
         userRepository.save(normalUser);
     }

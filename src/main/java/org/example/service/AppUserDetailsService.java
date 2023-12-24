@@ -1,5 +1,6 @@
 package org.example.service;
 
+import org.example.models.Role;
 import org.example.models.Users;
 import org.example.repo.UsersRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -8,6 +9,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import java.util.Collections;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class AppUserDetailsService implements UserDetailsService {
@@ -20,13 +23,18 @@ public class AppUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findByUserName(username)
-                .map(u -> new User(
-                        u.getUserName(),
-                        u.getPassword(),
-                        u.getRoles().stream()
-                                .map(r -> new SimpleGrantedAuthority("ROLE_" + r.getName().name()))
-                                .collect(Collectors.toList())
-                )).orElseThrow(() -> new UsernameNotFoundException(username + " was not found!"));
-
+                .map(u -> {
+                    Role role = u.getRoles();
+                    if (role != null) {
+                        return new User(
+                                u.getUserName(),
+                                u.getPassword(),
+                                Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + role.getName().name()))
+                        );
+                    } else {
+                        throw new UsernameNotFoundException(username + " has no roles!");
+                    }
+                })
+                .orElseThrow(() -> new UsernameNotFoundException(username + " was not found!"));
     }
 }

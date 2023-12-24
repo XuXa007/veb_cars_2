@@ -63,33 +63,11 @@ public class OfferController {
 
     @GetMapping("/offer-details/{offer-id}")
     public String offerDetails(@PathVariable("offer-id") String offerId, Model model) {
+        model.addAttribute("modelInfos", modelService.getAllModels());
         model.addAttribute("offerDetails", offerService.offerDetails(offerId));
 
         return "offer-details";
     }
-//
-//    @GetMapping("/all")
-//    public String showAllOffers(
-//            Model model,
-//            Principal principal,
-//            @RequestParam(name = "sortOrder", defaultValue = "asc") String sortOrder
-//    ) {
-//        if (principal != null) {
-//            LOG.log(Level.INFO, "Show all offers by " + principal.getName());
-//        }
-//
-//        List<ShowOfferInfoDto> offers;
-//        if ("desc".equals(sortOrder)) {
-//            offers = offerService.getAllOffersSortedByPriceDesc();
-//        } else {
-//            offers = offerService.getAllOffersSortedByPriceAsc();
-//        }
-//
-//        model.addAttribute("addOffer", offers);
-//        model.addAttribute("modelInfos", modelService.getAllModels());
-//
-//        return "offer-all";
-//    }
 
     @GetMapping("/all")
     public String showAllOffers(@RequestParam(name = "sortOrder", defaultValue = "asc") String sortOrder, Model model, Principal principal) {
